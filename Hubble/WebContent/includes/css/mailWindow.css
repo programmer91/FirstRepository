@@ -1,0 +1,326 @@
+/*  ###########################################################
+Author: MrutyumajayaRao.Chenn<mchennu@miraclesoft.com>
+###########################################################
+*/
+
+/*
+Default Body
+------------------------------------------------------ */ 
+.bodyGeneral {
+   background-color: #fff;
+   color: #38394B;
+   font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size: 13px;
+   font-weight: bold;
+   margin: 0;
+   padding: 0;
+}
+
+/*
+Template Styles
+------------------------------------------------------
+*/
+.templateTable{
+   height: 440px;
+   left: 0px;
+   top: 0px;
+   width: 705px;
+   border-top:        0px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.cellBorder{
+   border-top:        1px solid #979AC2;
+   border-bottom:     0px solid #979AC2;
+   border-right:      0px solid #979AC2;
+
+}
+.innerTable {
+   border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-style: solid;
+   border-top: 0px solid #979AC2;
+   height: 440px;
+   left: 0px;
+   top: 0px;
+   width: 700px;
+}
+
+.horizontalMenuBarBg{
+   background-image: url(blueBar_10x35.gif);
+   background-repeat: repeat-x;
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   height: 35px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+.headerBg{
+   background-image: url(blueHeader_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   border-bottom: 0px solid #979AC2;
+   height: 30px;
+   width: 800px;
+}
+.headerBg1{
+   background-image: url(blueHeader_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   border-bottom: 0px solid #979AC2;
+   height: 400px;
+   width: 800px;
+}
+.footerBg{
+   background-image: url(blueFooter_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size: 11px;
+   height: 30px;
+   width: 800px;
+}
+
+.mirageLogo{
+   background-image: url(mirageLogo_135x32.gif);
+   background-repeat: no-repeat;
+}
+
+.menuBarHelpLink{
+  background-image: url(help00_44x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarHelpLink:hover {
+  background-image: url(help01_44x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarLogInLink{
+  background-image: url(logIn00_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarLogInLink:hover {
+  background-image: url(logIn01_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarLogoutLink{
+  background-image: url(logOut00_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarLogoutLink:hover {
+  background-image: url(logOut01_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarHomeLink{
+  background-image: url(home00_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarHomeLink:hover {
+  background-image: url(home01_59x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarContactUsLink{
+  background-image: url(contactUs00_82x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+.menuBarContactUsLink:hover {
+  background-image: url(contactUs01_82x13.gif);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+
+
+/*
+Data Labels
+------------------------------------------------------
+*/
+
+.fieldLabel {
+
+   font-family:       lucida-sans,Bold;
+   font-size:         13px;
+   color:             #ffffff;
+   padding:           4px 6px 4px 6px;
+}
+
+
+/*
+FORM OBJECTS
+------------------------------------------------------
+*/
+
+.buttonBg{
+   background-image: url(bgBlue.gif);
+   background-repeat: repeat-x;
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   font-size: 11px;
+   padding-top: 0px;
+   vertical-align: bottom;
+}
+/* add by rajanikanth */
+.inputTextBlueAddress {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 5.7em;
+   margin: 0;
+   padding: 0;
+   width: 500px;
+}
+.inputBox {
+   BORDER-RIGHT: silver 1px solid; 
+   BORDER-TOP: silver 1px solid; 
+   FONT-WEIGHT: 500; 
+   FONT-SIZE: 12px; 
+   BORDER-LEFT: silver 1px solid; 
+   BORDER-BOTTOM: silver 1px solid; 
+   FONT-STYLE: normal; 
+   FONT-FAMILY: arial, helvetica, sans-serif; 
+   BACKGROUND-COLOR: #ffffff;
+}
+.inputBlue {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color:             #333;
+   font-family:       arial, helvetica, sans-serif;
+   font-size:         12px;
+   height:            1.7em;
+   padding:           0;
+   margin:            0;
+ 
+}
+
+.select {
+   background-color:  #fff;
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         11px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        2px;
+   margin-bottom:     2px;
+} 
+
+.radio {
+   background-color:  transparent;
+   margin-top:        4px;
+   margin-bottom:     4px;
+   padding:           0;
+   border:            0;
+}
+
+.textarea {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color:             #333;
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         11px;
+   padding:           0;
+   margin:            0;
+}
+
+
+
+/*
+TABLE FORMATTING 
+------------------------------------------------------ 
+*/ 
+
+
+.border {
+   border:     		1px solid #B2B3CE;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+.tableBorder {
+   border-left:     	1px solid #B2B3CE;
+   border-right:     	1px solid #B2B3CE;
+   border-bottom:         1px solid #B2B3CE;
+   padding:			0px;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+.tableBorderLeft {
+   border-left:      1px solid #B2B3CE;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+
+.tableHeading {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         10px;
+   letter-spacing:    .1em;
+   font-weight:		bold;
+   color:             #fff;
+   padding:           0;
+   margin:			0;
+   background-color:  transparent; 
+   white-space: 		nowrap;
+}
+.tableHeadingBig {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         1px;
+   font-weight:		normal;
+   color:             #fff;
+   padding:           0;
+   margin:			0;
+   background-color:  transparent;  
+}
+
+.tableCellOne {
+
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         11px;
+   color:             #38394B;
+   padding:           3px 6px 3px 6px;
+   border-top:        1px solid #fff;
+   border-bottom:     1px solid #B2B3CE;
+   border-left:       1px solid #fff;
+   border-right:      1px solid #B2B3CE;
+}
+
+.tableDescription {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         10px;
+   color:             #73769D;
+   background-color:  transparent;  
+}
+

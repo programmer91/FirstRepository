@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.reports.EmployeeAvailabilityAction" table="tblReports">
+        
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="loginUserId" column="LoginId"/>
+        <property name="empReportType" column="ReportType"/>
+        <property name="description" column="Description"/>   
+        <property name="createdDate" column="CreatedDate"/>
+        <property name="reportName" column="ReportName"/>
+        
+    </class>
+</hibernate-mapping>

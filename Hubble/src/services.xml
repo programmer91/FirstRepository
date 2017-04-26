@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : services.xml
+    Created on  : November 19, 2007, 10:35 AM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : mailService
+       Author       : Rajareddy Andra
+       Description  :
+    -->
+    <package name="mailService" namespace="/services/mail" extends="default">
+        
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="mailAction" class="com.mss.mirage.services.mail.MailAction" method="sendMail">
+            <result>MailWindow.jsp</result>
+            <result name="failure">Failure.jsp</result>
+        </action>
+        <action name="contactmailAction" class="com.mss.mirage.services.mail.ContactMailAction" method="sendMail">
+            <result>ContactsMailWindow.jsp</result>
+            <result name="failure">Failure.jsp</result>
+        </action>
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+</struts>

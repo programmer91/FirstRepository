@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    
+    <class name="com.mss.mirage.employee.general.StateVTO" table="tblEmployee">
+        
+        <id name="empId" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="empState" column="State"/>
+        <property name="stateStartDate" column="StateStartDate"/>
+        <property name="stateEndDate" column="StateEndDate"/>
+      <!--  <property name="intRatePerHour" column="IntRatePerHour"/>
+        <property name="invRatePerHour" column="InvRatePerHour"/> -->
+        <property name="skillSet" column="SkillSet"/>     
+        <property name="prjName" column="PrjName"/>
+     <!--   <property name="ctcPerYear" column="CTC"/> -->
+        
+	  <property name="modifiedBy" column="ModifiedBy"/>
+        <property name="modifiedDate" column="ModifiedDate"/>
+		
+    </class>
+    
+    
+</hibernate-mapping>

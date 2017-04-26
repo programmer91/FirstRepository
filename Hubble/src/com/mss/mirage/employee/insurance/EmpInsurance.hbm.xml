@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+    Document    :   Immigration.hbm.xml
+    Created on  :   August 31, 2007, 11:00 PM
+    Author      :   Rajani Kanth Teppala
+    Description :  Purpose of the document follows.
+-->
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.employee.insurance.EmpInsuranceVTO" table="tblEmpInsurance">
+        
+        <id name="empId" column="EmpId"  type="java.lang.Integer"> 
+            <generator class="assigned"/>
+        </id>
+        <property name="licPolicyNumber"   column="LicPolicyNumber" insert="true" update="true"/>
+        <property name="licPolicyDate"      column="LicPolicyDate"  insert="true" update="true"/>
+        <property name="licPolicyValues"      column="LicPolicyValues"  insert="true" update="true"/>
+        
+        <property name="licPolicyComNumber"   column="LicPolicyComNumber"  insert="true" update="true"/>
+        <property name="healthInsuranceType"  column="HealthInsType"  insert="true" update="true"/>
+        <property name="healthInsEffecDate"   column="HealthInsEffecDate"  insert="true" update="true"/>
+        
+        <property name="healthInsuranceCoverage" column="HealthInsCoverage"  insert="true" update="true"/>
+        <property name="effecChangeDate"  column="EffecChangeDate"  insert="true" update="true"/>
+        <property name="healthInsComName"  column="HealthInsComName"  insert="true" update="true"/>
+        
+        <property name="healthInsurePolicyNum"  column="HealthInsPolicyNumber"  insert="true" update="true"/>
+        <property name="healthInsPolicyDate"  column="HealthInsPolicyDate"  insert="true" update="true"/>
+        <property name="healthInsureDedAmt" column="HealthInsDedAmt"  insert="true" update="true"/>
+        
+        <property name="healthInsureNumOfDep"  column="HealthInsNumOfDep"  insert="true" update="true"/>
+        <property name="cobraNotif"  column="CobraNotif"  insert="true" update="true"/>
+        <property name="cobraNotifDate"  column="CobraNotifDate"  insert="true" update="true"/>
+        
+        <property name="cobraStartDate"   column="CobraStartDate"  insert="true" update="true"/>
+        <property name="cobraPayment"   column="CobraPayment"  insert="true" update="true"/>
+        <property name="dentalInsureType"   column="DentalInsType"  insert="true" update="true"/>
+        
+        <property name="dentalInsEffecDate"   column="DentalInsEffecDate"  insert="true" update="true"/>
+        <property name="dentalInsureCoverage"   column="DentalInsCoverage"  insert="true" update="true"/>
+        <property name="medicalLeave"   column="MedicalLeave"  insert="true" update="true"/>
+        
+        <property name="medicalLeaveEffecDate"        column="MedLeaveEffecDate"  insert="true" update="true"/>
+        <property name="medicalHours"    column="MedicalHours"  insert="true" update="true"/>
+        <property name="shortTermDisability"     column="ShortTermDisability"  insert="true" update="true"/>
+        
+        <property name="longTermDisability"   column="LongTermDisability"  insert="true" update="true"/>
+        <property name="comments"  column="Comments"  insert="true" update="true"/>
+        <property name="modifiedBy" column="ModifiedBy"  insert="false" update="true"/>
+        <property name="modifiedDate" column="ModifiedDate"  insert="false" update="true"/>
+        
+    </class>
+</hibernate-mapping>

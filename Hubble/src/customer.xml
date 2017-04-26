@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!-- <struts>
+    <package name="/customer"  extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <action name="custHome">
+            <result>ListOfProjects.jsp</result>
+        </action>
+        <action name="login">
+            <result>Login.jsp</result>
+        </action>
+        <action name="loginCustCheck" class="com.mss.mirage.customer.general.CustLoginAction">
+            <result>ListOfProjects.jsp</result>
+            <result name="input">Login.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="logout" class="com.mss.mirage.customer.general.CustLoginAction" method="doCustomerLogout">
+            <result>Login.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+    </package>
+    
+</struts> -->
+<struts>
+    <package name="/customer"  extends="default">
+       <!--  <default-interceptor-ref name="crudStack" />  -->
+       <!--  <action name="custHome">
+            <result>ListOfProjects.jsp</result>
+        </action>  -->
+        <action name="login">
+            <result>CustomerLogin.jsp</result>
+        </action>
+      
+        <action name="loginCustCheck" class="com.mss.mirage.customer.general.CustLoginAction">
+            <interceptor-ref name="crudStack"/>
+            <!-- <result type="redirect" name="success">/employee/timesheets/timeSheet.action</result>
+            <result type="redirect" name="operations">/employee/timesheets/empTimeSheets.action</result> -->
+            <result type="redirect" name="success">/employee/timesheets/newtimeSheet.action</result>
+              <result type="redirect" name="operations">/employee/timesheets/newempTimeSheets.action</result>
+              <result type="redirect" name="opportunity">/crm/opportunities/myCustOpportunities.action</result>
+           <!-- <result type="redirect" name="timesheet">/employee/timesheets/getTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}</result> -->
+         <!--  <result type="redirect" name="timesheet">/employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result> -->
+         
+ <!-- <result type="redirect" name="timesheet">/employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result> -->
+            <result type="redirect" name="timesheet">/employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}</result>
+            <result name="input">CustomerLogin.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="logout" class="com.mss.mirage.customer.general.CustLoginAction" method="doCustomerLogout">
+            <interceptor-ref name="crudStack"/>
+            <result>CustomerLogin.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+    </package>
+    
+</struts>

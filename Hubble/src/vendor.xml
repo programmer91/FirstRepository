@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : vendor.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package  name="/vendor" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+       <action name="vendorlogin">
+            <result>VendorLogin.jsp</result>
+        </action>
+      
+        <action name="loginVendorCheck" class="com.mss.mirage.vendor.general.VendorLoginAction">
+            <interceptor-ref name="crudStack"/>
+            <result type="redirect" name="success">/employee/timesheets/timeSheet.action</result>
+            <result type="redirect" name="operations">/employee/timesheets/empTimeSheets.action</result>
+            <result type="redirect" name="timesheet">/employee/timesheets/getTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}</result>
+            <result name="input">VendorLogin.jsp</result>
+            <result name="error" type="redirect">./exception/exception.action</result>
+        </action>
+        <action name="logoutVendor" class="com.mss.mirage.vendor.general.VendorLoginAction" method="doVendorLogout">
+            <interceptor-ref name="crudStack"/>
+            <result>VendorLogin.jsp</result>
+            <result name="error" type="redirect">./exception/exception.action</result>
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+</struts>

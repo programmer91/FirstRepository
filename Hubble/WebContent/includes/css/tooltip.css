@@ -1,0 +1,11 @@
+#fixedtipdiv{
+
+position:absolute;
+padding: 2px;
+border:1px lightgreen;
+font:normal 9px Verdana;
+color: white;
+line-height:13px;
+z-index:100;
+
+}

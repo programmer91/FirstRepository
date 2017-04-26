@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="ecertification" namespace="/ecertification" extends="default">
+        
+        <default-interceptor-ref name="crudStack"/>
+         
+        <!-- Ecertification exam start -->
+        <action name="getEcertification" class="com.mss.mirage.ecertification.EcertificationAction" method="getEcertification">
+            <result>ecertificationDomainAjax.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+      <!-- it starts the exam -->
+       <action name="startExam" class="com.mss.mirage.ecertification.EcertificationAction" method="startExam">
+            <result>examination.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- submit the exam -->    
+       <action name="submitExam" class="com.mss.mirage.ecertification.EcertificationAction" method="submitExam">
+            <result>SubmitExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+       <!-- to get the exam result -->
+       <action name="getExamResultsList" class="com.mss.mirage.ecertification.EcertificationAction" method="getExamResultsList">
+            <result>ExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- to serch the exam result -->
+        <action name="searchExamResultList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchExamResultList">
+            <result>ExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getMyExamResultsList" class="com.mss.mirage.ecertification.EcertificationAction" method="getMyExamResultsList">
+            <result>ExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="searchMyExamResultList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchMyExamResultList">
+            <result>ExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- eceretfication admin side actions -->
+        
+        <!-- to get the question adding screen -->
+          <action name="addQuestions" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddQuestions">
+            <result>AddQuestions.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- to insert the question into database -->
+          <action name="createQuestion" class="com.mss.mirage.ecertification.EcertificationAction" method="doCreateQuestion">
+            <result>AddQuestions.jsp</result>
+            <result name="EXAMLIST" type="redirect">ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- to the exams list -->
+        <!-- Exam Update Actions By prasad kandregula-->
+          <action name="examsList" class="com.mss.mirage.ecertification.EcertificationAction" method="examsList">
+            <result>ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="crmBackToList" class="com.mss.mirage.ecertification.EcertificationAction" method="getEcertBackToList">
+            <result>ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- New methods : created by ajay on 07-31-2013 -->
+        
+        
+        
+        <!-- Exam keys search actions by ajay tummapala-->
+        <action name="createKeys" class="com.mss.mirage.ecertification.EcertificationAction" method="doCreateKey">
+            <result>CreateKey.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          <action name="doAddExamKey" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddExamKey">
+            <result>CreateKey.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="listKeys" class="com.mss.mirage.ecertification.EcertificationAction" method="doListKeys">
+            <result>ExamKeysList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="searchExamKeyList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchExamKeyList">
+            <result>ExamKeysList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+             <!-- END of Exam keys search actions by ajay tummapala-->
+        <!-- to review the question of an exam -->
+         <action name="reviewExam" class="com.mss.mirage.ecertification.EcertificationAction" method="reviewExam">
+            <result>ReviewExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          <!-- Exam list search actions by prasad kandregula-->
+         
+          <action name="serachExamList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSerachExamList">
+            <result>ExamList.jsp</result>     
+            <result name="input">ExamList.jsp</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        
+        <!-- New methods to trace out -->
+        
+        
+        
+        
+        
+         <!-- <action name="getExam" class="com.mss.mirage.ecertification.EcertificationAction" method="questionsList">
+            <result>QuestionsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>  -->
+        
+       
+        <!-- <action name="populateQuestionDetails" class="com.mss.mirage.ecertification.EcertificationAction" method="populateQuestionDetails">
+            <result>AddQuestions.jsp</result>
+            <result type="redirect" name="login">../general/login.action?questionId=${id}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> -->
+        
+         <!--<action name="updateQuestion" class="com.mss.mirage.ecertification.EcertificationAction" method="doUpdateQuestion">
+         
+             <result type="redirect">getExam.action?resultMessage=${resultMessage}&amp;subTopicId=${subTopicId}</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="reAddQuestions" class="com.mss.mirage.ecertification.EcertificationAction" method="doReAddQuestions">
+            <result>AddQuestions.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action  -->
+        
+        
+        
+        
+        
+        
+        
+       
+        <!-- Add sub topics Ajay Tummapala-->
+        
+         
+        
+         <action name="getMyAuthoredExamsList" class="com.mss.mirage.ecertification.EcertificationAction" method="getMyAuthoredExamsList">
+           <!--  <result>MyAuthoredExamsList.jsp</result> -->
+           <result>ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="searchMyAuthoredExamList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchMyAuthoredExamList">
+           <!--  <result>MyAuthoredExamsList.jsp</result> -->
+            <result>ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="examsBackToList" class="com.mss.mirage.ecertification.EcertificationAction" method="examsBackToList">
+            <result>ExamList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+           <action name="searchQuestions" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchQuestions">
+            <result>SearchQuestionsList.jsp</result>
+             <result name="input">SearchQuestionsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="searchQuestionList" class="com.mss.mirage.ecertification.EcertificationAction" method="doSearchQuestionList">
+            <result>SearchQuestionsList.jsp</result>
+            <!-- <result name="input">SearchQuestionsList.jsp</result> -->
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+           <action name="deleteQuestion" class="com.mss.mirage.ecertification.EcertificationAction" method="doDeleteQuestion">
+           <result type="redirect">searchQuestionList.action?questionId=${questionId}&amp;topicId=${topicId}&amp;checkDelete=${checkDelete}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+         <action name="generateExcelReportForKeys" class="com.mss.mirage.ecertification.KeysDownloadAction" />
+            
+            <!-- New actions for Adding Authors and Subtopics start -->
+            <action name="viewAuthorsAndSubtopics" class="com.mss.mirage.ecertification.EcertificationAction" method="viewAuthorsAndSubtopics">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="authorUpdate" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddAuthors">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="deleteAuthor" class="com.mss.mirage.ecertification.EcertificationAction" method="doDeleteAuthor">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="getSubTopic" class="com.mss.mirage.ecertification.EcertificationAction" method="getSubTopic">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="subtopicUpdate" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddSubTopic">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="deleteSubTopic" class="com.mss.mirage.ecertification.EcertificationAction" method="deleteSubTopic">
+            <result>AuthorAndSubTopic.jsp</result>
+             <result name="input">AuthorAndSubTopic.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+            <!-- New actions for Adding Authors and Subtopics End -->
+            <!--For Question Editing -Ajay -->
+         <action name="populateQuestionDetails" class="com.mss.mirage.ecertification.EcertificationAction" method="populateQuestionDetails">
+            <result>AddQuestions.jsp</result>
+            <result type="redirect" name="login">../general/login.action?questionId=${id}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+         
+        <action name="updateQuestion" class="com.mss.mirage.ecertification.EcertificationAction" method="doUpdateQuestion">
+         
+             <result type="redirect">getExam.action?resultMessage=${resultMessage}&amp;subTopicId=${subTopicId}&amp;topicId=${topicId}</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+         
+           <action name="getExam" class="com.mss.mirage.ecertification.EcertificationAction" method="questionsList">
+            <result>SearchQuestionsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>    
+            <!-- Adding practice Ajay-->
+        <action name="addPractice" class="com.mss.mirage.ecertification.EcertificationAction" method="addPractice">
+            <result>AddPractice.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+     
+         <action name="doAddPractice" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddOrUpdatePractice">
+            <result>AddPractice.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="getPractice" class="com.mss.mirage.ecertification.EcertificationAction" method="getPractice">
+            <result>AddPractice.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="doUpdatePractice" class="com.mss.mirage.ecertification.EcertificationAction" method="doAddOrUpdatePractice">
+            <result>AddPractice.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="questionsBackToList" class="com.mss.mirage.ecertification.EcertificationAction" method="questionsBackToList">
+            <result>SearchQuestionsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <!-- to generate the exam result -->
+        <action name="generateExamReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="getExamReport">
+                <result  type="redirect" name="input">getExamResultsList.action</result>
+        
+            </action>
+            
+            <action name="deleteQuestionOpp" class="com.mss.mirage.ecertification.EcertificationAction" method="doDeleteQuestion">
+              
+           <result type="redirect">searchQuestions.action?questionId=${questionId}&amp;topicId=${topicId}&amp;checkDelete=${checkDelete};&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+             <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        <action name="getSampleQuestionExcel" class="com.mss.mirage.ecertification.EcertificationAction" method="getSampleQuestionExcel">
+                <result type="redirect">searchQuestions.action?topicId=${topicId}&amp;list=1&amp;flag=1</result>
+                <result name="error" type="redirect">../exception/exception.action</result>
+            </action>
+ 
+
+
+    </package>
+    
+</struts>

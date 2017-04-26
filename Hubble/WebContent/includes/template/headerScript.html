@@ -1,0 +1,9 @@
+<script type="text/javascript">
+            function win_open(url){
+            var values=document.getElementById('mailid').innerHTML; 
+            url = url+"?name="+values;
+            newWindow=window.open(url,'name','height=445,width=709');
+            if (window.focus) {newWindow.focus();}
+            return false;
+        }
+</script>

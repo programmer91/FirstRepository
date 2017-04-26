@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : cre.xml
+    Created on  : August 22, 2013, 1:49 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    <!--
+       Package Name : cre
+       Author       : Santosh Kola
+       Description  : Cre Actions.
+    -->
+    
+       
+        
+    <package name="cre-general" namespace="/cre/general" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+         <result-types>
+            <result-type name="stream" class="org.apache.struts2.dispatcher.StreamResult"/>
+        </result-types>
+            
+         <default-interceptor-ref name="crudStack" />
+        <action name="crelogin">
+            <result>creLogin.jsp</result>
+        </action>
+         <action name="creLoginCheck" class="com.mss.mirage.cre.general.CreLoginAction" method="execute">
+             <interceptor-ref name="crudStack"/>
+             <result>CreInstructions.jsp</result>
+            <result name="login" >creLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>
+        <action name="crelogout" class="com.mss.mirage.cre.general.CreLoginAction" method="doLogout">
+             <interceptor-ref name="crudStack"/>
+              <result>creLogin.jsp</result>
+            <!-- <result type="redirect">crelogin.action</result> -->
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>  
+    
+        
+        <!-- Cre Consultent registration -->
+         <action name="creregistration" class="com.mss.mirage.cre.general.CreRegistrationAction" method="prepare"> 
+                 <result>CreRegistration.jsp</result>
+                <!--  <result type="redirect">crelogin.action</result>  -->
+                <result name="error" type="redirect">../../exception/creException.action</result>
+             </action>
+          <!--   <action name="creRegistrationSubmit" class="com.mss.mirage.cre.general.CreRegistrationAction" method="doRegister">
+                 <result>RegistrationSuccess.jsp</result>
+                 <result name="input">CreRegistration.jsp</result>
+                 <result name="login">CreRegistration.jsp</result>
+                 <result name="error" type="redirect">../../exception/creException.action</result>
+             </action> -->
+             <action name="creRegistrationSubmit" class="com.mss.mirage.cre.general.CreRegistrationAction" method="doRegister"> 
+             <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="basicStack"/>
+            <result type="stream">
+              <param name="contentType">image/gif</param> 
+                <param name="inputName">imageStream</param>
+            </result>
+                 <result>RegistrationSuccess.jsp</result>
+                 <result name="input">CreRegistration.jsp</result>
+                 <result name="login">CreRegistration.jsp</result>
+                 <result name="error" type="redirect">../../exception/creException.action</result>
+             </action>
+        
+        <!-- Cre Consultent registration ENd -->
+
+    </package> 
+    
+    <package name="cre" namespace="/cre" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack"/>
+    
+        <!-- Miracle Employee Side Operations Start -->
+         <action name="creConsultantList" class="com.mss.mirage.cre.CreAction" method="creConsultantList">
+            <result>CreConsultantList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="crmBackToList" class="com.mss.mirage.cre.CreAction" method="getCreBackToList">
+            <result>CreConsultantList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+          <action name="searchCreConsultants" class="com.mss.mirage.cre.CreAction" method="searchCreConsultants">
+             <result>CreConsultantList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+         
+        <action name="startExam" class="com.mss.mirage.cre.CreAction" method="startExam">
+             <result>CreExam.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/creaccessFailed.action</result>
+            <result name="error" type="redirect">../exception/creException.action</result>
+        </action>
+        <!-- Miracle Employee Side Operations End -->
+        
+         <action name="submitExam" class="com.mss.mirage.cre.CreAction" method="submitExam">
+            <result>CreSubmitExam.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/creaccessFailed.action</result>
+            <result name="error" type="redirect">../exception/creException.action</result>
+        </action>
+        
+        <!-- To edit the CRE consultent -->
+        <action name="getConsultantEdit" class="com.mss.mirage.cre.CreAction" method="getConsultantDetails">
+            <result>CreConsultantDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="creConsultantEdit" class="com.mss.mirage.cre.CreAction" method="updateConsultantDetails">
+            <result type="redirect">getConsultantEdit.action?id=${id}</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <!-- End of cre Consultent edit -->
+        
+        <!-- get cre Actions -->
+        
+        <action name="getCreRecords" class="com.mss.mirage.cre.CreAction" method="getCreRecords">
+             <result>GetCreRecords.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+       
+       
+          <action name="reviewCreConsultant" class="com.mss.mirage.cre.CreAction" method="getReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+         <action name="creTechReviewUpdate" class="com.mss.mirage.cre.CreAction" method="creTechReviewUpdate">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        
+         <action name="getTechLeadReview" class="com.mss.mirage.cre.CreAction" method="getTechLeadReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+         <action name="deleteTechLeadReview" class="com.mss.mirage.cre.CreAction" method="deleteTechLeadReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+          <action name="getHrReview" class="com.mss.mirage.cre.CreAction" method="getHrReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+         <action name="creHrReviewUpdate" class="com.mss.mirage.cre.CreAction" method="creHrReviewUpdate">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="deleteHrReview" class="com.mss.mirage.cre.CreAction" method="deleteHrReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+          <action name="creVpReviewUpdate" class="com.mss.mirage.cre.CreAction" method="creVpReviewUpdate">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+          <action name="getVpReview" class="com.mss.mirage.cre.CreAction" method="getVpReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+             <action name="deleteVpReview" class="com.mss.mirage.cre.CreAction" method="deleteVpReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+
+	<!-- <action name="makeEmployee" class="com.mss.mirage.cre.CreAction" method="makeEmployee">
+             <result type="redirect">creConsultantList.action?resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action> -->
+        <!-- New action for setting cre exam -->
+        <!-- Added by aditya malla satrt-->
+      <action name="setCreExam" class="com.mss.mirage.cre.CreAction" method="setCreExam">
+            <result>SetCreExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+      <action name="addExamDetails" class="com.mss.mirage.cre.CreAction" method="addExamDetails">
+            <result>AddCreExamDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+       <action name="doAddSubTopics" class="com.mss.mirage.cre.CreAction" method="doAddSubTopics">
+            <result>SetCreExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="getCreExamDetails" class="com.mss.mirage.cre.CreAction" method="getCreExamDetails">
+            <result>AddCreExamDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="doUpdateSubTopics" class="com.mss.mirage.cre.CreAction" method="doUpdateSubTopics">
+            <result>AddCreExamDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="inActiveCreExam" class="com.mss.mirage.cre.CreAction" method="inActiveCreExam">
+            <result>SetCreExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+<!-- Added by aditya malla end -->
+ <!-- new Action for Image upload by Cre TEam date : 08/11/2014 -->
+         
+                  <action name="doImageUpload" class="com.mss.mirage.cre.CreAction" method="doUploadImage"> 
+             <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="basicStack"/>
+            <result type="stream">
+              <param name="contentType">image/gif</param> 
+                <param name="inputName">imageStream</param>
+            </result>
+            <result>CreConsultantDetails.jsp</result>
+                 
+                 <result name="input">CreConsultantDetails.jsp</result>
+                 <result type="redirect" name="login">../general/login.action</result>
+                 <result name="error" type="redirect">../exception/creException.action</result>
+             </action>
+             
+               <action name="renderConsultantImage" class="com.mss.mirage.cre.CreAction" method="renderConsultantImage">            
+                 <result type="redirect">getConsultantEdit.action?id=${id}</result>
+          <!--  <result>CreConsultantDetails.jsp</result> -->
+            <result name="input">CreConsultantDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <!-- Onboard Review Comments Date : 08/15/2014 Start -->
+         <action name="creOnboardReviewUpdate" class="com.mss.mirage.cre.CreAction" method="creOnboardReviewUpdate">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+          <action name="getOnboardReview" class="com.mss.mirage.cre.CreAction" method="getOnboardReview">
+             <result>ReviewCreConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <!-- Onboard Review Comments DAte : 08/152014 End -->
+		<!-- new action for onboard form download date : 08/15/2014 -->
+        <action name="printOnboardForm" class="com.mss.mirage.cre.CreOnboardDownloadACtion" />
+		
+                
+       <!-- Excel generate for Consultant List -->         
+                
+                
+                <action name="generateCreConsultantsReports" class="com.mss.mirage.cre.CreAction" method="generateCreConsultantsReports">
+                    <result type="redirect">creConsultantList.action</result>
+          <!--  <result>CreConsultantDetails.jsp</result> -->
+            <result type="redirect" name="login">../general/login.action</result>
+                 <result name="error" type="redirect">../exception/creException.action</result>
+                </action>
+                
+                
+  <action name="CaptureImage" class="com.mss.mirage.cre.CreAction" method="doCaptureImage">            
+                  <result type="redirect">getConsultantEdit.action?id=${id}</result>
+          <!--  <result>CreConsultantDetails.jsp</result> -->
+            <result type="redirect" name="login">../general/login.action</result>
+                 <result name="error" type="redirect">../exception/creException.action</result>
+             </action>
+    </package> 
+    
+     
+</struts>

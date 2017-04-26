@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCountry" entity-name="CountryData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Country"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKStates" entity-name="StatesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKStates" entity-name="DefaultStatesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+        <property name="countryId" column="CountryId"/>
+        
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKRoles" entity-name="RolesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpActivityType" entity-name="EmpActivityData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKProjectType" entity-name="ProjectTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKProjectStatusType" entity-name="ProjectStatusTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKTimeType" entity-name="TimeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKTimeSheetStatusType" entity-name="TimeSheetStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKOrganization" entity-name="LKOrganizationData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKDepartment" entity-name="LKDepartmentData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPractice" entity-name="LKPracticeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKIndustry" entity-name="LKIndustryData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <!--
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKTeam" entity-name="LKTeamData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    -->
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKRecConsultantType" entity-name="RecConsultantData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmAccountType" entity-name="CrmAccountData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmAccountStatus" entity-name="CrmAccountStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmActivityType" entity-name="CrmActivityData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+        <!-- newly added on 28 mar2013 -->
+        <property name="status" column="Status"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmAddressTypes" entity-name="CrmAddressData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKObjectType" entity-name="ObjectData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpTypes" entity-name="EmployeeTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKStage" entity-name="StageData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="stage"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKOpportunityType" entity-name="opportunitytypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="type"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKTitleType" entity-name="titleTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPoLineTypes" entity-name="PoLineData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPoStatus" entity-name="PoStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="POStatus"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKInvoiceStatusType" entity-name="InvoiceStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmNoteType" entity-name="CrmNoteData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpState" entity-name="EmpCurrentState">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmCampaignContacts" entity-name="CrmCampaignContactsData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmCampaignStatus" entity-name="CrmCampaignStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmCampaignType" entity-name="CrmCampaignTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmContactStatus" entity-name="CrmContactStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmContactType" entity-name="CrmContactTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetUnits" entity-name="GreensheetUnitsData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Units"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetVPSales" entity-name="GreensheetVPSalesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="VpSalesStatus"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreenSheetExpenses" entity-name="GreenSheetExpensesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Expenses"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetCreationStatus" entity-name="GreensheetCreationStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="GreenSheetStatus"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCrmActivityStatus" entity-name="CrmActivityStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPriority" entity-name="PriorityData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKRegion" entity-name="RegionData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="vwRegionTerritory" entity-name="TerritoryData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="regionName" column="RegionName"/>
+        <property name="description" column="TerritoryName"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" 
+           table="tblCrmCampaign" entity-name="CampaignNamesData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="CampaignName"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmAccount" entity-name="AccountData">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="Name"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblProjects" entity-name="ProjectName">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="ProjectName"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblSubProjects" entity-name="SubProjectName">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="SubProjectName"/>
+        
+    </class>
+    
+    
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblMapIssues" entity-name="MapIssueType">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="IssueType"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblMaps" entity-name="MapName">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="MapName"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmContact" entity-name="ContactData">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="firstName" column="FirstName"/>
+        <property name="lastName" column="LastName"/>
+        <property name="middleName" column="MiddleName"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmContact" entity-name="ContactDataForAccountId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="accountId" column="AccountId"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmActivity" entity-name="AccountIdForActivityId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="accountId" column="AccountId"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblProjects" entity-name="ProjectDataForAccountId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="accountId" column="CustomerId"/>
+        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblCrmActivity" entity-name="CrmActivityDataForContactId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="contactId" column="ContactId"/>
+        
+    </class>
+    
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="vwSalesPersonsList" entity-name="CrmBDMData">
+        <id name="bdmID" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="name"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreenSheetExpenses" entity-name="CrmGreenSheetExpencesData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Expenses"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetUnits" entity-name="CrmGreenSheetUnitsData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Units"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKCountry" entity-name="CrmGreenSheetCurrencyData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="countrycurrency"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetCreationStatus" entity-name="CrmGreenSheetStatusData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="GreenSheetStatus"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPoStatus" entity-name="CrmGreenSheetPOStatusData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="POStatus"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKScopes" entity-name="CrmGreenSheetScopeOfWorkData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="scopename"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKGreensheetVPSales" entity-name="CrmGreenSheetVPSalesData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="VpSalesStatus"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblPaymentTerms" entity-name="CrmGreenSheetPaymentTermsData">
+        <id name="bdmID" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="PaymentName"/>
+    </class>
+    
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKModules" entity-name="ModuleData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="ModuleName"/>
+    </class>
+    
+    <!-- BEGIN: Issues Related Application Components -->  
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpIssueCategory" entity-name="IssuesCategoryData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpIssueStatus" entity-name="IssueStatusData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKReportsType" entity-name="LKEmpRepType">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <!-- Begin Immigration Related Application Components -->  
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKEmpImmStatus" entity-name="ImmigrationData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKHealthInsuranceTypes" entity-name="EmpHealthInsuranceData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <!-- END Immigration Related Application Components -->  
+    <!-- Projects Related Module START -->
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblMapIssues" entity-name="IssueData">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="name" column="IssueName"/>
+        
+    </class>   
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblProjects" entity-name="ProjectData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="ProjectName"/>
+    </class>        
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblSubProjects" entity-name="SubProjectData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="SubProjectName"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKMapIssueType" entity-name="IssueNameData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKMappingTools" entity-name="ToolData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="ToolName"/>
+    </class> 
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblEmployee" entity-name="EmployData">
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="FName"/>
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblMaps" entity-name="MapDataForAccountId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>        
+        <property name="accountId" column="CustomerId"/>        
+    </class>
+    
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblMapIssues" entity-name="IssueDataForAccountId">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>        
+        <property name="accountId" column="CustomerId"/>        
+    </class>
+    <class name="com.mss.mirage.util.HibernateDataProvider" table="tblLKPrjAttachmentTypes" entity-name="ProjectAttachTypeData">
+        <id name="id" column="Id">
+            <generator class="increment"/>
+        </id>
+        <property name="description" column="Description"/>
+    </class>
+</hibernate-mapping>

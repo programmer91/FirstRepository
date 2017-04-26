@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+
+<!--
+    Document    : struts.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+<struts>
+    
+    <constant name="struts.ui.theme" value="simple" />
+    <constant name="struts.devMode" value="false" /><!-- Please Make it false on Production -->
+    <constant name="struts.freemarker.templatesCache" value="true" />
+    <constant name="struts.configuration.xml.reload" value="true" />
+    <constant name="struts.multipart.saveDir" value="/home/miracle/ProjectFiles"/>
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    
+    <!-- <constant name="struts.ui.theme" value="simple"/> -->
+    <!-- 5mb -->
+    <constant name="struts.multipart.maxSize" value="5000000" />
+
+    <package name="default" extends="struts-default" namespace="/">
+        <interceptors>
+	     <interceptor name="login" class="com.mss.mirage.general.LoginInterceptor" />
+                <interceptor-stack name="crudStack">
+                    <interceptor-ref name="login"/>
+                    <interceptor-ref name="checkbox"/>
+                    <interceptor-ref name="params"/>
+                    <interceptor-ref name="staticParams"/>
+                    <interceptor-ref name="actionMappingParams"/>
+                    <interceptor-ref name="defaultStack"/>
+               </interceptor-stack>                
+        </interceptors>
+        <global-results>
+          <!--  <result  name="sessionExpire">/general/Login.jsp</result> -->
+            <result  name="Emp_SessionExpire">/general/Login.jsp</result>
+            <result  name="Cust_SessionExpire">/customer/CustomerLogin.jsp</result> 
+            <result  name="Vendor_SessionExpire">/vendor/VendorLogin.jsp</result> 
+           
+            
+            
+      </global-results>
+    </package>
+    
+    <package name="exception" extends="default" namespace="/exception">
+        <action name="exception">
+            <result>ErrorDisplay.jsp</result>
+        </action>
+        <action name="accessFailed">
+            <result>AccessFailed.jsp</result>
+        </action>
+        <!-- cre exceptions -->
+        <action name="creException">
+            <result>CreErrorDisplay.jsp</result>
+        </action>
+        <action name="creAccessFailed">
+            <result>CreAccessFailed.jsp</result>
+        </action>
+    </package>
+    <include file="employee.xml"/>
+    <include file="general.xml"/>
+    <include file="crm.xml"/>
+    <include file="ajax.xml"/>
+    <include file="marketing.xml"/>
+    <include file="vendor.xml"/>
+    <include file="admin.xml"/>
+    <include file="sysadmin.xml"/>
+    <include file="recruitment.xml"/>   
+    <include file="services.xml"/>
+    <include file="reports.xml"/>
+    <include file="projects.xml"/>
+    <include file="app.xml"/>
+    <include file="customer.xml"/>
+    <include file="partner.xml"/>
+    <include file="ecertification.xml"/>
+    <include file="cre.xml"/>
+     <include file="presales.xml"/>
+      <include file="bms.xml"/>
+      <include file="mcertification.xml"/>
+    <!-- Add packages here -->
+    
+</struts>

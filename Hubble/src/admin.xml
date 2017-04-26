@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : admin.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="admin" namespace="/admin" extends="default">
+        
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="userSearch" class="com.mss.mirage.admin.AdminAction" method="getUsersSearch">
+            <result>UsersList.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="getQuery" class="com.mss.mirage.admin.AdminAction" method="getSearchQuery">
+            <result>UsersList.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="getAssingnedRoles" class="com.mss.mirage.admin.AdminAction" method="getAssingnedRoles">
+            <result>AssignedRoles.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="transferRole" class="com.mss.mirage.admin.AdminAction" method="getTransferRole">
+            <!-- userSearch -->
+            <result name="success" type="redirect">userSearch.action</result>
+            <!-- <result name="success" type="redirect">getQuery.action</result> -->
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="changePassword">
+            <result>ResetUserPassword.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="updatePassword" class="com.mss.mirage.admin.AdminAction" method="resetPassword">
+            <result>ResetUserPassword.jsp</result>
+            <result name="input">ResetUserPassword.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        
+        
+        <action name="AssignScreens">
+            <result>AssignScreensToRoles.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="getAssingnRoleScreen" class="com.mss.mirage.admin.AdminAction" method="getAssingnRoleScreen">
+            <result>AssignScreensToRole.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            
+        </action>
+        
+        <action name="transferScreensRole" class="com.mss.mirage.admin.AdminAction" method="getTransferScreensRole">
+            <result>AssignScreensToRoles.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="assignScreen" class="com.mss.mirage.admin.AdminAction" method="getAssignScreen">
+            <result>AssignScreensToRoles.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+        <!-- new action for customer password reset-->
+        
+        <action name="changeCustPassword">
+            <result>ResetCustPassword.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        <action name="updateCustPassword" class="com.mss.mirage.admin.AdminAction" method="resetCustPassword">
+            <result>ResetCustPassword.jsp</result>
+            <result name="input">ResetCustPassword.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getExecutiveDashBoard" class="com.mss.mirage.admin.AdminAction" method="getExecutiveDashBoard">
+            <result>ExecutiveDashBoard.jsp</result>
+            <result name="input">ExecutiveDashBoard.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+ <action name="getNewsLetters" class="com.mss.mirage.admin.AdminAction" method="getNewsLetters">
+            <result>NewsLetters.jsp</result>
+            <result name="input">NewsLetters.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+<action name="getBdmAssociates" class="com.mss.mirage.admin.AdminAction" method="getBdmAssociates">
+            <result>BDMAssociates.jsp</result>
+            <result name="input">BDMAssociates.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+
+<action name="addBdmTeam" class="com.mss.mirage.admin.AdminAction" method="addBdmTeam">
+            <result>BDMTeamAssociates.jsp</result>
+            <result name="input">BDMTeamAssociates.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          
+      
+          
+          
+        <action name="bdmTeamSubmit" class="com.mss.mirage.admin.AdminAction" method="bdmTeamSubmit">
+       <!--   <result type="redirect">addBdmTeam.action?bdmId=${bdmId}</result>
+        <result name="input">addBdmTeam.action?bdmId=${bdmId}</result>
+              <result>BDMTeamAssociates.jsp</result>
+            <result name="input">BDMTeamAssociates.jsp</result> -->
+         <result type="redirect">addBdmTeam.action?bdmId=${bdmId}&amp;resultMessage=${resultMessage}</result>
+            <result name="input">addBdmTeam.action?bdmId=${bdmId}&amp;resultMessage=${resultMessage}</result> 
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+    </package>
+    
+</struts>

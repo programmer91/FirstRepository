@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+    Document   : Login.hbm.xml
+    Created on : September 24, 2007, 11:31 PM
+    Author     : miracle
+    Description:
+        Purpose of the document follows.
+-->
+
+<hibernate-mapping>
+       
+    <class name="com.mss.mirage.general.RegistrationAction" table="tblEmployee">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property name="firstName" column="FName"/>
+        <property name="lastName" column="LName"/>
+        <property name="middleName" column="MName"/>
+        <property name="gender" column="Gender"/>
+        <property name="maritalStatus" column="MaritalStatus"/>
+        <property name="ssn" column="SSN"/>
+        <property name="country" column="Country"/>
+        <property name="birthDate" column="BirthDate"/>
+        <property name="offBirthDate" column="OffBirthDate"/>
+        <property name="refferedBy" column="RefferedBy"/>
+        <property name="workPhoneNo" column="WorkPhoneNo"/>
+        <property name="cellPhoneNo" column="CellPhoneNo"/>
+        <property name="homePhoneNo" column="HomePhoneNo"/>
+        <property name="altPhoneNo" column="AlterPhoneNo"/>
+        <property name="hotelPhoneNo" column="HotelPhoneNo"/>
+        <property name="indiaPhoneNo" column="IndiaPhoneNo"/>
+        <property name="faxNo" column="FaxPhoneNo"/>
+        <property name="officeEmail" column="Email1"/>
+        <property name="otherEmail" column="Email3"/>
+        <property name="personalEmail" column="Email2"/>
+        <property name="prefQuestion" column="PreferedQuestion"/>
+        <property name="prefAnswer" column="PreferedAnswer"/>
+        <property name="loginId" column="LoginId"/>
+        <property name="password" column="Password"/>
+        <property name="curStatus" column="CurStatus"/>
+        <property name="deletedFlag" column="DeletedFlag"/>
+        <property name="orgId" column="OrgId"/>
+        <property name="workingCountry" column="WorkingCountry"/>
+        
+        
+        
+    </class>
+    
+    <class name="com.mss.mirage.general.PasswordAction" table="tblEmployee" entity-name="RegetPasswordData">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property name="loginId" column="LoginId"/>
+        <property name="userName" column="FName"/>
+        <property name="prefQuestionId" column="PreferedQuestion"/>
+        <property name="prefAnswer" column="PreferedAnswer"/>
+        <property name="oldPassword" column="Password"/>
+    </class>
+    
+    <class name="com.mss.mirage.general.PasswordAction" table="tblEmployee" entity-name="GetPasswordData">
+        <id name="id" column="id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property name="loginId" column="LoginId"/>
+        <property name="oldPassword" column="Password"/>
+    </class>
+    
+    
+    <class name="com.mss.mirage.general.HomeAction" table="tblLKRoles">
+        <id name="roleTypeId" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="description" column="Description"/>
+        
+    </class>
+    
+</hibernate-mapping>

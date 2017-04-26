@@ -1,0 +1,65 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.crm.greensheets.GreenSheetVTO" table="tblGreensheets">
+        <id name="id" type="int" column="Id" >
+            <generator class="assigned"></generator>
+        </id> 
+        <property name="empId" type="int" column="EmpId"/>
+        <property name="consultantType" type="int" column="ConsultantType"/>
+        <property name="userAccountID" type="int" column="AccountId"/>
+        <property name="consultantId" type="int" column="ConsultantId"/>
+        <property name="customerName" column="CustomerName"/>
+        <property name="firstName"  column="FirstName"/>
+        <property name="lastName"  column="LastName"/>
+        <property name="middleName"  column="MiddleName"/>
+        <property name="phone"  column="Phone"/>
+        <property name="dateStart" type="java.sql.Date" column="DateStart"/>
+        <property name="dateEnd" type="java.sql.Date" column="DateEnd"/>
+        <property name="reportingManagerName"   column="ReportingManagerName"/>
+        <property name="reportingAddress"  column="ReportingAddress"/>
+        <property name="reportingManageremail"  column="ReportingManageremail"/>
+        <property name="reportingMGRPhone"   column="ReportingManagerPhone"/> 
+        <property name="duration" type="java.lang.Double" column="Duration"/>
+        <property name="units" type="int" column="Units"/>
+        <property name="expenses"  column="Expenses"/>
+        <property name="clientBillingRate" type="java.lang.Double" column="UnitsRate"/>
+        <property name="clientBillingRateType" type="int" column="CurrencyType"/>
+        <property name="dateCreated" type="date" column="DateCreated"/>
+        <property name="expenseDetail"  column="ExpenseDetail"/>
+        <property name="equipmentNeeded"  column="EquipmentDetail"/>
+        <property name="otallowed"  column="otallowed"/>
+        <property name="agencyName"  column="VendorName"/>
+        <property name="vendorContactPhone"  column="VendorContactPhone"/>
+        <property name="vendorContactEmail"  column="VendorContactEmail"/>
+        <property name="vendorContactPerson"   column="VendorContactPerson"/>
+        <property name="venConsultantName"   column="VenConsultantName"/>
+        <property name="vendorContact"   column="VendorContact"/>
+        <property name="venUnits" type="int" column="VenUnits"/>
+        <property name="venUnitRate" type="java.lang.Double" column="VenUnitRate"/>
+        <property name="billingManagerName"  column="BillingManagerName"/>
+        <property name="billingManagerPhone"  column="BillingManagerPhone"/>
+        <property name="billingAddress"  column="BillingAddress"/>
+        <property name="billingManageremail"  column="BillingManageremail"/>
+        <property name="status"  column="Status"/>
+        <property name="poStatus"  column="POStatus"/>
+        <property name="priSalesPersonId"  column="PriSalesPersonId"/>
+        <property name="priSalesPersonCommission" type="java.lang.Double"  column="PriSalesPersonCommission"/>
+        <property name="priSalesMgrCommission" type="java.lang.Double"  column="PriSalesMgrCommission"/>
+        <property name="secSalesPersonId" type="int" column="SecSalesPersonId"/>
+        <property name="priSalesMgrId" type="int" column="PriSalesMgrId"/>
+        <property name="secSalesPersonCommission" type="java.lang.Double" column="SecSalesPersonCommission"/>
+        <property name="scopeId" type="int" column="ScopeId"/>
+        <property name="invoicing"  column="Invoicing"/>
+        <property name="vpApprovalStatus"  column="VPApprovalStatus"/>
+        <property name="priBDMId" type="int" column="PriBDMId"/>
+        <property name="priBDMCommission" type="java.lang.Double" column="PriBDMCommission"/>
+        <property name="paymentTerms" type="int" column="PaymentId"/>
+        <property name="marginid" type="int" column="marginid"/>
+        <property name="total" type="java.lang.Double" column="Total"/>
+    </class>
+    
+</hibernate-mapping>

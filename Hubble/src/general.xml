@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : general.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    <!--
+       Package Name : General
+       Author       : Prasad V Lokam
+       Description  : General Actions.
+    -->
+   
+    
+    <package name="general" namespace="/general" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        
+       
+        <action name="login">
+            <result>Login.jsp</result>
+        </action>
+        
+        <action name="help">
+            <result>Help.jsp</result>
+        </action>
+        
+        <action name="contactUs">
+            <result>ContactUs.jsp</result>
+        </action>
+        
+        <action name="logout" class="com.mss.mirage.general.LoginAction" method="doLogout">
+            <interceptor-ref name="crudStack" />
+            <result type="redirect">login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>  
+        
+        <!-- cre login Action -->
+         <action name="crelogin">
+            <result type="redirect">/cre/general/crelogin.action</result>
+        </action>
+        <action name="crelogout">
+            <result type="redirect">/cre/general/crelogout.action</result>
+        </action> 
+        
+        <!--      <action name="logout" class="com.mss.mirage.general.LoginAction" method="doLogout">
+            <result type="redirect">logOff.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>  
+        
+        <action name="logOff" class="com.mss.mirage.general.LogsOut" method="test" >
+            <result>logout.jsp</result>
+        </action>
+        --> 
+        
+       <!-- <action name="loginCheck" class="com.mss.mirage.general.LoginAction">
+            <interceptor-ref name="crudStack" />
+             <result type="redirect" name="TASK">../employee/tasks/getTask.action?taskId=${taskId}&amp;resM=${resM}</result>
+            <result type="redirect" name="ISSUE">../employee/issues/getIssue.action?issueId=${issueId}&amp;accessType=Issue&amp;resM=${resM}</result>
+            <result type="redirect" name="LEAVE">../employee/getleaveApprovalList.action?leaveId=${leaveId}</result>-->
+           <!-- <result type="redirect" name="TIMESHEET">../employee/timesheets/getTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}</result> -->
+         <!--  <result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result> -->
+         
+<!-- <result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result> -->
+<!--<result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}</result>
+            <result type="redirect" name="TECHREVIEW">../recruitment/consultant/reviewTechnical.action?id=${id}&amp;consultantId=${consultantId}</result>
+            <result type="redirect">home.action</result>
+            <result name="input">Login.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>-->
+            <!--<result type="redirect" name="accessFailed">../exception/accessFailed.action</result>-->
+          <!--  <result type="redirect" name="accessFailed">../employee/tasks/getTasks.action</result>
+        </action>  -->
+        
+        <action name="loginCheck" class="com.mss.mirage.general.LoginAction">
+            <interceptor-ref name="crudStack" />
+             <result type="redirect" name="TASK">../employee/tasks/getTask.action?taskId=${taskId}&amp;resM=${resM}</result>
+            <result type="redirect" name="ISSUE">../employee/issues/getIssue.action?issueId=${issueId}&amp;accessType=Issue&amp;resM=${resM}</result>
+            <result type="redirect" name="LEAVE">../employee/getleaveApprovalList.action?leaveId=${leaveId}</result>
+           <!-- <result type="redirect" name="TIMESHEET">../employee/timesheets/getTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}</result> -->
+         <!--  <result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result> -->
+         
+<!-- <result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result> -->
+<result type="redirect" name="TIMESHEET">../employee/timesheets/newGetTeamTimeSheet.action?empID=${empId}&amp;timeSheetID=${timeSheetID}&amp;resourceType=${resourceType}</result>
+            <result type="redirect" name="TECHREVIEW">../recruitment/consultant/reviewTechnical.action?id=${id}&amp;consultantId=${consultantId}&amp;status=${status}&amp;requirementId=${requirementId}&amp;recConsultantId=${recConsultantId}</result>
+            <result type="redirect">home.action</result>
+            <result name="input">Login.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="REQUIREMENTDETAILS">../crm/requirement/getRequirement.action?objectId=${objectId}&amp;requirementAdminFlag=${requirementAdminFlag}</result>
+            <result type="redirect" name="consultantDetails">../crm/requirement/getConsultantRequirement.action?objectId=${objectId}&amp;consultId=${consultId}&amp;requirementAdminFlag=${requirementAdminFlag}</result>
+            <!--<result type="redirect" name="accessFailed">../exception/accessFailed.action</result>-->
+            <result type="redirect" name="accessFailed">../employee/tasks/getTasks.action</result>
+        </action>
+
+        
+       <!-- <action name="forgotPassword" class="com.mss.mirage.general.PasswordAction" method="prepare">
+            <interceptor-ref name="crudStack" />
+            <result>ForgotPassword.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+        </action>
+        
+        <action name="forgotPasswordSubmit" class="com.mss.mirage.general.PasswordAction" method="forgotPassword">
+            <interceptor-ref name="crudStack" />
+            <result>Login.jsp</result>
+            <result name="input">ForgotPassword.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+        </action> -->
+        
+        
+        <action name="resetPassword">
+            <interceptor-ref name="crudStack" />
+            <result>ResetPassword.jsp</result>
+         </action>
+        
+        <action name="resetPasswordSubmit" class="com.mss.mirage.general.PasswordAction" method="resetPassword">
+            <interceptor-ref name="crudStack" />
+            <result>ResetPassword.jsp</result>
+            <result name="input">ResetPassword.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            
+        </action>
+        <action name="resetCustPassword">
+            <interceptor-ref name="crudStack" />
+            <result>ResetCustPassword.jsp</result>
+        </action>
+        
+        <action name="resetCustPasswordSubmit" class="com.mss.mirage.general.PasswordAction" method="resetCustPassword">
+            <interceptor-ref name="crudStack" />
+            <result>ResetCustPassword.jsp</result>
+            <result name="input">ResetCustPassword.jsp</result>
+            <result type="redirect" name="login">../customer/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="error" >../exception/exception.action</result>
+        </action>
+        
+        <action name="registration" class="com.mss.mirage.general.RegistrationAction" method="prepare">
+            <result>Registration.jsp</result>
+            <result name="login">Login.jsp</result>
+        </action>
+        
+        <action name="registrationSubmit" class="com.mss.mirage.general.RegistrationAction">
+            <result name="login">Login.jsp</result>
+            <result name="input">Registration.jsp</result>
+        </action>
+        
+        <action name="home" class="com.mss.mirage.general.HomeAction" method="setDefaultRole">
+            <interceptor-ref name="crudStack" />
+            <result type="redirect">roleSubmit.action</result>
+            <!--<result>Home.jsp</result>-->
+            <!--<result name="manager">managerHome.jsp</result>-->
+            <result type="redirect" name="login">login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            
+        </action>
+        
+        <action name="roleSubmit" class="com.mss.mirage.general.HomeAction">
+            <interceptor-ref name="crudStack" />
+            <result type="redirect">..${defaultAction} </result>
+            <result type="redirect" name="login">login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <!-- new action for forgot password -->
+        <action name="forgotPassword" class="com.mss.mirage.general.PasswordAction" method="prepare">
+            <interceptor-ref name="crudStack" />
+            <result>ForgotPwd.jsp</result>
+            
+        </action>
+        
+        <action name="forgotPasswordSubmit" class="com.mss.mirage.general.PasswordAction" method="forgotPassword">
+            <interceptor-ref name="crudStack" />
+            
+             <result>ForgotPwd.jsp</result>
+              <!-- <result name="input">ForgotPwd.jsp</result>
+         <result name="success" type="redirect">login.action</result>
+            <result name="CustSuccess" type="redirect">../customer/CustomerLogin.jsp</result>  -->
+        </action>
+        
+        <!-- end -->
+           <!--New For Release Notes-->
+         <action name="releaseNotes">
+            <result>ReleaseNotes.jsp</result>
+         </action>
+        
+        <action name="download" class="com.mss.mirage.general.DownloadAction">	
+            <result name="error" type="redirect">../exception/filenotfoundexception.action</result>
+        </action>
+       <!--End For Release Notes-->  
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+</struts>

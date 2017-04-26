@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.recruitment.ConsultantAction" table="tblRecAttachments">
+        <id name="id" type="int" column="Id" >
+            <generator class="increment"/>
+        </id> 
+        <property name="objectIdinInt" type="int" column="ObjectId"/>
+        <property name="requestType" column="ObjectType"/>
+        <property name="attachmentName" column="AttachmentName"/>
+        <property name="uploadFileName"  column="AttachmentFileName"/>
+        <property name="filepath" column="AttachmentLocation"/>
+        <property name="date" column="DateUploaded"/>
+        </class>
+</hibernate-mapping>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : sysadmin.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="sysadmin" namespace="/sysadmin" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+</struts>

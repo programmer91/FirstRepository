@@ -1,0 +1,2023 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : employee.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : Employee serach
+       Author       :
+       Description  :
+    -->
+    <package name="employee" namespace="/employee" extends="default">
+        <result-types>
+            <result-type name="stream" class="org.apache.struts2.dispatcher.StreamResult"/>
+        </result-types>
+        
+        <default-interceptor-ref name="crudStack" />
+        
+        
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <action name="employeeSearch">
+            <result>EmployeeSearch.jsp</result>
+        </action>
+        
+        <action name="employeeLeave" >
+            <result>EmplLeaves.jsp</result>
+        </action>
+        <!-- new action for email checking -->
+           <action name="empEmailCheck">
+            <result>EmployeeEmailCheck.jsp</result>
+        </action>
+        <action name="empSearchAll" class="com.mss.mirage.employee.general.EmployeeAction" method="getEmpSearchAll">
+            <result>EmpSearch.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- getEmpBackToList -->
+        <action name="empBackToList" class="com.mss.mirage.employee.general.EmployeeAction" method="getEmpSearchAll">
+            <result>EmpSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>            
+        </action>
+        
+        <action name="empSearchMyTeam" class="com.mss.mirage.employee.general.EmployeeAction" method="getEmpSearchMyTeam">
+            <result>TeamEmpSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- <action name="deleteEmployee" class="com.mss.mirage.employee.general.EmployeeAction" method="deleteEmployee">
+            <result type="redirect">${deleteAction}.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>-->
+        
+        <action name="deleteEmployee" class="com.mss.mirage.employee.termination.EmpTerminateAction" method="prepare">
+            <result>/employee/termination/EmpTermination.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="updateTemination" class="com.mss.mirage.employee.termination.EmpTerminateAction" method="update">
+            <result>/employee/termination/EmpTermination.jsp</result>
+            <result name="input">/employee/termination/EmpTermination.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getQuery" class="com.mss.mirage.employee.general.EmployeeAction" method="getSearchQuery">
+            <result>EmpSearch.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getTeamQuery" class="com.mss.mirage.employee.general.EmployeeAction" method="getTeamSearchQuery">
+            <result>TeamEmpSearch.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getEmployee" class="com.mss.mirage.employee.general.EmployeeAction" method="getEmployee">
+            <result>EmpUpdate.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- new -->
+         <action name="updateImageAction" class="com.mss.mirage.employee.general.EmployeeAction" method="doImageUpdate">
+            <result>EmpUpdate.jsp</result>
+            <result name="input">EmpUpdate.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        
+        <action name="employeeUpdate" class="com.mss.mirage.employee.general.EmployeeAction" method="doEdit">
+            <result type="redirect">getEmployee.action?empId=${empId}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">getEmployee.action?empId=${empId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="empStateUpdate" class="com.mss.mirage.employee.general.EmployeeAction" method="doUpdateState">
+            <result type="redirect">getEmployee.action?empId=${empId}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">getEmployee.action?empId=${empId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        
+        <action name="deleteEmpStatus" class="com.mss.mirage.employee.general.EmployeeAction" method="deleteEmpStatus">
+            <result type="redirect">getEmployee.action?empId=${empId}</result>
+            <result name="input">EmpUpdate.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!--Ancillary Related Configuration START-->
+        <action name="empAncillary" class="com.mss.mirage.employee.ancillary.AncillaryAction">
+            <result>EmpAncillary.jsp</result>   
+            <result name="input">EmpAncillary.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="ancillaryCheck" class="com.mss.mirage.employee.ancillary.AncillaryAction" method="checkAction">
+            <result>EmpAncillary.jsp</result> 
+            <result name="input">EmpAncillary.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="ancillaryAdd" class="com.mss.mirage.employee.ancillary.AncillaryAction" method="doAdd">
+           <!-- <result name="success">EmpAncillary.jsp</result>
+            <result name="input">EmpAncillary.jsp</result> -->
+              <result name="success" type="redirect">ancillaryCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+           <result name="input" type="redirect">ancillaryCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getAncillary" class="com.mss.mirage.employee.ancillary.AncillaryAction" method="getAncillary">
+            <result>EmpAncillary.jsp</result>
+            <result name="input">EmpAncillary.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="ancillaryEdit" class="com.mss.mirage.employee.ancillary.AncillaryAction" method="doEdit">
+        <!--    <result>EmpAncillary.jsp</result>
+            <result name="input">EmpAncillary.jsp</result> -->
+             <result name="success" type="redirect">ancillaryCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">ancillaryCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!--Ancillary Related Configuration END-->
+        
+        <!-- These actions are for Employee Immigration  -->
+           
+        <action name="immigration" class="com.mss.mirage.employee.immigration.ImmigrationAction" method="immigrationPrepare">
+            <result>EmpImmigration.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="immigrationCheck" class="com.mss.mirage.employee.immigration.ImmigrationAction" method="checkAction">
+            <result>EmpImmigration.jsp</result>    
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addImmigration"  class="com.mss.mirage.employee.immigration.ImmigrationAction"  method="doImmigrationAdd">
+            <result>EmpImmigration.jsp</result>
+            <result name="input">EmpImmigration.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editImmigration" class="com.mss.mirage.employee.immigration.ImmigrationAction" method="doImmigrationEdit">
+            <result name="success">EmpImmigration.jsp</result>
+            <result name="input">EmpImmigration.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getImmigration" class="com.mss.mirage.employee.immigration.ImmigrationAction" method="getImmigration">
+            <result>EmpImmigration.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- These actions are for Employee Immigration End -->
+            
+        <!-- These actions are for Employee Insurance Start -->
+        <action name="empInsurance" class="com.mss.mirage.employee.insurance.EmpInsuranceAction" method="prepare">
+            <result>EmpInsurance.jsp</result>            
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>  
+        
+        <action name="insuranceCheck" class="com.mss.mirage.employee.insurance.EmpInsuranceAction" method="checkAction">
+            <result>EmpInsurance.jsp</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="empInsuranceAdd" class="com.mss.mirage.employee.insurance.EmpInsuranceAction"  method="doAdd">
+            <result>EmpInsurance.jsp</result>  
+            <result name="input">EmpInsurance.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+        
+        <action name="getInsurance" class="com.mss.mirage.employee.insurance.EmpInsuranceAction" method="getInsurance">
+            <result name="success">EmpInsurance.jsp</result>            
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="insuranceEdit" class="com.mss.mirage.employee.insurance.EmpInsuranceAction" method="doEdit">
+            <result>EmpInsurance.jsp</result>
+            <result name="input">EmpInsurance.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>     
+        
+        <!-- These actions are for Employee Insurance End -->
+              
+        <!-- Employee Address Related Configurations Start -->
+        
+        <action name="employeeAddress" class="com.mss.mirage.employee.address.AddressAction" method="prepare">
+            <result>EmpAddress.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addressCheck" class="com.mss.mirage.employee.address.AddressAction" method="checkAction">
+            <result>EmpAddress.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addEmpAddress" class="com.mss.mirage.employee.address.AddressAction" method="addEmpAddress">
+           <!-- <result>EmpAddress.jsp</result>
+            <result name="input">EmpAddress.jsp</result> -->
+            
+            <result type="redirect">addressCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">addressCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="editEmpAddress" class="com.mss.mirage.employee.address.AddressAction" method="editEmpAddress">
+          <!--  <result>EmpAddress.jsp</result>
+            <result name="input">EmpAddress.jsp</result> -->
+            <result  type="redirect">addressCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">addressCheck.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- Employee Address Related Configurations End -->
+        <!-- These actions are for Employee Travel Start -->
+        
+        <action name="empTravelCheck" class="com.mss.mirage.employee.travel.TravelAction" method="checkAction">
+            <result>EmpTravel.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="travelAdd" class="com.mss.mirage.employee.travel.TravelAction" method="doAdd">
+            <result>EmpTravel.jsp</result>
+            <result name="input">EmpTravel.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="travelEdit" class="com.mss.mirage.employee.travel.TravelAction" method="doEdit">
+            <result>EmpTravel.jsp</result>
+            <result name="input">EmpTravel.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getTravel" class="com.mss.mirage.employee.travel.TravelAction" method="getTravel">
+            <result>EmpTravel.jsp</result>
+            <result name="input">EmpTravel.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- These actions are for Employee Travel End -->
+        <action name="leaveRequest" class="com.mss.mirage.employee.leaverequest.LeaveAction">
+            <result>EmpLeaveRequest.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>         
+        <action name="addLeave" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="doAddLeave">
+            <!-- <result>EmpLeaveList.jsp</result> -->
+            <result type="redirect">leaveRequestList.action?resultMessage=${resultMessage}</result>
+            <result name="input">EmpLeaveRequest.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>         
+        <action name="leaveRequestList" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getLeaveList">
+            <result>EmpLeaveList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>        
+        
+        <action name="getLeaves" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getLeaveListDetails">
+            <result>EmpLeaveRequest.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>    
+        <action name="editLeave" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="doEditLeave">
+            <result>EmpLeaveRequest.jsp</result>
+            <result name="input">EmpLeaveRequest.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>           
+        
+        <action name="editLeaveApproval" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="doEditLeave">
+           <!-- <result>EmpLeaveApprovels.jsp</result> -->
+           <result type="redirect">leaveApprovalList.action?resultMessage=${resultMessage}</result>
+            <result name="input">EmpLeaveRequest.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>           
+        
+        <action name="leaveApprovalList" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getLeaveApprovalList">
+            <result>EmpLeaveApprovels.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>        
+        <action name="getleaveApprovalList" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getLeaveApprovalDetails">
+            <result>EmpLeaveRequest.jsp</result>
+            <result name="input">EmpLeaveRequest.jsp</result>
+            <result type="redirect" name="login">../general/login.action?leaveId=${leaveId}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <!-- <result type="redirect" name="accessFailed">../exception/accessFailed.action</result> -->
+        </action>         
+        
+        <action name="leaveSearch" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getLeaveSearch">
+            <result>EmpLeaveList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>   
+        <action name="vacationList" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="getVacationList">
+            <result>EmpVacationList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        <!--  START SNIPPET: myTeamXWorkXml -->
+        
+        <action name="myTeamTree" class="com.mss.mirage.tree.team.TeamHierarchyAction">
+            <result>MyTeam.jsp</result>
+            
+        </action>
+        
+        <action name="myOperationsTeamTree" class="com.mss.mirage.tree.team.TeamHierarchyAction">
+            <result>MyOperationsTeam.jsp</result>
+        </action>
+        
+        <action name="myGDCTeamTree" class="com.mss.mirage.tree.team.TeamHierarchyAction">
+            <result>GDCTeam.jsp</result>
+        </action>
+        
+        <action name="myRecruitmentTeamTree" class="com.mss.mirage.tree.team.TeamHierarchyAction">
+            <result>RecruitmentTeam.jsp</result>
+        </action>
+        
+        <action name="myTeamTreeSelect" class="com.mss.mirage.tree.team.TeamSelectAction">
+            <result>MyTeamTreeSelect.jsp</result>
+        </action>
+        
+        <!--  END SNIPPET: myTeamXWorkXml -->
+        <!--Employee Profile Configuration -->
+        <action name="getProfile" class="com.mss.mirage.employee.profile.EmpProfileAction" method="getSkills">
+            <result>EmpProfile.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="imageAction" class="com.mss.mirage.employee.profile.EmpProfileAction">
+            <interceptor-ref name="fileUpload"/>
+            <interceptor-ref name="basicStack"/>
+            <result type="stream">
+                <param name="contentType">image/gif</param>
+                <param name="inputName">imageStream</param>
+            </result>
+            <result>EmpProfile.jsp</result>
+            <result name="input">EmpProfile.jsp</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+   
+        
+        <action name="editSkills" class="com.mss.mirage.employee.profile.EmpProfileAction" method="doEdit">
+            <result>EmpProfile.jsp</result>
+            <result name="input">EmpProfile.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="profileUpdate" class="com.mss.mirage.employee.profile.EmpProfileAction" method="updateProfile">
+            <result>EmpProfile.jsp</result>
+            <result name="input">EmpProfile.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="renderImage" class="com.mss.mirage.employee.profile.EmpProfileAction" method="renderImage">            
+            <result>EmpProfile.jsp</result>
+            <result name="input">EmpProfile.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        
+        <action name="pmoActivity" class="com.mss.mirage.employee.general.EmployeeAction" method="getPMOActivity">
+            <result>pmoActivity.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+         <action name="pmoActivitySearch" class="com.mss.mirage.employee.general.EmployeeAction" method="pmoActivitySearch">
+            <result>pmoActivity.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="viewProjectTeam" class="com.mss.mirage.employee.general.EmployeeAction" method="viewProjectTeam">
+            <result>pmoTeamMembers.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getProjectTeamQuery" class="com.mss.mirage.employee.general.EmployeeAction" method="getProjectTeamQuery">
+            <result>pmoTeamMembers.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="consultantTechReviews" class="com.mss.mirage.employee.general.EmployeeAction" method="consultantTechReviews">
+            <result>EmpTechReviews.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="searchTechReviews" class="com.mss.mirage.employee.general.EmployeeAction" method="searchTechReviews">
+            <result>EmpTechReviews.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="teamMembersLeavesSearch" class="com.mss.mirage.employee.leaverequest.LeaveAction" method="teamMembersLeavesSearch">
+            <result>EmpLeaveApprovels.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="getCurrentEmployeeReport" class="com.mss.mirage.employee.general.EmployeeAction" method="getCurrentEmployeeReport">
+     <result type="redirect">getEmployee.action?empId=${empId}&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="expensesCheck" class="com.mss.mirage.employee.expenses.ExpensesAction" method="expensesCheck">
+            <result>EmpExpenses.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="addEmpExpenses" class="com.mss.mirage.employee.expenses.ExpensesAction" method="addEmpExpenses">
+            <result>EmpExpenses.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="editEmpExpenses" class="com.mss.mirage.employee.expenses.ExpensesAction" method="editEmpExpenses">
+            <result>EmpExpenses.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+        
+          <action name="pmoDashBoard" class="com.mss.mirage.employee.general.EmployeeAction" method="getPMODashBoard">
+            <result>pmoDashBoard.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getManagerDashBoard" class="com.mss.mirage.employee.general.EmployeeAction" method="getManagerDashBoard">
+            <result>ManagerDashboard.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+ <action name="getCustomerProjectsList" class="com.mss.mirage.employee.general.EmployeeAction" method="getCustomerProjectsList">
+            <result>CustomerProjectsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="getAddProject" class="com.mss.mirage.projects.ProjectAction" method="getAddProject">
+            <result>AddProjectToCuctomer.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        <action name="getCustomerProjectsDetailsList" class="com.mss.mirage.employee.general.EmployeeAction" method="getCustomerProjectsDetailsList">
+            <result>CustomerProjectsDetailsList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="doAddProjectToCustomer" class="com.mss.mirage.projects.ProjectAction" method="doAddProjectToCustomer">
+            <result  type="redirect" name="add">getCustomerProjectsList.action?accountId=${accountId}&amp;customerName=${accountName}</result>
+            <result  type="redirect" name="update">getCustomerProjectDetails.action?projectId=${projectId}&amp;accountId=${accountId}&amp;accountName=${accountName}&amp;backFlag=${backFlag}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="getCustomerProjectDetails" class="com.mss.mirage.projects.ProjectAction" method="getCustomerProjectDetails">
+            <result>AddProjectToCuctomer.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+
+        <action name="getInActiveCustomerProject" class="com.mss.mirage.projects.ProjectAction" method="getInActiveCustomerProject">
+            <result type="redirect">getCustomerProjectsDetailsList.action?accountId=${accountId}&amp;customerName=${accountName}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+
+  <action name="downloadEmployeeResume" class="com.mss.mirage.employee.general.EmployeeAction" method="downloadEmployeeResume"> 
+  <result name="input" type="redirect">getEmployee.action?empId=${empId}&amp;currId=${id}&amp;resultMessage=${resultMessage}&amp;navId=1</result>  
+           
+        </action>
+        
+        <action name="projectPortfolioReport" class="com.mss.mirage.employee.general.EmployeeAction" method="projectPortfolioReport">
+            <result>projectProtofolioReport.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+    </package>
+    
+    <!--
+       Package Name : Payroll
+       Author       :
+       Description  :
+    -->
+  <package name="employee-payroll" namespace="/employee/payroll" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+         <default-interceptor-ref name="crudStack" />
+  <action name="getEmployeeNoDues" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getEmployeeNoDues">
+            <result>EmployeeNoDueForm.jsp</result>
+        
+        </action>
+        
+        <action name="employeeNoDueFormSearch" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="employeeNoDueFormSearch">
+            <result>EmployeeNoDueForm.jsp</result>
+        
+        </action>
+            <action name="getEmployeeNoDuesOperations" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getEmployeeNoDuesOperations">
+            <result>EmployeeNoDueFormOperations.jsp</result>
+        
+        </action>
+         <action name="employeeNoDueFormSearchOperations" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="employeeNoDueFormSearchOperations">
+            <result>EmployeeNoDueFormOperations.jsp</result>
+        
+        </action>
+        
+        <action name="employeeNoDueFormSearchOperationsRemainder" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="employeeNoDueFormSearchOperationsRemainder">
+            <result>EmployeeNoDueFormOperations.jsp</result>
+        
+        </action>
+        
+        
+        <action name="getAllEmployeePayroll" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getAllEmployeePayroll">
+            <result>EmpPayroll.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+      <action name="addPayrollRecord" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="addPayrollRecord">
+            <result>EmpPayrollAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+              <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        
+<action name="searchPayroll" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="searchPayroll">
+            <result>EmpPayroll.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        <action name="editEmployeePayroll" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="editEmployeePayroll">
+            <result>EmpPayrollAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+             <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        <action name="getPayRollReports" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="doGetPayRollReports">
+            <result>PayRollReport.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+             <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        <action name="getEmpWageDetails" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getEmpWageDetails">
+            <result>EmpWageDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+              <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        <action name="searchWages" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="searchWages">
+            <result>EmpWageDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+         <!-- <action name="doRunWages" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="doRunWages">
+            <result>PayRollReport.jsp</result>
+              <result name="input">PayRollReport.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action> -->
+        <action name="editEmployeeWages" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="editEmployeeWages">
+            <result>EditEmpWages.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        
+        <action name="runPayslip" class="com.mss.mirage.employee.payroll.DownloadPayslip" method="paySlipGeneration">
+          
+            <result  type="redirect" name="input">getPayRollReports.action?payslipFlag=${payslipFlag}&amp;payslipResponse=${payslipResponse}</result>
+        </action>
+        <action name="generatePayrollReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport">
+            <result  type="redirect" name="input">getPayRollReports.action?bankReportFlag=${bankReportFlag}&amp;bankReportsResponse=${bankReportsResponse}</result>
+        
+        </action>
+        <action name="getDashBoardForEmpReports" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getDashBoardForEmpReports">
+            <result>optDashBaordForLeaveAndTimesheet.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="generateLeavesCountReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="generateLeavesCountReport">
+            <result  type="redirect" name="input">getDashBoardForEmpReports.action</result>
+        
+        </action>
+        <action name="generateBiometricReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="generateBiometricReport">
+            <result  type="redirect" name="input">getPayRollReports.action</result>
+        
+        </action>
+        <action name="generateBankReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="getBankReport">
+            <result  type="redirect" name="input">getPayRollReports.action?bankReportFlag=${bankReportFlag}&amp;bankReportsResponse=${bankReportsResponse}</result>
+        
+        </action>
+         <action name="generateTaxSaving" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="generateTaxSaving">
+            <result  type="redirect" name="input">payrollCheck.action</result>
+        
+        </action>
+        <action name="generateTimeSheetReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="getTimeSheetReport">
+            <result  type="redirect" name="input">getDashBoardForEmpReports.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- payroll check actions start -->
+        <action name="payrollCheck" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="payrollCheck">
+            <result>PayrollCheckDashboard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="getPayrollCheckReport" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="getPayrollCheckReport">
+            <result type="redirect">payrollCheck.action</result>
+            <result  type="redirect" name="input">payrollCheck.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        
+        </action>
+        <!-- payroll check actions end -->
+        <!-- bank reports pdf -->
+        <action name="generateBankReportAsPDF" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="getBankReportAsPDF">
+            <result  type="redirect" name="input">getPayRollReports.action?bankReportFlag=${bankReportFlag}&amp;bankReportsResponse=${bankReportsResponse}</result>
+        
+        </action>
+        <action name="getEmployeePayRollDashBoard" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getEmployeePayRollDashBoard">
+            <result>PayRollDashBoard.jsp</result>
+         <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="taxExemptionDownload" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="taxExemptionDownload">
+            <result  type="redirect" name="input">getEmployeePayRollDashBoard.action</result>
+        </action>
+        <action name="taxExemptionDownloadForRolePayroll" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="taxExemptionDownloadForRolePayroll">
+            <result  type="redirect" name="input">getPayRollDashBoard.action</result>
+        </action>
+         
+        <action name="getPayRollDashBoard" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getPayRollTaxDashBoard">
+            <result>PayrollTaxExemption.jsp</result>
+            <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        <action name="employeeTaxAssumptionSearch" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="employeeTaxAssumptionSearch">
+            <result>PayRollDashBoard.jsp</result>
+              <result type="redirect" name="login">../general/login.action</result>
+        
+        </action>
+        <action name="PayrollTaxAssumptionSearch" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getPayrollTaxAssumptionSearch">
+            <result>PayrollTaxExemption.jsp</result>
+          <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+             <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action> 
+       
+        
+        <action name="downloadTefAttachment" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="downloadTefAttachment">
+            <result  type="redirect" name="input">editEmployeePayroll.action?payRollId=${payRollId}&amp;empId=${empId}</result>
+            <result  type="redirect" name="tef">getPayRollDashBoard.action</result>
+        
+        </action>
+            
+        <action name="runEmployeePayslip" class="com.mss.mirage.employee.payroll.DownloadPayslip" method="paySlipGeneration">
+          
+            <result  type="redirect" name="input">getEmployeePayRollDashBoard.action</result>
+        </action>
+            
+        <action name="employeeNoDuesSettlement" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="addNoDueSettlement">
+            <result type="redirect">getEmployeePayRollDashBoard.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="generateExcelReportForLockAmt" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="generateExcelReportForLockAmt">
+            <result  type="redirect" name="input">payrollCheck.action?tempFlag=${tempFlag}</result>
+        </action>
+        
+        <action name="generateTefReport" class="com.mss.mirage.employee.payroll.DownloadPayslip" method="generateTefReport">
+          
+            <result  type="redirect" name="input">getPayRollReports.action?payslipFlag=${payslipFlag}&amp;payslipResponse=${payslipResponse}</result>
+        </action>
+     
+        <action name="generatePfOrPTExcel" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="generatePfOrPTExcel">
+          
+            <result  type="redirect" name="input">payrollCheck.action?tempFlag=${tempFlag}</result>
+        </action>
+        
+        
+        <action name="payrollAuthenticationRegister" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="payrollAuthenticationRegister">
+            <result type="redirect">./getAllEmployeePayroll.action</result>
+              <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+         <action name="payrollAuthenticationLogin" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="payrollAuthenticationLogin">
+            <result type="redirect">./getAllEmployeePayroll.action</result>
+              <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+         <action name="payrollAuthenticationCanel" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="payrollAuthenticationCanel">
+            <result type="redirect">../..${currentAction} </result>
+              <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+         <action name="changeMyPayrollPassword">
+            <result>ResetMyPayrollPassword.jsp</result>
+        
+        </action>
+        
+         <action name="resetMyPayrollPasswordSubmit" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="resetPayrollPassword">
+            <interceptor-ref name="crudStack" />
+            <result>ResetMyPayrollPassword.jsp</result>
+            <result name="input">ResetMyPayrollPassword.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            
+        </action>
+        
+      <action name="tdsCalculations" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="tdsCalculations">
+            <interceptor-ref name="crudStack" />
+            <result>TDSCalculations.jsp</result>
+            <result name="input">TDSCalculations.jsp</result>
+            <result type="redirect" name="login">login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            
+        </action>
+        <action name="getReleasePayslip" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getReleasePayslip">
+            <result>ReleasePayslip.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+         </action>
+        <action name="releasePayslipSearch" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="releasePayslipSearch">
+            <result>ReleasePayslip.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="doRunWages" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="doRunWages">
+            <result>PayRollReport.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="tdsGeneration" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="doTdsGeneration">
+            <result>TDSGeneration.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+             <result type="redirect" name="payRoll">getAllEmployeePayroll.action</result>
+        </action>
+        
+          <action name="tdsReportGeneration" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="tdsReportGeneration">
+            <result  type="redirect" name="input">tdsGeneration.action?resultMessage=${resultMessage}&amp;yearOverlay=${yearOverlay}&amp;monthOverlay=${monthOverlay}&amp;orgId=${orgId}&amp;paymentDate=${paymentDateEmp}</result>
+        
+        </action>
+
+         <action name="getSampleForm12BB" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getSampleForm12BB">
+           <result  type="redirect" name="input">getEmployeePayRollDashBoard.action</result>
+        </action>
+
+<!-- triveni new action 03/22/2017 start-->
+<action name="getSampleForm12BB" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="getSampleForm12BB">
+           <result  type="redirect" name="input">getEmployeePayRollDashBoard.action</result>
+        </action>
+<action name="taxExemptionDownloadForm12BB" class="com.mss.mirage.employee.payroll.PayrollHandlerAction" method="taxExemptionDownloadForm12BB">
+            <result  type="redirect" name="input">getEmployeePayRollDashBoard.action</result>
+</action>
+ <action name="downloadTefAttachmentForm12BB" class="com.mss.mirage.employee.payroll.DownloadExcelPayrollReport" method="downloadTefAttachmentForm12BB">
+            <result  type="redirect" name="input">editEmployeePayroll.action?payRollId=${payRollId}&amp;empId=${empId}</result>
+            <result  type="redirect" name="tef">getPayRollDashBoard.action</result>
+        
+        </action>
+
+<!-- triveni new action 03/22/2017 end -->
+
+
+
+       
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+
+    
+    <!--
+       Package Name : timeSheets
+       Author       :
+       Description  :
+    -->
+    <package name="employee-timesheets" namespace="/employee/timesheets" extends="default">
+        <!--START: Following actions written by : RangaRao Panda :<rpanda@miraclesoft.com>-->
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="timeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="myTimesheet" >
+            <result>TimeSheetSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="fillTimesheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="fillMyTimesheet">
+            <result name="input">TimeSheetSearch.jsp</result>
+            <result name="success">TimeSheetAdd.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="AddTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="doAdd">
+            <result type="redirectAction">
+                <param name="actionName">timeSheet</param>
+                <param name="resultMessage">${resultMessage}</param>
+            </result>
+            
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getTimesheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="prepare">
+            <result name="success">TimeSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="EditTimesheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="doEdit">
+            <result type="redirectAction">
+                <param name="actionName">timeSheet</param>
+                <param name="resultMessage">${resultMessage}</param>
+            </result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="searchTimesheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="doSearch">
+            <result name="success">TimeSheetSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="deleteTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="deleteTimeSheet">
+            <result name="success">TimeSheetSearch.jsp</result>
+            <result name="success">TimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="teamTimeSheets" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="teamTimeSheet">
+            <result name="success">TeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+            <action name="getTeamTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="prepare">
+            <result name="success">TimeSheetApprovels.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}</result>
+              <result type="redirect" name="input">../../customer/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=c</result> 
+              <result type="redirect" name="INPUT1">../../vendor/vendorlogin.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=v</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="approve" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="approveTimeSheet">
+            <result>TeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="reject" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="rejectTimeSheet">
+            <result>TeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="empTimeSheets" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="empTimeSheets">
+            <result name="success">custTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="printEmpTimeSheets" class="com.mss.mirage.employee.timesheets.TimeSheetAction">
+            <result name="success">printEmpTimeSheets.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getEmpTimeSheetsReport" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="getEmpTimeSheetsReport">
+            <result>printEmpTimeSheets.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="getEmpTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="prepare">
+            <result name="success">TimeSheetApprovels.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- <action name="remind" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="sendReminders">
+            <result>TeamTimeSheetSearch.jsp</result>
+            <result name="input">TeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> -->
+          <action name="remind" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="sendReminders">
+            <!-- <result>TeamTimeSheetSearch.jsp</result> -->
+            <result>custTimeSheetSearch.jsp</result>
+            <result name="esuccess">EmpTimeSheetSerach.jsp</result>
+            
+            <result name="input">custTimeSheetSearch.jsp</result>
+            <result name="einput">EmpTimeSheetSerach.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="timeSheetSearch" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="onSiteTimeSheetSearch">
+            <result name="success">OnsiteTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="uploadTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="doUploadTimeSheet">
+            <result name="success">TimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="deleteOnsiteTimeSheet" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="deleteOnsiteTimeSheet">
+            <result name="success">TimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="download" class="com.mss.mirage.employee.issues.DownloadAction">
+           <!-- <result>TimeSheetSearch.jsp</result>-->
+        </action>
+        
+        <action name="getCustomerTimesheetReport" class="com.mss.mirage.employee.timesheets.CustTimeSheetDownLoadAction"></action>
+        
+        <!-- madhavi mam Changes 07/31/2014 -->
+        
+             <action name="empTimeSheetSearch" class="com.mss.mirage.employee.timesheets.TimeSheetAction" method="empTimeSheetSearch">
+            <result name="success">EmpTimeSheetSerach.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <action name="getEmpTimesheetReport" class="com.mss.mirage.employee.timesheets.EmpTimeSheetDownLoadAction"></action>
+        <action name="getTeamTimesheetReport" class="com.mss.mirage.employee.timesheets.TeamTimesheetDownloadAction"></action>
+        <!--END: Following actions written by : RangaRao Panda :<rpanda@miraclesoft.com>-->
+        
+        
+        
+         <!--  new actions for new timesheet functionality 09/26/2014 -->
+            <action name="newtimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newMyTimesheet" >
+            <result>NewTimeSheetSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+       <action name="newfillTimesheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newFillMyTimesheet">
+            <result name="input">NewTimeSheetSearch.jsp</result>
+            <result name="success">NewTimeSheetAdd.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            
+            <result type="redirect" name="custaccessFailed">../../customer/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+         <action name="newDeleteTimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newDeleteTimeSheet">
+            <result name="success">NewTimeSheetSearch.jsp</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="custaccessFailed">../../customer/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+          <action name="newAddTimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newDoAdd">
+            <result type="redirectAction">
+                <param name="actionName">newtimeSheet</param>
+                <param name="resultMessage">${resultMessage}</param>
+            </result>
+            
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+            <action name="newgetTimesheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newPrepare">
+            <result name="success">NewTimeSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="NewEditTimesheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newDoEdit">
+            <result type="redirectAction">
+                <param name="actionName">newtimeSheet</param>
+                <param name="resultMessage">${resultMessage}</param>
+            </result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+                <action name="newteamTimeSheets" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newTeamTimeSheet">
+            <result name="success">NewTeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <!--    <action name="newGetTeamTimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newPrepare">
+            <result name="success">NewTimeSheetApprovels.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result>
+              <result type="redirect" name="input">../../customer/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=c&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result> 
+              <result type="redirect" name="INPUT1">../../vendor/vendorlogin.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=v&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> -->
+        
+ <action name="newGetTeamTimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newPrepare">
+            <result name="success">NewTimeSheetApprovels.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+    
+              <!--  <result type="redirect" name="login">../../general/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result>
+              <result type="redirect" name="input">../../customer/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=c&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result> 
+              <result type="redirect" name="INPUT1">../../vendor/vendorlogin.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=v&amp;resourceType=${resourceType}&amp;statusValue=${statusValue}&amp;secStatusValue=${secStatusValue}</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result> -->
+             <result type="redirect" name="login">../../general/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;resourceType=${resourceType}</result>
+              <result type="redirect" name="input">../../customer/login.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=c&amp;resourceType=${resourceType}</result> 
+              <result type="redirect" name="INPUT1">../../vendor/vendorlogin.action?employeeID=${employeeid}&amp;emptimeSheetID=${emptimesheetid}&amp;type=v&amp;resourceType=${resourceType}</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>  
+			
+        </action>
+		
+        
+        
+         
+        
+         <action name="newapprove" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newApproveTimeSheet">
+            <!-- <result>NewTeamTimeSheetSearch.jsp</result> -->
+             <result>NewEmployeeTeamTimeSheets.jsp</result>
+             <result name="csuccess">NewCustomerTeamTimeSheetSearch.jsp</result>
+            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          <action name="newreject" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newRejectTimeSheet">
+           <!-- <result>NewTeamTimeSheetSearch.jsp</result> -->
+             <result>NewEmployeeTeamTimeSheets.jsp</result>
+             <result name="csuccess">NewCustomerTeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="newempTimeSheetSearch" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newEmpTimeSheetSearch">
+            <result name="success">NewEmpTimeSheetSerach.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="newgetEmpTimeSheet" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newPrepare">
+            <result name="success">NewTimeSheetApprovels.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="newempTimeSheets" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newEmpTimeSheets">
+            <result name="success">NewCustTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="newGetTeamTimesheetReport" class="com.mss.mirage.employee.timesheets.NewTeamTimesheetDownloadAction"></action>
+        
+        <action name="newGetEmpTimesheetReport" class="com.mss.mirage.employee.timesheets.NewEmpTimeSheetDownLoadAction"></action>
+        
+        <action name="newGetCustomerTimesheetReport" class="com.mss.mirage.employee.timesheets.NewCustTimeSheetDownLoadAction"></action>
+         <action name="newremind" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newSendReminders">
+            <!-- <result>TeamTimeSheetSearch.jsp</result> -->
+            <result>NewCustTimeSheetSearch.jsp</result>
+            <result name="esuccess">NewEmpTimeSheetSerach.jsp</result>
+            <result name="input">NewCustTimeSheetSearch.jsp</result>
+            <result name="einput">NewEmpTimeSheetSerach.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+	
+<!--  new actions for customer 01/27/2015 -->
+         <action name="newCustomerTeamTimeSheets" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newCustomerTeamTimeSheets">
+            <result name="success">NewCustomerTeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="newCustomerTeamTimeSheetsSearch" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newCustomerTeamTimeSheetsSearch">
+            <result name="success">NewCustomerTeamTimeSheetSearch.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="newEmployeeteamTimeSheets" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newEmployeeteamTimeSheets">
+            <result name="success">NewEmployeeTeamTimeSheets.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="newEmployeeteamTimeSheetsSearch" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="newEmployeeteamTimeSheetsSearch">
+            <result name="success">NewEmployeeTeamTimeSheets.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+			
+		 <action name="getTimeSheetAttachementDownload" class="com.mss.mirage.employee.timesheets.NewTimeSheetAction" method="getTimeSheetAttachementDownload"></action>
+    </package>
+    
+    <!-- 
+       Package Name : Issues
+       Author       : RajasekharYenduva  mailid:ryenduva@miraclesoft.com
+       Description  : Managing Issues of Employees
+      -->    
+    <package name="employee-issues" namespace="/employee/issues" extends="default">
+        <default-interceptor-ref name="crudStack"/>
+        
+        <!-- used in new issues -->
+        <action name="getIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="myIssues">
+            <result>IssuesList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- end -->
+        <action name="getTeamIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="myTeamIssues">
+            <result>IssuesList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="getMyTasks" class="com.mss.mirage.employee.issues.IssuesAction" method="getMyTaskList">
+            <result>Tasks.jsp</result>     
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        <action name="getMyIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="getMyIssuesList">
+            <result>IssuesList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        <!-- new Action -->
+         <action name="getTeamTasks" class="com.mss.mirage.employee.issues.IssuesAction" method="getMyTeamTasks">
+            <result>Tasks.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        
+        
+        
+        
+        <action name="doSearchEmpIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="doSearchEmployeeIssues">
+            <result>IssuesList.jsp</result>     
+            <result name="input">IssuesList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="doSearchIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="doSearchIssues">
+            <result>IssuesList.jsp</result>     
+            <result name="input">IssuesList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="doSearchTeamIssues" class="com.mss.mirage.employee.issues.IssuesAction" method="doSearchTeamIssues">
+            <result>IssuesList.jsp</result>     
+            <result name="input">IssuesList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="issue" class="com.mss.mirage.employee.issues.IssuesAction" method="prepare">
+            <result>IssueDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- New Issue1 -->
+         <action name="createissue" class="com.mss.mirage.employee.issues.IssuesAction" method="doCreateIssue">
+            <result>IssueDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- End of the issue -->
+        
+        <action name="getIssue" class="com.mss.mirage.employee.issues.IssuesAction" method="getIssue">
+            <result>IssueDetails.jsp</result>       
+            <result type="redirect" name="login">../../general/login.action?issueId=${issueId}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <!-- New Issue2 -->
+        <action name="addIssue" class="com.mss.mirage.employee.issues.IssuesAction" method="doAddIssue">
+           <!-- <result>IssuesList.jsp</result>    -->
+           <result>IssueDetails.jsp</result>
+            <result name="input">IssueDetails.jsp</result>  
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editIssue" class="com.mss.mirage.employee.issues.IssuesAction" method="doEditIssue">
+           <result type="redirect">${navigateTo}.action?issueId=${issueId}&amp;accessType=${accessType}&amp;resM=${resM}</result>  
+            <result name="input">IssueDetails.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <!-- End of the issue -->
+        <action name="download" class="com.mss.mirage.employee.issues.DownloadAction">
+           <!-- <result>IssueDetails.jsp</result>     -->
+        </action>
+         <!-- new on 06112012 for issue reminder-->
+        <action name="issueReminderPopup" class="com.mss.mirage.employee.issues.IssuesAction" method="issueReminderPopup">
+            <result>IssueReminderWindow.jsp</result> 
+            </action>
+        
+    </package>
+    <!-- 
+       Package Name : PhoneLogs
+       Author       : Venkateswara Rao Nukala  mailid:vnukala@miraclesoft.com
+       Description  : Managing PhoneLogs of Employees
+      -->    
+    <package name="employee-phonelog" namespace="/employee/phonelog" extends="default">
+        
+        <!--   list the employ phone log   -->
+        <action name="phoneLogList" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="myPhoneLogList">
+            <result name="success" >PhoneLogList.jsp</result>
+            <result name="error" >PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="phoneLog" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="prepare" >
+            <result>PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!--  add the employ phone log   -->
+        <action name="addPhoneLog" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="doAdd">
+            <result >PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!--  Search the employ phone log   -->
+       
+        <action name="phoneLogSearch" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="myPhoneLogSearch">
+            <result >PhoneLogList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+        <!--  get the employ phone log form  -->
+        
+        <action name="getPhoneLog" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="getPhoneLog">
+            <result>PhoneLog.jsp</result>
+            <result name="input">PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+        
+        <action name="editPhonelog" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="doEdit">
+            <result>PhoneLog.jsp</result>
+            <result name="input">PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="deletePhonelog" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="doDelete">
+            <result>PhoneLogList.jsp</result>
+            <result name="input">PhoneLog.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <!-- Team Phone logs   -->
+       
+        <action name="teamPhoneLogList" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="myTeamPhoneLogList">
+            <result >PhoneLogList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="teamPhoneLogSearch" class="com.mss.mirage.employee.phonelog.PhoneLogAction" method="myTeamPhoneLogSearch">
+            <result >PhoneLogList.jsp</result>
+            <result name="input">PhoneLogList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action> 
+    </package>
+    
+    <!-- 
+       Package Name : BridgeSchedule
+       Author       :Vani Amaresh Aryasomayajula  EmailId:varyasomayajula2@miraclesoft.com
+       Description  :
+    -->  
+    <package name="employee-bridgeconference" namespace="/employee/bridgeconference" extends="default">
+        
+        <action name="bridgeScheduleList" >
+            <result>BridgeScheduleLIst.jsp</result>
+        </action>
+        <action name="AddBridgeSchedule" class="com.mss.mirage.employee.bridgeconference.BridgeConferenceAction" method="doAdd">
+            <result>BridgeScheduleLIst.jsp</result>
+            <result name="input">BridgeScheduleLIst.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        <action name="getBridgeConference" class="com.mss.mirage.employee.bridgeconference.BridgeConferenceAction" method="getBridgeConference">
+            <result>AddBridgeSchedule.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        <action name="bridge" class="com.mss.mirage.employee.bridgeconference.BridgeConferenceAction" method="prepare">
+            <result>AddBridgeSchedule.jsp</result>
+        </action>
+        <action name="EditBridgeSchedule" class="com.mss.mirage.employee.bridgeconference.BridgeConferenceAction"  method="doEdit">
+            <result>AddBridgeSchedule.jsp</result>
+            <result name="input">AddBridgeSchedule.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        <action name="delete" class="com.mss.mirage.employee.bridgeconference.BridgeConferenceAction" method="doDelete">
+            <result>BridgeScheduleLIst.jsp</result>
+            <result name="input">BridgeScheduleLIst.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+    </package>
+    <package name="employee-projects" namespace="/employee/projects" extends="default">
+        
+        <action name="projectHome" class="com.mss.mirage.projects.ProjectAction" method="projectList">
+            <result>ListOfProjects.jsp</result>
+            <result name="input">ListOfProjects.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>    
+        
+        <action name="addProject" class="com.mss.mirage.employee.projects.ProjectAction" method="prepare">
+            <result>EmpProjects.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addProjectDetails" class="com.mss.mirage.employee.projects.ProjectAction" method="addProjectDetails">
+            <result>EmpProjects.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getProject" class="com.mss.mirage.projects.ProjectAction" method="getProject">
+            <result>ListOfProjects.jsp</result>
+            <result name="login">ProjectDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="project1">
+            <result>ListOfProjects.jsp</result>            
+        </action>
+        
+        <action name="getEmpProject" class="com.mss.mirage.employee.projects.ProjectAction" method="getProjectDetails">
+            <result>EmpProjects.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+    </package>
+    <!--This module is related to Employee Appraisal-->
+    <package name="employee-appraisal" namespace="/employee/appraisal" extends="default">
+        <action name="project" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="prepare">
+            <result>SelfAppraisal.jsp</result>
+        </action>
+        <action name="empAppraisalSearch" class="com.mss.mirage.employee.general.EmployeeAction" method="getEmpSearchAll">
+            <result>/employee/appraisal/EmpAppraisalSearch.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            
+        </action>
+        
+        <action name="getAppraisalQuery" class="com.mss.mirage.employee.general.EmployeeAction" method="getSearchQuery">
+            <result>/employee/appraisal/EmpAppraisalSearch.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getAppraisal" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="getGenalDetails">
+            <result>EmployeeTeamAppraisalList.jsp</result>
+        </action>
+        <action name="getEmpAppraisal" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="getEmployeeAppraisalList">
+            <result>EmployeeTeamAppraisalList.jsp</result>
+            <result name="input">EmployeeTeamAppraisalList.jsp</result>
+            <result name="dbGrid">EmployeeTeamAppraisalList.jsp</result>
+        </action>
+        <action name="getTeamAppraisal" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="getTeamAppraisal">
+            <result>EmployeeTeamAppraisalList.jsp</result>
+            <result name="input">EmployeeTeamAppraisalList.jsp</result>
+        </action>
+        <action name="editEmployeeAppraisal" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="getGenalDetails">
+            <result>SelfAppraisal.jsp</result>
+            <result name="dbGrid">EmployeeTeamAppraisalList.jsp</result>
+        </action>
+        <action name="editTeamAppraisal" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="getEmployeeAppraisalList">
+            <result>EmployeeTeamAppraisalList.jsp</result>
+            <result name="input">EmployeeTeamAppraisalList.jsp</result>
+            <result name="dbGrid">EmployeeTeamAppraisalList.jsp</result>
+        </action>
+        <action name="addProject" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAdd">
+            <result>SelfAppraisal.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        <!-- Details of individuals -->
+        <action name="addorUpdate" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="individualDetails">
+            <result>SelfAppraisal.jsp</result>
+        </action>
+        
+        <!-- Self Assessment Details-->
+        <action name="selfAssessment" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAddSelfAssessment" >
+            <result name="input" >SelfAppraisal.jsp</result>
+            <result name="success">SelfAppraisal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+        <!-- team Lead or Hr or PM or Vp -->
+        <action name="tLead" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAddTL">
+            <result>SelfAppraisal.jsp</result>
+            <result name="input">SelfAppraisal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        <action name="pracManager" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAddTL">
+            <result>SelfAppraisal.jsp</result>
+            <result name="input">SelfAppraisal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="hr" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAddTL">
+            <result>SelfAppraisal.jsp</result>
+            <result name="input">SelfAppraisal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="vicePresident" class="com.mss.mirage.employee.appraisal.EmployeeAppraisalAction" method="doAddTL">
+            <result>SelfAppraisal.jsp</result>
+            <result name="input">SelfAppraisal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <!-- quarterly Appraisal Start-->
+         <action name="myQuarterlyAppraisalSearch" class="com.mss.mirage.employee.general.EmployeeAction" method="getMyQuarterlyAppraisalSearch">
+            <result>/employee/appraisal/QuaterAppraisalSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+        </action>
+        <action name="teamQuaterAppraisalSearch" class="com.mss.mirage.employee.general.EmployeeAction" method="teamQuaterAppraisalSearch">
+            <result>/employee/appraisal/TeamQuaterAppraisalSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+        </action>
+        <action name="myQuarterlyAppraisalAdd" class="com.mss.mirage.employee.general.EmployeeAction" method="myQuarterlyAppraisalAdd">
+            <result>/employee/appraisal/QuarterlyAppraisalAdd.jsp</result>
+ <result type="redirect" name="input">/employee/appraisal/myQuarterlyAppraisalSearch.action?resultMessage=${resultMessage}</result>
+                       
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+        </action>
+        <action name="empQuarterlyAppraisalSave" class="com.mss.mirage.employee.general.EmployeeAction" method="empQuarterlyAppraisalSave">
+            <result type="redirect">/employee/appraisal/myQuarterlyAppraisalSearch.action?resultMessage=${resultMessage}</result>
+            <result name="team" type="redirect">/employee/appraisal/teamQuaterAppraisalSearch.action?resultMessage=${resultMessage}</result>
+            <result name="added" type="redirect">/employee/appraisal/myQuarterlyAppraisalEdit.action?empId=${empId}&amp;lineId=${lineId}&amp;appraisalId=${appraisalId}&amp;status=${status}&amp;curretRole=${curretRole}&amp;quarterly=${quarterly}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+        </action>
+        <action name="myQuarterlyAppraisalEdit" class="com.mss.mirage.employee.general.EmployeeAction" method="myQuarterlyAppraisalEdit">
+            <result>/employee/appraisal/QuarterlyAppraisalAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+        </action>
+        <!-- quarterly Appraisal End-->
+    </package>
+    
+    <package name="employee-calendar" namespace="/employee/calendar" extends="default">
+        <action name="empCalendar">
+            <result>DailyEventsCal.jsp</result>
+        </action>
+    </package>
+    
+<!--
+       Package Name : Tasks
+       Author       : Ajay Tummapala
+       Description  : For Tasks in EMployee
+    -->
+    <package name="employee-tasks" namespace="/employee/tasks" extends="default">
+        <default-interceptor-ref name="crudStack"/>
+
+         <action name="newCreateTask" class="com.mss.mirage.employee.tasks.TasksAction" method="doNewCreateTask">
+            <result>NewTaskDetails1.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        
+         <action name="newAddTask" class="com.mss.mirage.employee.tasks.TasksAction" method="doNewAddTask">
+            <result type="redirect">newCreateTask.action?resM=${resM}</result>
+            <result name="input">NewTaskDetails1.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+       
+     <action name="getTasks" class="com.mss.mirage.employee.tasks.TasksAction" method="myTasks">
+            <result>TasksList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="doSearchEmpTasks" class="com.mss.mirage.employee.tasks.TasksAction" method="doSearchEmployeeTasks">
+            <result>TasksList.jsp</result>     
+            <result name="input">TasksList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        <action name="getTask" class="com.mss.mirage.employee.tasks.TasksAction" method="getTask">
+            <result>NewEditTaskDetails.jsp</result>       
+            <result type="redirect" name="login">../../general/login.action?taskId=${taskId}&amp;type=${type}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+       
+        <action name="NewEditTask" class="com.mss.mirage.employee.tasks.TasksAction" method="doNewEditTask">
+           <result type="redirect">${navigateTo}.action?taskId=${Id}&amp;resM=${resM}&amp;type=${type}&amp;projectId=${projectId}</result>  
+            <result name="input">TaskDetails.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="download" class="com.mss.mirage.employee.tasks.DownloadAction">
+            <!--<result>TaskDetails.jsp</result>     -->
+        </action>
+        
+         <action name="taskReminderPopup" class="com.mss.mirage.employee.tasks.TasksAction" method="taskReminderPopup">
+            <result>TaskReminderWindow.jsp</result> 
+            </action>
+         <action name="getTeamTasks" class="com.mss.mirage.employee.tasks.TasksAction" method="myTeamTasks">
+            <result>TasksList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <action name="doSearchTeamTasks" class="com.mss.mirage.employee.tasks.TasksAction" method="doSearchTeamTasks">
+            <result>TasksList.jsp</result>     
+            <result name="input">TasksList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- new actions for task attachemnts -->
+         <action name="addTaskAttachment" class="com.mss.mirage.employee.tasks.TasksAction" method="addTaskAttachment">
+            <result>TaskAttachments.jsp</result>     
+            <result name="input">TaskAttachments.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="doAddTaskAttachment" class="com.mss.mirage.employee.tasks.TasksAction" method="doAddTaskAttachment">
+            <result type="redirect">getTask.action?taskId=${taskId}&amp;type=${type}&amp;projectId=${projectId}&amp;resM=</result>     
+            <result name="input">TaskAttachments.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="taskAttachmentDownload" class="com.mss.mirage.employee.tasks.TaskDownloadAction">
+           <!-- <result>TaskDetails.jsp</result>     -->
+        </action>
+        
+            <action name="addTaskNotes" class="com.mss.mirage.employee.tasks.TasksAction" method="addTaskNotes">
+            <result>TaskNotes.jsp</result>     
+            <result name="input">TaskNotes.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+                     <action name="doaddTaskNotes" class="com.mss.mirage.employee.tasks.TasksAction" method="doaddTaskNotes">
+              <result type="redirect">getTask.action?taskId=${taskId}&amp;type=${type}&amp;projectId=${projectId}&amp;resM=</result>     
+            <result name="input">TaskNotes.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+            <action name="getNotes" class="com.mss.mirage.employee.tasks.TasksAction" method="dogetNotes">
+             <result>TaskNotes.jsp</result> 
+             <result name="input">TaskNotes.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+              <action name="doUpdateNotes" class="com.mss.mirage.employee.tasks.TasksAction" method="getdoUpdateNotes">
+            <result type="redirect">getTask.action?taskId=${taskId}&amp;type=${type}&amp;projectId=${projectId}&amp;resM=</result>     
+            <result name="input">TaskNotes.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="getTaskDashBoard" class="com.mss.mirage.employee.tasks.TasksAction" method="getTaskDashBoard">
+            <result>TaskDashBoard.jsp</result> 
+             <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>	
+    </package>
+<package name="employee-performanceReviews" namespace="/employee/performanceReviews" extends="default">
+        <default-interceptor-ref name="crudStack"/>
+        
+        
+         <action name="givePerformanceReview" class="com.mss.mirage.employee.performanceReviews.PerformanceReviewsAction" method="givePerformanceReview">
+            <result>EmpPerformanceReview.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action> 
+       
+        
+         <action name="addPerformanceReview" class="com.mss.mirage.employee.performanceReviews.PerformanceReviewsAction" method="addPerformanceReview">
+            <result type="redirect">givePerformanceReview.action?resM=${resM}</result>
+             <result name="input">EmpPerformanceReview.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+      
+        
+    </package>
+ 
+   
+     <package name="employee-Reviews" namespace="/employee/Reviews" extends="default">
+        <!--START: Following actions written by : RangaRao Panda :<rpanda@miraclesoft.com>-->
+         <default-interceptor-ref name="crudStack" />
+        
+        
+        <action name="addMyReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getMyReview">
+            <result>MyReview.jsp</result>
+            </action>
+            
+             <action name="giveMyReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getMyReviewList">
+            <result>MyReviewSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="teamReviewList" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="teamReviewList">
+            <result>TeamReview.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="teamReviewSearch" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="doTeamReviewSearch">
+            <result>TeamReview.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+        
+        <action name="doAddReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getInsertReview">
+            <result>MyReviewSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+            
+             
+         
+            <action name="getReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getEditReview">
+            <result>MyReview.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+            <action name="download" class="com.mss.mirage.employee.Reviews.ReviewDownloadAction" />
+        
+        
+        
+         <action name="doEditReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="doEditReview">
+            <result>MyReviewSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+        
+        
+        <action name="reviewSearch" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="doReviewSearch">
+            <result>MyReviewSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+        
+        
+        <action name="deleteReview" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="deleteReview">
+            <result>MyReviewSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+       
+        <!-- appraisal review actions start -->
+          <action name="getAppraisalsList" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getAppraisalsList">
+            <result>AppraisalsList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+          
+         <action name="getEmpReviewsList" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getEmpReviewsList">
+            <result>EmpReviews.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+         <action name="doEmployeeRevisedSearch" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="doEmployeeRevisedSearch">
+            <result>AppraisalsList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+            
+            
+        <!-- appraisal review actions end -->
+       
+       <!-- new actions for performance dashboard start -->
+       <action name="perfDashboard" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="perfDashboard">
+            <result>PerfDashboard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+			
+
+ <action name="getCompetitionBoard" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="getCompetitionBoard">
+            <result>PerfDashboard.jsp</result>
+            <result name="esuccess">EmployeePerfDashboard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+		<action name="employeePerfDashboard" class="com.mss.mirage.employee.Reviews.ReviewsAction" method="employeePerfDashboard">
+            <result>EmployeePerfDashboard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>	
+
+       <!-- new actions for performance dashboard end -->
+       
+       
+         </package>
+        
+        
+                      <package name="employee-appreciation" namespace="/employee/appreciation" extends="default">
+        
+        <default-interceptor-ref name="crudStack" />
+        <action name="getMyAppreciation" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="getMyAppreciation">
+            <result>AppreciationSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>	
+            
+        <action name="getAppreciationadd" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="getAppreciationadd">
+            <result>AppreciationDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="doSendAppreciation" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="doSendAppreciation">
+        <result name="success" type="redirect">getMyAppreciation.action?resultMessage=${resultMessage}&amp;searchflag=${searchflag}</result>
+            <result name="input" type="redirect">getEmpAppreciationEdit.action?appriceationId=${appriceationId}&amp;resultMessage=${resultMessage}&amp;searchflag=${searchflag}</result>
+
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="getMyTeamAppreciation" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="doSearchAppreciation">
+          <result>AppreciationSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result> 
+        </action> 
+
+             <action name="getEmpAppreciationEdit" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="getAppreciationDetailsById">
+           
+            <result>AppreciationDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>  
+        </action> 
+          
+          <action name="getAppreciationPreview" class="com.mss.mirage.employee.appreciation.AppreciationAction" method="getAppreciationPreview">
+            <result >AppreciationPreview.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+          
+    </package>
+
+
+ <package name="employee-hierarchy" namespace="/employee/hierarchy" extends="default">
+        
+        <default-interceptor-ref name="crudStack" />
+
+   <action name="getTeamHirearchy" class="com.mss.mirage.tree.team.DynamicTeamHierarchyAction">
+            <result>TeamHierarchy.jsp</result>
+        </action>
+         <action name="myTeamTree" class="com.mss.mirage.tree.team.DynamicTeamHierarchyAction">
+        </action>
+        
+        <action name="myOperationsTeamTree" class="com.mss.mirage.tree.team.DynamicTeamHierarchyAction">
+        </action>
+        
+        <action name="myGDCTeamTree" class="com.mss.mirage.tree.team.DynamicTeamHierarchyAction">
+        </action>
+        
+        <action name="myRecruitmentTeamTree" class="com.mss.mirage.tree.team.DynamicTeamHierarchyAction">
+        </action>
+     
+        </package>
+</struts>

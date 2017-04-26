@@ -1,0 +1,30 @@
+<%@ page contentType="text/html; charset=UTF-8" errorPage="../exception/ErrorDisplay.jsp"%>
+<%@ taglib prefix="s" uri="/struts-tags" %>
+<%@ page import="com.mss.mirage.util.ApplicationConstants"%>
+<html>
+    <head>
+        <meta http-equiv="refresh" content="5;url=<s:url includeParams="all"/>"/>
+        <script type="text/JavaScript" src="<s:url value="/includes/javascripts/AppConstants.js"/>"></script>
+    </head>
+    
+    <body class="bodyGeneral" oncontextmenu="return false;">
+        <table class="innerTable" width="850" height="600"cellpadding="0" cellspacing="0">
+            <tr>
+                <td>
+                    <p style="border: 1px solid silver; padding: 5px; background: #ffd; text-align: center;">
+                        We are processing your request. Please wait..
+                    </p>
+                    
+                    <p/>
+                    You can click this link to <a href="<s:url includeParams="all"/>">refresh</a>.
+                    
+                    <div align="center">
+                        <embed src="/<%=ApplicationConstants.CONTEXT_PATH%>/includes/flash/loadingTime.swf" quality="high" width="190" height="80"></embed>
+                        <!--   <embed src="/<%=ApplicationConstants.CONTEXT_PATH%>/includes/flash/loadingCircle.swf" quality="high" width="190" height="80"></embed>-->
+                    </div>
+                </td>
+            </tr>
+        </table>
+        
+    </body>
+</html>

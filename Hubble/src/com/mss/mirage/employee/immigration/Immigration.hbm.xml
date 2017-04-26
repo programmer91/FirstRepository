@@ -1,0 +1,74 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+    Document   :   Immigration.hbm.xml
+    Created on  :   August 31, 2007, 11:00 PM
+    Author        :   Jyothi Nimmagadda
+    Description  :  Purpose of the document follows.
+-->
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.employee.immigration.ImmigrationAction" table="tblEmpImmigration">
+        
+        <id name="empId" column="EmpId">
+            <generator class="assigned"/>
+        </id>
+        
+        <property name="currentImmigStatus" column="CurrentImmigStatus"  insert="true" update="true"/>
+        <property name="passportNo" column="PassportNo"  insert="true" update="true"/>
+        <property name="passportIssuedAt" column="PassportIssuedAt"  insert="true" update="true"/>
+        <property name="passportIssue" column="PassportIssueDate"  insert="true" update="true"/>
+        <property name="passportExp" column="PassportExpiryDate"  insert="true" update="true"/>
+        <property name="passportCountry" column="PassportCountry"  insert="true" update="true"/>
+        
+        <property name="dateOfArrival" column="DateOfArrival"  insert="true" update="true"/>
+        <property name="portOfEntry" column="PortOfEntry"  insert="true" update="true"/>
+        <property name="i94No" column="I94Number"  insert="true" update="true"/>
+        <property name="ptUniversity" column="PTUniversity"  insert="true" update="true"/>
+        <property name="ptStart" column="PTStartDate"  insert="true" update="true"/>
+        <property name="ptEnd" column="PTEndDate"  insert="true" update="true"/>
+        
+        <property name="h1Filed" column="H1FiledDate"  insert="true" update="true"/>
+        <property name="h1LinReceive" column="H1LinRcvDate"  insert="true" update="true"/>
+        <property name="h1Lin" column="H1Lin"  insert="true" update="true"/>
+        <property name="h1LcaEtaNo" column="H1LcaEtaNo"  insert="true" update="true"/>
+        <property name="H1Title" column="H1Title"  insert="true" update="true"/>
+        <property name="H1Start" column="H1StartDate"  insert="true" update="true"/>
+        <property name="h1Termination" column="H1TerminationDate"  insert="true" update="true"/>
+        <property name="h1End" column="H1EndDate"  insert="true" update="true"/>
+        <property name="h1Status" column="H1Status"  insert="true" update="true"/>
+        <property name="queryReceived" column="QueryReceivedDate"  insert="true" update="true"/>
+        <property name="queryDue" column="QueryDueDate"  insert="true" update="true"/>
+        <property name="queryResponded" column="QueryResponded"  insert="true" update="true"/>
+        <property name="queryComments" column="QueryComments"  insert="true" update="true"/>
+        
+        <property name="b1Filed" column="B1FiledDate"  insert="true" update="true"/>
+        <property name="b1Interview" column="B1InterviewDate"  insert="true" update="true"/>
+        <property name="b1Start" column="B1StartDate"  insert="true" update="true"/>
+        <property name="b1End" column="B1EndDate"  insert="true" update="true"/>
+        <property name="b1Status" column="B1Status"  insert="true" update="true"/>
+        
+        <property name="l1Filed" column="L1FiledDate"  insert="true" update="true"/>
+        <property name="l1Interview" column="L1InterviewDate"  insert="true" update="true"/>
+        <property name="l1Start" column="L1StartDate"  insert="true" update="true"/>
+        <property name="l1End" column="L1EndDate"  insert="true" update="true"/>
+        <property name="l1Status" column="L1Status"  insert="true" update="true"/>
+        
+        
+        <property name="gcApplied" column="GCAppliedDate"  insert="true" update="true"/>
+        <property name="gcApproved" column="GCApprovedDate"  insert="true" update="true"/>
+        <property name="gcRef" column="GCRef"  insert="true" update="true"/>
+        <property name="gcTitle" column="GCTitle"  insert="true" update="true"/>
+        <property name="gcStatus" column="GCStatus"  insert="true" update="true"/>
+        
+        <property name="otherVisas" column="OtherVISAS"  insert="true" update="true"/>
+        <property name="comments" column="Comments"  insert="true" update="true"/>
+        
+        <property name="modifiedBy" column="ModifiedBy"  insert="false" update="true"/>
+        <property name="modifiedDate" column="ModifiedDate"  insert="false" update="true"/>
+        
+    </class>
+</hibernate-mapping>

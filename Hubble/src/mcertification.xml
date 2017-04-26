@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : cre.xml
+    Created on  : August 22, 2013, 1:49 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    <!--
+       Package Name : cre
+       Author       : Santosh Kola
+       Description  : Cre Actions.
+    -->
+    
+       
+
+    <package name="mcertification" namespace="/mcertification" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack"/>
+    
+            
+      <!--  <action name="crelogin">
+            <result>creLogin.jsp</result>
+        </action>
+         <action name="creLoginCheck" class="com.mss.mirage.cre.general.CreLoginAction" method="execute">
+             <interceptor-ref name="crudStack"/>
+             <result>CreInstructions.jsp</result>
+            <result name="login" >creLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>
+        <action name="crelogout" class="com.mss.mirage.cre.general.CreLoginAction" method="doLogout">
+             <interceptor-ref name="crudStack"/>
+              <result>creLogin.jsp</result>
+            
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>  
+        -->
+        
+        
+          <action name="getMcertRecords" class="com.mss.mirage.mcertification.McertificationAction" method="getMcertRecords">
+             <result>GetMcertRecords.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+         <action name="setMcertExam" class="com.mss.mirage.mcertification.McertificationAction" method="setMcertExam">
+            <result>SetMcertExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+         <action name="addMcertExamDetails" class="com.mss.mirage.mcertification.McertificationAction" method="addMcertExamDetails">
+            <result>AddMcertExamDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        
+        
+        <action name="doAddMcertSubTopics" class="com.mss.mirage.mcertification.McertificationAction" method="doAddMcertSubTopics">
+            
+            <result type="redirect">setMcertExam.action?resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="getMcertExamDetails" class="com.mss.mirage.mcertification.McertificationAction" method="getMcertExamDetails">
+            <result>AddMcertExamDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="doMcertUpdateSubTopics" class="com.mss.mirage.mcertification.McertificationAction" method="doMcertUpdateSubTopics">
+            
+             <result type="redirect">setMcertExam.action?resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="inActiveMcertExam" class="com.mss.mirage.mcertification.McertificationAction" method="inActiveMcertExam">
+            <result>SetMcertExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+         <action name="mcertConsultantList" class="com.mss.mirage.mcertification.McertificationAction" method="mcertConsultantList">
+            <result>McertConsultantList.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+          <action name="searchMcertConsultants" class="com.mss.mirage.mcertification.McertificationAction" method="searchMcertConsultants">
+             <result>McertConsultantList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+         <action name="mcertlogin">
+            <result>McertLogin.jsp</result>
+        </action>
+        
+        
+        
+<!--          <action name="mcertLoginCheck" class="com.mss.mirage.mcertification.McertificationAction">
+           
+             <result>McertInstructions.jsp</result>
+            <result name="login">McertLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>-->
+        
+         <action name="mcertLoginCheck" class="com.mss.mirage.mcertification.McertificationAction" method="getLoginCheckDetails">
+           
+             <result>McertInstructions.jsp</result>
+            <result name="login">McertLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>
+        
+       <action name="mcertlogout" class="com.mss.mirage.mcertification.McertificationAction" method="doMcertLogout">
+             
+              <result>McertLogin.jsp</result>
+            <!-- <result type="redirect">crelogin.action</result> -->
+            <result name="error" type="redirect">../../exception/creException.action</result>
+        </action>  
+        
+         <action name="mcertStartExam" class="com.mss.mirage.mcertification.McertificationAction" method="mcertStartExam">
+             <result>McertExam.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/creaccessFailed.action</result>
+            <result name="error" type="redirect">../exception/creException.action</result>
+        </action>
+        
+        <action name="submitMcertExam" class="com.mss.mirage.mcertification.McertificationAction" method="submitMcertExam">
+            <result>McertSubmitExam.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/creaccessFailed.action</result>
+            <result name="error" type="redirect">../exception/creException.action</result>
+        </action>
+        
+           <action name="getMcertExamResultsList" class="com.mss.mirage.mcertification.McertificationAction" method="getMcertExamResultsList">
+            <result>McertExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="searchMcertExamResultList" class="com.mss.mirage.mcertification.McertificationAction" method="doSearchMcertExamResultList">
+            <result>McertExamResults.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="reviewMcertExam" class="com.mss.mirage.mcertification.McertificationAction" method="reviewMcertExam">
+            <result>ReviewMcertExam.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+           <action name="reviewMcertConsultant" class="com.mss.mirage.mcertification.McertificationAction" method="getMcertConsultantReview">
+             <result>ReviewMcertConsultant.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+    </package> 
+    
+     
+</struts>

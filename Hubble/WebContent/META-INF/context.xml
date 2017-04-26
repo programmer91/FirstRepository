@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context path="/Hubble">
+
+  
+ <!-- <Resource 
+        auth="Container" 
+        description="c3pO DataSource" 
+        driverClass="com.mysql.jdbc.Driver" 
+        name="jndi/mirageteam" 
+        user="AppAdmin" 
+        password="pa55w0rd" 
+        factory="org.apache.naming.factory.BeanFactory" 
+        type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+        jdbcUrl="jdbc:mysql://192.168.5.6:3306/mirage?autoReconnect=true" 
+    />   -->
+    
+<!--
+   <Resource 
+  auth="Container" 
+  description="c3pO DataSource" 
+  driverClass="com.mysql.jdbc.Driver" 
+  factory="org.apache.naming.factory.BeanFactory" 
+  jdbcUrl="jdbc:mysql://172.17.11.73:3306/mirage?autoReconnect=true" 
+  name="jndi/mirageteam" 
+  password="lokam@2k16" 
+  type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+  user="AppAdmin"/> 
+
+  -->
+ 
+  <Resource 
+  auth="Container" 
+  description="c3pO DataSource" 
+  driverClass="com.mysql.jdbc.Driver" 
+  factory="org.apache.naming.factory.BeanFactory" 
+  jdbcUrl="jdbc:mysql://192.168.1.131:3306/mirage?autoReconnect=true" 
+  name="jndi/mirageteam" 
+  password="lokam001" 
+  type="com.mchange.v2.c3p0.ComboPooledDataSource" 
+  user="AppAdmin"/> 
+
+
+
+ 
+ 
+</Context>

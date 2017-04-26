@@ -1,0 +1,37 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : presales.xml
+    Created on  : Dcember 08, 2015, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       : Indira
+       Description  :
+    -->
+    <package name="presales" namespace="/presales" extends="default">
+        <!-- <default-interceptor-ref name="crudStack"/> -->
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+         <default-interceptor-ref name="crudStack" />
+        
+         <action name="myOpportunities" class="com.mss.mirage.presales.PreSalesAction" method="myOpportunities">
+            <result>PreSalesDashBoard.jsp</result>
+            
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+       
+
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+</struts>

@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+    
+    <package name="recruitment" namespace="/recruitment" extends="default">
+        
+       <!--  <default-interceptor-ref name="crudStack"/> -->
+        <action name="popUpConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="prepare">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+            <!--<result name="input">ConsultantAdd.jsp</result> 
+          <result type="redirect" name="login">../../general/login.action</result>-->
+            
+        </action>
+        <action name="addConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="doAdd">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ConsultantAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+             <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="getConsultantEdit" class="com.mss.mirage.recruitment.ConsultantAction" method="getConsultantEditDetails">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+           <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="saveEditDetails" class="com.mss.mirage.recruitment.ConsultantAction" method="doEdit">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ConsultantAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="consultantSearch" class="com.mss.mirage.recruitment.ConsultantAction" method="doSearch">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ConsultantAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+              <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        <action name="skillSearch" class="com.mss.mirage.recruitment.ConsultantAction" method="doSkillSearch">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ConsultantAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+              <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        <action name="deleteConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="doDelete">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ConsultantAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="consultantSkills" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="doAdd">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="viewConsultantDetails" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="viewConsultant">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetailsView.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="viewConsultantSkills" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="viewConsultantSkill">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetails.jsp</result>
+            <result type="redirect"  name="login">../../general/login.action</result>-->
+        </action>
+        <!-- new actions -->
+        
+          <action name="consultantResume" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="consultantResume">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantResume.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetails.jsp</result>
+            <result type="redirect"  name="login">../../general/login.action</result>-->
+        </action>
+          <action name="consultantResumeSubmit" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="consultantResume">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantSubmittals.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetails.jsp</result>
+            <result type="redirect"  name="login">../../general/login.action</result>-->
+        </action>
+        
+           <action name="techReview" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="consultantResume">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantsTechReviews.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetails.jsp</result>
+            <result type="redirect"  name="login">../../general/login.action</result>-->
+        </action>
+        
+           <!-- new actions -->
+        
+        <action name="getConsultantSkills" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="doGet">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="editConsultantSkills" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="doEdit">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="deleteConsultantSkills" class="com.mss.mirage.recruitment.consultantdetails.ConsultantDetailsAction" method="doDelete">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetailsView.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="resumeAttachment" class="com.mss.mirage.recruitment.attachments.ConsultantAttachmentAction" method="input">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <!--<result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;reqList=${reqList}</result> -->
+            <result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;requirement=-1&amp;consultId=-1&amp;requirementId=0&amp;requirementAdminFlag=</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result type="input">ConsultantDetailsView.jsp</result>
+          <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        
+        <action name="insertResumeSubmitt" class="com.mss.mirage.recruitment.attachments.ConsultantAttachmentAction" method="resumesubmitt">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <!--<result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;reqList=${reqList}</result> -->
+            <result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;requirement=-1&amp;consultId=-1&amp;requirementId=0&amp;requirementAdminFlag=</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            
+            <!-- <result name="input">ConsultantDetailsView.jsp</result>
+         <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="insertTechreview" class="com.mss.mirage.recruitment.attachments.ConsultantAttachmentAction" method="consultechreview">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <!-- <result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;reqList=${reqList}</result> -->
+            <result type="redirect">consultant/getConsultant.action?empId=${objectId}&amp;requirement=-1&amp;consultId=-1&amp;requirementId=0&amp;requirementAdminFlag=</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+          <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        
+        <action name="getAttachment" class="com.mss.mirage.recruitment.attachments.DownloadAction" >
+            <interceptor-ref name="crudStack"></interceptor-ref>
+           <!-- <result>ConsultantDetailsView.jsp</result> -->
+           <!--<result type="redirect" name="login">../../general/login.action</result> -->
+        </action>
+        
+        <!-- new for resume submission -->
+         <action name="getAttachmentForResume" class="com.mss.mirage.recruitment.attachments.DownloadActionForResume" >
+            <result>ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+        
+        <action name="deleteConsultantAttachment" class="com.mss.mirage.recruitment.attachments.ConsultantAttachmentAction" method="doDelete">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantDetailsView.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>  
+            
+            <!--<result name="input">ConsultantDetailsView.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        
+        <action name="getAttachmentForReview" class="com.mss.mirage.recruitment.attachments.DownloadAction" >
+            <interceptor-ref name="crudStack"></interceptor-ref>
+           <!-- <result>ConsultantDetailsView.jsp</result> -->
+           <!--<result type="redirect" name="login">../../general/login.action</result> -->
+        </action>
+        <action name="consultantsFromWebsite" class="com.mss.mirage.recruitment.ConsultantAction" method="prepare">
+             <result>ConsultantsFromWebsite.jsp</result>
+           <!-- <result>ConsultantDetailsView.jsp</result> -->
+           <!--<result type="redirect" name="login">../../general/login.action</result> -->
+        </action>
+    </package>
+    
+    <package name="recruitment-consultant" namespace="/recruitment/consultant" extends="default">
+         
+        <action name="consultantSearch" class="com.mss.mirage.recruitment.ConsultantAction" method="doConsultantSearch">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ConsultantSearch.jsp</result>
+        </action>
+        <action name="resumeSearch" class="com.mss.mirage.recruitment.ConsultantAction" method="doConsultantSearch">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ResumeSearch.jsp</result>
+        </action>
+        <action name="crmBackToList" class="com.mss.mirage.recruitment.ConsultantAction" method="getCrmBackToList">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ConsultantSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        <action name="getConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="execute">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>AddConsultant.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>  
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="addingConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="doAddConsultant">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>AddConsultant.jsp</result>
+            <result name="input">AddConsultant.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="editConsultant">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>AddConsultant.jsp</result>
+            <result name="input">AddConsultant.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getDetailsOfConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="execute">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>AddConsultant.jsp</result>
+        </action>
+        
+        <action name="getDownload" class="com.mss.mirage.recruitment.attachments.DownloadAction">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ConsultantSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+        <action name="activity" class="com.mss.mirage.recruitment.ConsultantAction" method="consultantActivity">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ConsultantActivity.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addActivity" class="com.mss.mirage.recruitment.ConsultantAction" method="consultantActivityAdd">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>ConsultantActivity.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editActivity" class="com.mss.mirage.recruitment.ConsultantAction" method="consultantActivityEdit">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>ConsultantActivity.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="searchConsultantResume" class="com.mss.mirage.recruitment.ConsultantAction" method="doResumeSearch">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>ResumeSearch.jsp</result>
+            <result name="input">ConsultantSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+        </action>
+        
+        <action name="nextConsultantResume" class="com.mss.mirage.recruitment.ConsultantAction" method="doNextGridResume">
+           <interceptor-ref name="crudStack"></interceptor-ref>
+           <result>ResumeSearch.jsp</result>
+        </action>
+        
+        <action name="searchConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="getConsultantList">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>ConsultantSearch.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--Ajay Tummapala for Reviews -->
+         <action name="reviews" class="com.mss.mirage.recruitment.ConsultantAction" method="doReviewConsultant">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>TechReviews.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+       <!--   <action name="doReferToReview" class="com.mss.mirage.recruitment.ConsultantAction" method="doReferToReview">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>TechReviews.jsp</result>-->
+        <!--   <result type="redirect">reviews.action?consultantId=${consultantId}&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action> -->
+        <action name="doReferToReview" class="com.mss.mirage.recruitment.ConsultantAction" method="doReferToReview">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+    <!--       <result>TechReviews.jsp</result>
+          <result type="redirect">reviews.action?consultantId=${consultantId}&amp;resultMessage=${resultMessage}</result>-->
+<result type="redirect">reviews.action?consultantId=${consultantId}&amp;resultMessage=${resultMessage}&amp;recConsultantId=${recConsultantId}&amp;requirementId=${requirementId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;assignedTo2={preSales1}&amp;assignedTo3={preSales2}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        
+        <action name="reviewTechnical" class="com.mss.mirage.recruitment.ConsultantAction" method="doReviewTechnical">
+             <interceptor-ref name="crudStack"></interceptor-ref>
+            <result name="success">ExternalTechReviews.jsp</result>
+            <result name="input">ExternalTechReviews.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action?id=${id}&amp;consultantId=${consultantId}&amp;status=${status}&amp;requirementId=${requirementId}&amp;recConsultantId=${recConsultantId}</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="technicalReviewSubmit" class="com.mss.mirage.recruitment.ConsultantAction" method="doAddTechincalReview">
+            
+<result name="success" type="redirect">consultantTechReviews.action?resultMessage=${resultMessage}&amp;status=${status}</result>
+            <result name="input">ExternalTechReviews.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- new action for rec dashboard -->
+        <!--
+            <action name="recDashBoard" class="com.mss.mirage.recruitment.ConsultantAction" method="getRecDashBoard">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>RecDashBoardDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        -->
+        <!-- new action for REcruitment Dashboard Start-->
+          <action name="recruitmentDashboard" class="com.mss.mirage.recruitment.ConsultantAction" method="getRecruitmentDashboard">
+            <result name="success">DashBoardRecruitmentDetails.jsp</result>
+            <result name="input">DashBoardRecruitmentDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- new action for REcruitment Dashboard End-->
+        
+        <!--New Action for account merge-->
+        
+        <action name="getConsultantMerge" class="com.mss.mirage.recruitment.ConsultantAction" method="getConsultantMerge">
+            <interceptor-ref name="crudStack"></interceptor-ref>
+            <result>ConsultantMerge.jsp</result>           
+        </action>
+        
+        <action name="consultantTechReviews" class="com.mss.mirage.recruitment.ConsultantAction" method="consultantTechReviews">
+            <result>PreSalesTechReviews.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="searchTechReviews" class="com.mss.mirage.recruitment.ConsultantAction" method="searchTechReviews">
+            <result>PreSalesTechReviews.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <!-- new Executive Dashboard for for Requirement-->
+          <action name="executiveDashboardForRequirement" class="com.mss.mirage.recruitment.ConsultantAction" method="getExecutiveDashboardForRequirement">
+            <result name="success">ExecutiveDashboardforRequirement.jsp</result>
+            <result name="input">ExecutiveDashboardforRequirement.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- new Executive Dashboard for for Requirement-->
+        
+        <!-- untouched consultant actions 01/06/2017 -->
+           <action name="untouchedConsultantsSearch" class="com.mss.mirage.recruitment.ConsultantAction" method="untouchedConsultantSearch">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>UntouchedConsultants.jsp</result>
+           <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+   <action name="searchUntouchedConsultant" class="com.mss.mirage.recruitment.ConsultantAction" method="getUnTouchedConsultantList">
+          <interceptor-ref name="crudStack"></interceptor-ref>
+          <result>UntouchedConsultants.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- untouched consultant actions 01/06/2017 -->
+    </package>
+    
+    <package name="recruitment-requirement" namespace="/crm/requirement" extends="default">        
+        <default-interceptor-ref name="crudStack" />
+        <action name="getRequirementList">
+            <result>RequirementAjaxList.jsp</result>
+            <!--<result>RequirementList.jsp</result> -->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+    </package>
+    
+</struts>

@@ -1,0 +1,191 @@
+var totalLeavesAppled="";
+function newXMLHttpRequest() {
+    var xmlreq = false;
+    if(window.XMLHttpRequest) {
+        xmlreq = new XMLHttpRequest();
+    } else if(window.ActiveXObject) {
+        try {
+            xmlreq = new ActiveXObject("MSxm12.XMLHTTP");
+        } catch(e1) {
+            try {
+                xmlreq = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch(e2) {
+                xmlreq = false;
+            }
+        }
+    }
+    return xmlreq;
+}
+
+
+function readyStateHandler(req,responseTextHandler) {
+    return function() {
+        if (req.readyState == 4) {
+            if (req.status == 200) {
+                (document.getElementById("loadingMessage")).style.display = "none";
+                responseTextHandler(req.responseText);
+            } else {
+                
+                alert("HTTP error ---"+req.status+" : "+req.statusText);
+            }
+        }else {
+            (document.getElementById("loadingMessage")).style.display = "block";
+        }
+    }
+}
+
+function load(e) {
+    totalLeavesAppled="";
+    var year = document.getElementById("year").value;
+    if(year.length==4) {
+        var tableId = document.getElementById("tblUpdate");
+        clearTable(tableId);
+        getTotalLeaves();
+    }
+}
+
+function clearTable(tableId) {
+    var tbl =  tableId;
+    var lastRow = tbl.rows.length; 
+    while (lastRow > 0) { 
+        tbl.deleteRow(lastRow - 1);  
+        lastRow = tbl.rows.length; 
+    } 
+}
+
+function getTotalLeaves() {
+    var month = document.getElementById("month").value;
+    var year = document.getElementById("year").value;
+    var req = newXMLHttpRequest();
+    req.onreadystatechange = readyStateHandler(req, displayLeavesResult);
+    var url = CONTENXT_PATH+"/getEmpLeavesOpp.action?month="+month+"&year="+year+"&dummy="+new Date().getTime();
+    req.open("GET",url,"true");
+    req.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+    req.send(null);
+}
+
+
+function generateTableHeader(tableBody,headerFields) {
+    var row;
+    var cell;
+    row = document.createElement( "TR" );
+    row.className="gridHeader";
+    tableBody.appendChild( row );
+    for (var i=0; i<headerFields.length; i++) {
+        cell = document.createElement( "TD" );
+        cell.className="gridHeader";
+        row.appendChild( cell );
+        cell.innerHTML = headerFields[i];
+        //cell.width = 120;
+    }
+}
+
+function generateRow(tableBody,rowFeildsSplit,index) {
+    var row;
+    var cell;
+    row = document.createElement("TR");
+    row.className="gridRowEven";
+    cell = document.createElement("TD");
+    cell.className="gridRowEven";
+    cell.innerHTML = index+1;
+    row.appendChild(cell);
+    tableBody.appendChild(row);
+    var totalLeaves;
+    for (var i=1; i<=rowFeildsSplit.length-1; i++) {
+        cell = document.createElement( "TD" );
+        cell.className="gridRowEven";
+        row.appendChild(cell);
+        if(i==3) {
+            totalLeaves = checkTotalLeaves(rowFeildsSplit[i],rowFeildsSplit[i+1]);
+            cell.innerHTML = rowFeildsSplit[i];
+            totalLeavesAppled = totalLeavesAppled+totalLeaves+",";
+        }else if(i==rowFeildsSplit.length-1) {
+            cell.innerHTML = totalLeaves;
+        }else if(i==1){
+            //cell.innerHTML = rowFeildsSplit[i];
+            var anc = document.createElement("a");
+            anc.href = CONTENXT_PATH+"/employee/getLeaves.action?id="+rowFeildsSplit[rowFeildsSplit.length-1];
+            anc.appendChild(document.createTextNode(rowFeildsSplit[i]));
+            cell.appendChild(anc);
+        }else {
+            cell.innerHTML = rowFeildsSplit[i];
+        }
+        cell.width = 120;
+    }
+}
+
+function checkTotalLeaves(startDateVal,endDateVal) {
+    //alert("start date--"+startDateVal+"--EndDate--"+endDateVal)
+    var fromDateSplit1 = startDateVal.split(" ");  // Date,mm,Year
+    var toDateSplit1 = endDateVal.split(" ");
+    var fromDateSplit =  fromDateSplit1[0].split("-");
+    var toDateSplit =  toDateSplit1[0].split("-");
+    var fromDate1 = new Date(fromDateSplit[0],parseInt(fromDateSplit[1])-1,fromDateSplit[2]);
+    var toDate1 = new Date(toDateSplit[0],parseInt(toDateSplit[1])-1,toDateSplit[2]);
+    var weekDiff = (toDate1.getWeek()-fromDate1.getWeek());
+    //alert("week diff--"+weekDiff);
+    if(weekDiff>=1) {
+        var datesDiff = getDatesDifference(fromDate1,toDate1);
+        var nfd = (datesDiff-(weekDiff*2)+1);
+        //document.leaveInfo.nDays.value=nfd;
+        //alert("total Leaves--"+nfd);
+        return nfd;
+    }else {
+        var datesDiff = getDatesDifference(fromDate1,toDate1);
+        var nfd = (datesDiff+1);
+        //alert("total Leaves--"+nfd);
+        //document.leaveInfo.nDays.value=nfd;
+        return nfd;
+    }
+}
+
+function getDatesDifference(fromDate,t0Date) {
+    var one_day=1000*60*60*24;
+    dateDifference = Math.ceil((t0Date.getTime()-fromDate.getTime())/(one_day));
+    // alert("dateDifference --"+dateDifference);
+    return dateDifference;
+}
+
+function displayLeavesResult(resText) {
+    if(resText.length !=0 && resText!="no data"){
+        var oTable = document.getElementById("tblUpdate");
+        var headerFields = new Array("S.No","Employee Name","Reports To","Start Date(YY-MM-DD)","End Date(YY-MM-DD)","Leaves")
+        tbody = document.createElement("TBODY");
+        oTable.appendChild(tbody);
+        generateTableHeader(tbody,headerFields);
+        var resTextSplit1 = resText.split("!");
+        for(var index=0;index<resTextSplit1.length-1;index++) {
+            resTextSplit2 = resTextSplit1[index].split("|");
+            generateRow(tbody,resTextSplit2,index);
+        }
+        generateFooter(tbody);
+    }else {
+        alert("No Records Found");
+    }
+}
+
+function generateFooter(tbody) {
+    var row;
+    var cell;
+    var totalVal =0;
+    row = document.createElement("TR");
+    row.className="gridPager";
+    tbody.appendChild(row);
+    cell = document.createElement("TD");
+    cell.className="gridFooter";
+    cell.colSpan = "6";
+    //cell.width = 100;
+    cell.align="right";
+    totalLeavesApp = totalLeavesAppled.split(",");
+    for(i=0;i<totalLeavesApp.length-1;i++) {
+        totalVal = totalVal+parseInt(totalLeavesApp[i]);
+    }
+    cell.innerHTML = "Total Leaves Applied : "+totalVal;
+    row.appendChild(cell);
+}
+
+Date.prototype.getWeek = function() {
+    var onejan = new Date(this.getFullYear(),0,1);
+    return Math.ceil((((this - onejan) / 86400000) + onejan.getDay()+1)/7);
+} 
+

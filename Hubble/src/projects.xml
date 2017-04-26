@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : projects.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       :Arjun Sanapathi
+       Description  :
+    -->
+     
+    <package name="projects" namespace="/projects" extends="default" >
+        <default-interceptor-ref name="crudStack" />
+        
+        
+        <!--START: Following actions written by : <Arjun Sanapathi>:<asanapathi@miraclesoft.com>-->
+        
+        <action name="project" class="com.mss.mirage.projects.ProjectAction">
+            <result>ProjectAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="projectTeamAdd" class="com.mss.mirage.projects.ProjectAction" method="assignTeam">
+            <result>ProjectAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="projectTeamUpdate" class="com.mss.mirage.projects.ProjectAction" method="updateTeam">
+            
+            <result type="redirectAction">
+                
+                <param name="actionName">getProject</param>
+                <param name="parse">true</param>
+                <param name="id">${id}</param>
+                <param name="resultMessage">${resultMessage}</param>
+                <param name="accountId">${accountId}</param>   
+                
+            </result>
+            
+            
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addProject" class="com.mss.mirage.projects.ProjectAction" method="doProjectAdd">
+            <result type="redirect">project.action?accountId=${accountId}&amp;resultMessage=${resultMessage}</result>
+            <result name="input">ProjectAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getProject" class="com.mss.mirage.projects.ProjectAction" method="getProject">
+            <result>ProjectDetails.jsp</result>
+            <result name="login">ProjectDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- Start - newly added for Employee Projects List -->
+        <action name="getEmpProject" class="com.mss.mirage.projects.ProjectAction" method="getProject">
+            <result>../employee/projects/EmpProjectDetails.jsp</result>
+            <result name="login">../employee/projects/EmpProjectDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- End - newly added for Employee Projects List -->
+        
+        <action name="editProject" class="com.mss.mirage.projects.ProjectAction" method="doProjectEdit">
+            <result>ProjectDetails.jsp</result>
+            <result name="input">ProjectDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="subProject" class="com.mss.mirage.projects.ProjectAction" method="prepareSubProjectAdd">
+            <result>SubProjectAdd.jsp</result>
+            <result name="input">SubProjectAdd.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addSubProject" class="com.mss.mirage.projects.ProjectAction" method="doSubProjectAdd">
+            <result>SubProjectAdd.jsp</result>
+            <result name="input">SubProjectAdd.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editSubProject" class="com.mss.mirage.projects.ProjectAction" method="doSubProjectEdit">
+            <result>SubProjectDetails.jsp</result>
+            <result name="input">SubProjectDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getSubProject" class="com.mss.mirage.projects.ProjectAction" method="getSubProject">
+            <result>SubProjectDetails.jsp</result>
+            <result name="input">SubProjectDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        <!-- Start - newly added for Employee SubProjects List -->
+        <action name="getEmpSubProject" class="com.mss.mirage.projects.ProjectAction" method="getSubProject">
+            <result>../employee/projects/EmpSubProjectDetails.jsp</result>
+            <result name="input">../employee/projects/EmpSubProjectDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        <!-- End - newly added for Employee SubProjects List -->
+        <action name="getAttachment" class="com.mss.mirage.projects.ProjectAction" method="prepare">
+            <result>AttachmentAddDetails.jsp</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addAttachment" class="com.mss.mirage.projects.ProjectAction" method="doAttachmentAdd">
+            <result>AttachmentAddDetails.jsp</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getMap" class="com.mss.mirage.projects.ProjectAction" method="getMap">
+            <result>MapIssueList.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- Start - newly added for Employee Maps List -->
+        <action name="getEmpMap" class="com.mss.mirage.projects.ProjectAction" method="getMap">
+            <result>../employee/projects/EmpMapIssueList.jsp</result>           
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- End - newly added for Employee Maps List -->
+        <action name="editMap" class="com.mss.mirage.projects.ProjectAction" method="prepareMapAdd">
+            <result>MapAdd.jsp</result>
+            <result name="input">MapAdd.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addMap" class="com.mss.mirage.projects.ProjectAction" method="doMapAdd">
+            <result>MapAdd.jsp</result>
+            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="updateMap" class="com.mss.mirage.projects.ProjectAction" method="doMapEdit">
+            <result>MapIssueList.jsp</result>
+            <result name="input">MapAdd.jsp</result>    
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="mapIssue" class="com.mss.mirage.projects.ProjectAction" method="prepareIssueAdd">
+            <result>IssueAdd.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getIssues" class="com.mss.mirage.projects.ProjectAction" method="getIssues">
+            <result>IssueDetails.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addIssue" class="com.mss.mirage.projects.ProjectAction" method="doIssueAdd">
+            <result>IssueAdd.jsp</result>
+            <result name="input">IssueAdd.jsp</result>  
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="updateIssue" class="com.mss.mirage.projects.ProjectAction" method="doIssueEdit">
+            <result>IssueDetails.jsp</result>
+            <result name="input">IssueDetails.jsp</result>   
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getDownload" class="com.mss.mirage.projects.DownloadAction">
+          <!--  <result>ProjectDetails.jsp</result> 
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>-->
+        </action>
+        <!-- new -->
+        <action name="getProjectHeirarchy" class="com.mss.mirage.projects.ProjectAction" method="getProjectHeirarchy">
+            <result>ProjectHierarchy.jsp</result>
+            <result name="input">SubProjectAdd.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="saveProjectHeirarchy" class="com.mss.mirage.projects.ProjectAction" method="saveProjectHeirarchy">
+            <result >ProjectHierarchy.jsp</result>
+            
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          <action name="editProjectReportsTo" class="com.mss.mirage.projects.ProjectAction" method="editProjectReportsTo">
+            <result >ProjectHierarchy.jsp</result>
+            
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+          <action name="updateProjectReportsTo" class="com.mss.mirage.projects.ProjectAction" method="updateProjectReportsTo">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result >ProjectHierarchy.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- Added by Ajay -->
+        <action name="addProjectTeam" class="com.mss.mirage.projects.ProjectAction" method="addProjectTeam">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result >ProjectTeamAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="doAddProjectTeam" class="com.mss.mirage.projects.ProjectAction" method="doAddProjectTeam">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <!--<result type="redirect" name="success">getProjectTeamDetails.action?id=${id}&amp;accountId=${accountId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}</result>-->
+ <result type="redirect" name="add">addProjectTeam.action?accountId=${accountId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}&amp;backFlag=${backFlag}</result>
+            
+            <result type="redirect" name="update">getProjectTeamDetails.action?id=${id}&amp;accountId=${accountId}&amp;empId=${preAssignEmpId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}&amp;backFlag=${backFlag}</result>                      
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getProjectTeamDetails" class="com.mss.mirage.projects.ProjectAction" method="getProjectTeamDetails">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result >ProjectTeamAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+         <action name="doUpdateProjectTeam" class="com.mss.mirage.projects.ProjectAction" method="doUpdateProjectTeam">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+          <!--  <result type="redirect" name="success">getProjectTeamDetails.action?id=${id}&amp;accountId=${accountId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}</result>-->
+ <result type="redirect" name="success">getProjectTeamDetails.action?id=${id}&amp;accountId=${accountId}&amp;projectId=${projectId}&amp;empId=${preAssignEmpId}&amp;resultMessage=${resultMessage}&amp;backFlag=${backFlag}</result>
+                       
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+        
+        <!-- new action for project dash board -->
+        
+         <action name="projectDashBoard" class="com.mss.mirage.projects.ProjectAction" method="getProjectDashBoard">
+            <result>ProjectDashBoard.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!-- new action for pmo team-->
+         <action name="doAddPMO" class="com.mss.mirage.projects.ProjectAction" method="doAddPMOTeam">
+           <result type="redirect" name="success">getProject.action?Id=${id}&amp;accountId=${accountId}&amp;resultMessage1=${resultMessage1}</result>
+           <result type="redirect" name="input">getProject.action?Id=${id}&amp;accountId=${accountId}&amp;resultMessage1=${resultMessage1}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="deletePMODetails" class="com.mss.mirage.projects.ProjectAction" method="deletePMOTeamMember">
+           <result type="redirect" name="success">getProject.action?Id=${id}&amp;accountId=${accountId}&amp;resultMessage1=${resultMessage1}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+
+<!--project risk-->
+<action name="getProjectRisks" class="com.mss.mirage.projects.ProjectAction" method="getProjectRisks">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result >ProjectRisks.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+ <action name="doAddProjectRisk" class="com.mss.mirage.projects.ProjectAction" method="doAddProjectRisk">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result type="redirect">getProjectRisks.action?accountId=${accountId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}&amp;backFlag=${backFlag}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="doEditProjectRisk" class="com.mss.mirage.projects.ProjectAction" method="doEditProjectRisk">
+           <!-- <result type="redirect">getProject.action?Id=${id}&amp;accountId=${accountId}</result> -->
+            <result type="redirect">getProjectRisks.action?id=${id}&amp;accountId=${accountId}&amp;projectId=${projectId}&amp;resultMessage=${resultMessage}&amp;backFlag=${backFlag}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <!--project risk end-->
+        <!--
+        <action name="map" class="com.mss.mirage.projects.ProjectAction" method="prepareMapAdd">
+            <result>MapAdd.jsp</result>
+            <result name="input">MapAdd.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="getMap" class="com.mss.mirage.projects.ProjectAction" method="getMapAttachmentScreen">
+            <result>MapIssuesList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        
+        <action name="getIssues" class="com.mss.mirage.projects.ProjectAction" method="getIssuesScreen">
+            <result>IssueDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="addIssue" class="com.mss.mirage.projects.ProjectAction" method="doAddIssue">
+            <result>IssueDetails.jsp</result>
+            
+            <result name="INPUT">IssuesList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="editIssue" class="com.mss.mirage.projects.ProjectAction" method="doEditIssue">
+            <result>IssueDetails.jsp</result>
+            <result name="INPUT">IssuesList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="getAttachments" class="com.mss.mirage.projects.ProjectAction" method="getAttachmentsScreen">
+            <result>AttachmentAddDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="getProjectAdd" class="com.mss.mirage.projects.ProjectAction" method="getProjectAddScreen">
+            <result>ProjectAdd.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        
+        
+       
+        
+        <action name="addMap" class="com.mss.mirage.projects.ProjectAction" method="doMapAdd">
+            <result name="SUCCESS">MapAddDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        
+        <action name="editMap" class="com.mss.mirage.projects.ProjectAction" method="doMapEdit">
+            <result name="SUCCESS" type="redirect-action">MapIssuesList.jsp
+                <param name="actionName">getMap</param>
+                <param name="parse">true</param>
+                <param name="mapid">${mapid}</param>
+                <param name="accountId">${accountId}</param>   
+                <param name="projectId">${projectId}</param>   
+            </result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        
+        <action name="doUpload" class="com.mss.mirage.projects.ProjectAction" method="attachFile">
+            <result>AttachmentAddDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>   
+        <action name="getAttachmentDownload" class="com.mss.mirage.mars.DownloadAction">
+            <result>AttachmentAddDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>   
+       
+        
+        
+        
+       
+        
+        <action name="updateSubProject" class="com.mss.mirage.projects.ProjectAction" method="doUpdateSubProject">
+            <result>SubProjectDetails.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        <action name="mapSearchSubmit" class="com.mss.mirage.projects.ProjectAction" method="doPrepare">
+            <result>ProjectMapList.jsp</result>
+             <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        -->
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    <package name="projects-issues" namespace="/projects/issues" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="getIssues" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="myIssues">
+            <result>ProjectIssuesList.jsp</result>          
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getProjIssueList" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="myIssues">
+            <result>ProjectIssuesList.jsp</result>
+            <result name="input">Login.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="issue" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="prepare">
+            <result>ProjectIssueDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="issue1" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="getProjectIssue">
+            <result>ProjectIssueDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addIssue" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="doAddIssue">
+            <result>ProjectIssuesList.jsp</result>          
+            <result name="input">ProjectIssueDetails.jsp</result>  
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editIssue" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="doEditIssue">
+            <result type="redirect">${navigateTo}.action</result>     
+            <result name="input">ProjectIssueDetails.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getIssue" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="getIssue">
+            <result>ProjectIssueDetails.jsp</result>       
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- Start - newly added for Employee Projects Issues List -->
+        <action name="getEmpIssue" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="getIssue">
+            <result>../../employee/projects/EmpProjectIssueDetails.jsp</result>       
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- Start - newly added for Employee Projects Issues List -->
+        <action name="doSearchEmpIssues" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="doSearchEmployeeIssues">
+            <result>ProjectIssuesList.jsp</result>     
+            <result name="input">ProjectIssuesList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="doSearchIssues" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="doSearchIssues">
+            <result>ProjectIssuesList.jsp</result>     
+            <result name="input">ProjectIssuesList.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="download" class="com.mss.mirage.projects.issues.DownloadAction">
+           <!-- <result>ProjectIssueDetails.jsp</result>     -->
+        </action>
+        
+        <action name="getMyTasks" class="com.mss.mirage.projects.issues.ProjIssuesAction" method="getMyTaskList">
+            <result>ProjectTasks.jsp</result>     
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+    </package>
+</struts>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : bms.xml
+    Created on  : December 04, 2015, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       : Patnaik Anand
+       Description  :
+    -->
+    <package name="bms" namespace="/bms" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="bmsEvent" class="com.mss.mirage.bms.BridgeManagementAction">
+            <result>BMSEvent.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="bridgeSearch" class="com.mss.mirage.bms.BridgeManagementAction" method="doBridgeSearch">
+            <result>BMSBridgeConnectivity.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+    </package>
+    
+</struts>

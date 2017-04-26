@@ -1,0 +1,963 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : crm.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <package name="crm" namespace="/crm" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    
+    <package name="crm-accounts" namespace="/crm/accounts" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack"/>
+        <action name="accountSearch">
+            <result>AccountSearch.jsp</result>
+            
+        </action>
+        
+        <action name="mergeAccount">
+            <result>MergeAccounts.jsp</result>
+            
+        </action>
+        
+        <!--LIST OF VENDORS -->
+        <action name="vendorsList" class="com.mss.mirage.crm.accounts.AccountAction" method="getAllAccounts">           
+            <result>AccountsListAll.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action> 
+        
+        <action name="account" class="com.mss.mirage.crm.accounts.AccountAction" method="prepare">
+            <result>AccountAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="accountsListMyTeam" class="com.mss.mirage.crm.accounts.AccountAction" method="getMyTeamAccounts">
+            <!--  <interceptor-ref name="execAndWait">
+                <param name="delay">2000</param>
+                <param name="delaySleepInterval">50</param>
+            </interceptor-ref>
+            <result name="wait">../../general/Wait.jsp</result>
+            -->
+            <result>AccountsList.jsp</result>
+            <result name="input">AccountsList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="untouchedAccounts" class="com.mss.mirage.crm.accounts.AccountAction" method="getMyUnTouchedAccounts">
+            <result>UnTouchedAccountsList.jsp</result>
+            <result name="input">UnTouchedAccountsList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="untouchedTeamAccounts" class="com.mss.mirage.crm.accounts.AccountAction" method="getMyUnTouchedTeamAccounts">
+            <result>UnTouchedAccountsList.jsp</result>
+            <result name="input">UnTouchedAccountsList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="accountsListAll" class="com.mss.mirage.crm.accounts.AccountAction" method="getAllAccounts">
+            <!--  <interceptor-ref name="execAndWait">
+                <param name="delay">2000</param>
+                <param name="delaySleepInterval">50</param>
+            </interceptor-ref>
+            <result name="wait">../../general/Wait.jsp</result>
+            -->
+            <result>AccountsListAll.jsp</result>
+            <result name="input">AccountsListAll.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+        <action name="accountsListMy" class="com.mss.mirage.crm.accounts.AccountAction" method="getMyAccounts">
+            <result>AccountsList.jsp</result>
+            <result name="input">AccountsList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="searchSubmitAll" class="com.mss.mirage.crm.accounts.AccountAction" method="doSearchAll">
+            <result>AccountsListAll.jsp</result>
+            <result name="input">AccountsListAll.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="searchSubmitOther" class="com.mss.mirage.crm.accounts.AccountAction" method="doSearchOther">
+            <result type="redirect">${accountSearchAction}.action?accountSearchBy=${accountSearchBy}</result>
+            <result name="input">${accountSearchAction}.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="UntouchedsearchSubmit" class="com.mss.mirage.crm.accounts.AccountAction" method="unTouchedSearch">
+            <result type="redirect">${unTouchedSearch}.action?accountSearchBy=${accountSearchBy}</result>
+            <result name="input">${unTouchedSearch}.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="crmBackToList" class="com.mss.mirage.crm.accounts.AccountAction" method="getCrmBackToList">
+            <result>${accountsListJspName}.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+        </action>
+        
+        <action name="getAccount" class="com.mss.mirage.crm.accounts.AccountAction" method="getAccount">
+            <!--
+            <param name="addressLine1">Temp Address Line1</param>
+            <param name="addressLine2">Temp Address Line2</param>
+            <param name="mailStop">Temp Mail Stop</param>
+            <param name="city">Temp City</param>
+            <param name="state">Temp State</param>
+            <param name="country">Temp Country</param>
+            <param name="zip">Temp Zip</param>
+            -->
+            <result>AccountDetails.jsp</result>
+            <result name="input">AccountDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addAccount" class="com.mss.mirage.crm.accounts.AccountAction" method="doAdd">
+            <result>AccountAdd.jsp</result>
+            <result name="input">AccountAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="accountTeamSubmit" class="com.mss.mirage.crm.accounts.AccountAction" method="doUpdateAccountTeam">
+            <result type="redirect">getAccount.action?id=${id}&amp;activitySummaryFlag=${activitySummaryFlag}&amp;dashBoardEndDate=${dashBoardEndDate}&amp;dashBoardStartDate=${dashBoardStartDate}&amp;contactStatus=${contactStatus}&amp;activityType=${activityType}&amp;empId=${empId}</result>
+            <result name="input" type="redirect">getAccount.action?id=${id}</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editAccount" class="com.mss.mirage.crm.accounts.AccountAction" method="doEdit">
+            <!--
+            <param name="addressLine1"></param>
+            <param name="addressLine2"></param>
+            <param name="mailStop"></param>
+            <param name="city"></param>
+            <param name="state"></param>
+            <param name="country"></param>
+            <param name="zip"></param>
+            -->
+            <result type="redirect">getAccount.action?id=${id}&amp;resultMessage=${resultMessage}&amp;pri=All</result>
+            <result type="redirect" name="input">getAccount.action?id=${id}&amp;resultMessage=${resultMessage}&amp;pri=All</result>
+           <!-- <result>AccountDetails.jsp</result>
+            <result name="input">AccountDetails.jsp</result> -->
+            <result name="dbGrid" type="redirect">getAccount.action?id=${id}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <!--BEGIN: Software Action -->
+        <action name="addSoftware" class="com.mss.mirage.crm.accounts.SoftwareAction" method="doAdd">
+            <result type="redirect">getAccount.action?id=${id}</result>
+            <result name="input" type="redirect">getAccount.action?id=${id}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editSoftware" class="com.mss.mirage.crm.accounts.SoftwareAction" method="doEdit">
+            <result type="redirect">getAccount.action?id=${id}&amp;activitySummaryFlag=${activitySummaryFlag}&amp;dashBoardEndDate=${dashBoardEndDate}&amp;dashBoardStartDate=${dashBoardStartDate}&amp;contactStatus=${contactStatus}&amp;activityType=${activityType}&amp;empId=${empId}</result>
+            <result name="input" type="redirect">getAccount.action?id=${id}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- End: Software Action -->
+        
+        
+        <action name="reAssign" class="com.mss.mirage.crm.accounts.AccountAction" method="getReAssign">
+            <result>ReAssignAccounts.jsp</result>    
+            <result name="input" type="redirect">getAccount.action?id=${id}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action> 
+        
+        <action name="reAssignAccountsSubmit" class="com.mss.mirage.crm.accounts.AccountAction" method="editReAssignAccounts">
+            <result>ReAssignAccounts.jsp</result> 
+            <result name="input" type="redirect">getAccount.action?id=${id}</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--Dash Board-->
+        <action name="dashBoard" class="com.mss.mirage.crm.accounts.AccountAction" method="getDashBoard">
+            <result>DashBoardDetails.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--Account Assignment-->
+        <action name="accountAssign">
+            <result>TeamAssignAccounts.jsp</result>
+        </action>
+        <!-- New on 09202012 for BDM Account Assignment-->
+        <action name="assignTertioryAccounts">
+            <result>AssignTeritoryAccounts.jsp</result>
+        </action>
+        <action name="getContactLogin" class="com.mss.mirage.crm.accounts.AccountAction" method="getLogin">
+            <result>CreateContactLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="createContactLogin" class="com.mss.mirage.crm.accounts.AccountAction" method="createContactLogin">
+            <result>CreateContactLogin.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--New on 10162012 for assign accounts to BDM -->
+        <action name="getAccounts" class="com.mss.mirage.crm.accounts.AccountAction" method="getAccountsForBDM">
+            <result>AccountsForBDM.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+         <action name="bdmDashBoard" class="com.mss.mirage.crm.accounts.AccountAction" method="getBDMDashBoard">
+            <result>BDMDashBoard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+       <!-- <action name="activitiesNotification" class="com.mss.mirage.crm.accounts.AccountAction" method="activitiesNotification">
+                 <result>AccountsList.jsp</result> 
+        </action>-->
+        <action name="excelUpload" class="com.mss.mirage.crm.accounts.AccountAction" method="excelUpload">
+            <result>ExcelUpload.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+        <action name="getSampleAccountExcel" class="com.mss.mirage.crm.accounts.AccountAction" method="getSampleAccountExcel"/>
+        
+        
+        
+<!-- Client Engagement Requtest Start -->
+        
+        <action name="clientReqEngagementSearch" class="com.mss.mirage.crm.accounts.AccountAction" method="clientReqEngagementSearch">
+            <result>ClientEngagementRequestSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="clientReqEngagementAdd" class="com.mss.mirage.crm.accounts.AccountAction" method="clientReqEngagementAdd">
+            <result>ClientRequestForm.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <action name="doClientReqEngagementAdd" class="com.mss.mirage.crm.accounts.AccountAction" method="doClientReqEngagementAdd">
+            <result type="redirect">getClientEngagementDetails.action?requestId=${requestId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="getClientEngagementDetails" class="com.mss.mirage.crm.accounts.AccountAction" method="getClientEngagementDetails">
+            <result>ClientRequestForm.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="doClientReqEngagementUpdate" class="com.mss.mirage.crm.accounts.AccountAction" method="doClientReqEngagementUpdate">
+            <result type="redirect">getClientEngagementDetails.action?requestId=${requestId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="esuccess">getClientEngagementApprovalDetails.action?requestId=${requestId}&amp;resultMessage=${resultMessage}</result>
+            
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+           <action name="clientReqEngagementApprovalsSearch" class="com.mss.mirage.crm.accounts.AccountAction" method="clientReqEngagementApprovalsSearch">
+            <result>ClientEngagementRequestApprovalSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        
+          <action name="getClientEngagementApprovalDetails" class="com.mss.mirage.crm.accounts.AccountAction" method="getClientEngagementApprovalDetails">
+            <result>ClientRequestApprovalForm.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="clientReqEngagementPreSalesSearch" class="com.mss.mirage.crm.accounts.AccountAction" method="clientReqEngagementPreSalesSearch">
+           <!-- <result>ClientEngagementRequestPreSalesSearch.jsp</result> -->
+            <result>ClientEngagementRequestPresalesAjaxSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- Client Engagement Requtest End -->
+		
+    </package>
+    
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-contacts" namespace="/crm/contacts" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <action name="contact" class="com.mss.mirage.crm.contacts.ContactAction" method="prepareAddress">
+            <result>ContactAdd.jsp</result>
+            <result name="input" >ContactAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getContact" class="com.mss.mirage.crm.contacts.ContactAction" method="getContact">
+            <!--
+            <param name="addressLine1">Temp Address Line1</param>
+            <param name="addressLine2">Temp Address Line2</param>
+            <param name="mailStop">Temp Mail Stop</param>
+            <param name="city">Temp City</param>
+            <param name="state">Temp State</param>
+            <param name="country">Temp Country</param>
+            <param name="zip">Temp Zip</param>
+            -->
+            <result>ContactDetails.jsp</result>
+            <result name="input">ContactAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+       <action name="addContact" class="com.mss.mirage.crm.contacts.ContactAction" method="doAdd">
+            <result type="redirect">getContact.action?Id=${id}&amp;designationName=&amp;resultMessage=${resultMessage}</result>
+             <!--   <result name="input">ContactAdd.jsp</result> -->
+             <result name="input" type="redirect">contact.action?accountId=${accountId}&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- New Action for Contacts -->
+        <action name="UpdateContact" class="com.mss.mirage.crm.contacts.ContactAction" method="doUpdate">
+            <result>ContactAdd.jsp</result>
+            <result name="input">ContactAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <!-- End Action-->
+         
+       <action name="editContact" class="com.mss.mirage.crm.contacts.ContactAction" method="doEdit">
+            <!--
+            <param name="addressLine1"></param>
+            <param name="addressLine2"></param>
+            <param name="mailStop"></param>
+            <param name="city"></param>
+            <param name="state"></param>
+            <param name="country"></param>
+            <param name="zip"></param>
+            -->
+             <result type="redirect">getContact.action?Id=${id}&amp;designationName=&amp;resultMessage=${resultMessage}</result>
+             <result type="redirect" name="input">getContact.action?Id=${id}&amp;designationName=&amp;resultMessage=${resultMessage}</result>
+           <!-- <result>ContactDetails.jsp</result>
+            <result name="input">ContactDetails.jsp</result> -->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="contactSearchSubmit" class="com.mss.mirage.crm.contacts.ContactAction" method="searchContact">
+            <result type="redirect"> ../accounts/getAccount.action?id=${accountId}</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getEmail" class="com.mss.mirage.crm.contacts.ContactAction" method="emailService">
+            <result>ContactEmailService.jsp</result>  
+        </action>
+        	
+ <action name="contactSearch" class="com.mss.mirage.crm.contacts.ContactAction" method="getContactSearch">
+            <result>ContactSearch.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    <!--
+       Package Name : activities
+       Author       : Rajasekhar
+       Description  : 
+    -->
+    <package name="crm-activities" namespace="/crm/activities" extends="default">
+        <!--START: Following actions written by : Rajasekhar : ryenduva@miraclesoft.com -->
+        <default-interceptor-ref name="crudStack" />
+        <!-- Team Activities -->
+        <!-- This is for modularity we seperating but actual Functioning is done in AccountAction -->
+        <action name="teamActivitiesInfo" class="com.mss.mirage.crm.accounts.AccountAction" method="getTeamActivitiesInfo">
+            <result>ActivitiesInfo.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="myActivitiesInfo" class="com.mss.mirage.crm.activities.ActivityAction" method="getMyActivitiesInfo">
+            <result>ActivitiesInfo.jsp</result>  
+            <result type="redirect" name="login">../../general/login.action</result>    
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="activity" class="com.mss.mirage.crm.activities.ActivityAction" method="prepare">
+            <result>ActivityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>    
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getActivity" class="com.mss.mirage.crm.activities.ActivityAction" method="getActivity">
+            <result>ActivityDetails.jsp</result>
+            <result name="input">ActivityDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addActivity" class="com.mss.mirage.crm.activities.ActivityAction" method="doAdd">
+             <result type="redirect">getActivity.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="input">ActivityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editActivity" class="com.mss.mirage.crm.activities.ActivityAction" method="doEdit">
+            <!-- <result>ActivityDetails.jsp</result> -->
+            <result type="redirect">getActivity.action?id=${id}&amp;resultMessage=${resultMessage}</result>
+            <result name="input">ActivityDetails.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <!-- New Action for avoiding duplicate activities-->
+          
+        <action name="updateActivity" class="com.mss.mirage.crm.activities.ActivityAction" method="doUpdate">
+            <result>ActivityAdd.jsp</result>
+            <result name="input">ActivityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="calendar" class="com.mss.mirage.crm.activities.ActivityAction" method="prepare">
+            <result>Calendar.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="activitySearch" class="com.mss.mirage.crm.activities.ActivityAction" method="doSearch">
+            <result>Calendar.jsp</result>
+            <result name="input">Calendar.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!-- Start new action for activityManager dash board -->        
+        <action name="activityManager" class="com.mss.mirage.crm.activities.ActivityAction" method="getactivityManagerDetails">
+            <result>activitiesManagerDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="accountsContacts" class="com.mss.mirage.crm.accounts.AccountAction" method="getAccountsContacts">
+            <result>AccountContacts.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="accountContactsSearch" class="com.mss.mirage.crm.accounts.AccountAction" method="getAccountContactsSearch">
+            <result>AccountContacts.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+<!-- End Start new action for activityManager dash board-->
+        <!--END: Above actions written by :  Rajasekhar : ryenduva@miraclesoft.com -->
+    </package>
+    
+    <!--Start: Calendar weekly events  -->
+    
+    <package name="calendarEvents" namespace="/crm/calendar" extends="default" >
+        <default-interceptor-ref name="crudStack" />
+        <action name="getCalendar">
+            <result>DailyEventsCal.jsp</result>
+        </action>
+        
+        <action name="accessCalendar" class="com.mss.mirage.crm.calendar.CalendarHandlerAction" method="accessTeamCalendar">
+            <result>DailyEventsCal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="accessTeamCalendar" class="com.mss.mirage.crm.calendar.CalendarHandlerAction" method="accessTeamCalendar1">
+            <result>DailyEventsCal.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+    </package>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-attachments" namespace="/crm/attachments" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        <action name="attachment" class="com.mss.mirage.crm.attachments.AttachmentAction">
+            <result>Attachment.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="deleteAttachment" class="com.mss.mirage.crm.attachments.AttachmentAction" method="doDelete">
+            <result>Attachment.jsp</result>
+            <result name="input">Attachment.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addAttachment" class="com.mss.mirage.crm.attachments.AttachmentAction" method="doUpload">
+            <!--<result>Attachment.jsp</result>
+            <result name="input">Attachment.jsp</result>
+            <result type="redirect">attachment.action?objectId=${objectId}&amp;objectType=${objectType}</result>
+            <result name="input" type="redirect">attachment.action?objectId=${objectId}</result>
+            -->
+            <result>Attachment.jsp</result>
+            <result name="input">Attachment.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getAttachment" class="com.mss.mirage.crm.attachments.DownloadAction">
+           <!-- <result>Attachment.jsp</result>
+            <result name="input">Attachment.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>-->
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-greensheets" namespace="/crm/greensheets" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        
+        <action name="greenSheet" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="prepareSearch">
+            <result>GreenSheetList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="searchSubmit" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="getQuery">
+            <result>GreenSheetList.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        
+        <action name="viewGreenSheet"  class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="prepare">
+            <result name="success">GreenSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="newGreenSheetSubmit" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="doAdd">            
+            <result type="redirect">greenSheet.action?resultMessage=${resultMessageList}&amp;teamValue=${teamGreensheets}</result>
+            <result name="input">GreenSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getGreenSheetByID" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="getGreenSheet">
+            <result name="success">GreenSheetAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>   
+        <action name="editGeensheet" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="doEdit">
+            <result name="success" type="redirect">greenSheet.action?resultMessage=${resultMessageList}&amp;teamValue=${teamGreensheets}</result>
+            <result name="Accountedit" type="redirect">../accounts/getAccount.action?id=${accId}&amp;resultMessage=${resultMessageList}</result>
+            <result name="input">GreenSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action> 
+        
+        <action name="greensheetReport" class="com.mss.mirage.crm.greensheets.GreenSheetAction">
+            <result name="success">GreenSheetReport.jsp</result>
+            <result name="input">GreenSheetAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>            
+        </action>
+        
+        <!--
+        <action name="viewAccount" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="doAccountView">
+            <result name="success">NewAccount.jsp</result>
+        </action> 
+        <action name="addAccount" class="com.mss.mirage.crm.greensheets.GreenSheetAction" method="doAddAccount">
+            <result name="success">GreenSheetAdd.jsp</result>
+        </action> 
+        -->
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-invoices" namespace="/crm/invoices" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-notes" namespace="/crm/notes" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <action name="note" class="com.mss.mirage.crm.notes.NotesAction" method="prepare">
+            <result>NotesAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>            
+        </action>
+        
+        <action name="getNote" class="com.mss.mirage.crm.notes.NotesAction" method="getNotes">
+            <result>NotesAdd.jsp</result>
+            <result name="input">NotesAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addNote" class="com.mss.mirage.crm.notes.NotesAction" method="doAdd">
+            <result>NotesAdd.jsp</result>
+            <result name="input">NotesAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editNote" class="com.mss.mirage.crm.notes.NotesAction" method="doEdit">
+            <result>NotesAdd.jsp</result>
+            <result name="input">NotesAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="crm-opportunities" namespace="/crm/opportunities" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        <action name="opportunity" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="prepare">
+            <result>OpportunityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getOpportunity" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="getOpportunity">
+              <result>OpportunityAdd.jsp</result>
+            <result name="input">OpportunityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addOpportunity" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="doAdd">
+           
+            <result type="redirect">getOpportunity.action?id=${id}&amp;accountId=${accountId}&amp;addingOppurtunties=editOppur&amp;resultMessage=${resultMessage}&amp;pri=All</result>
+            <result name="input">OpportunityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editOpportunity" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="doEdit">
+             <result type="redirect">getOpportunity.action?id=${id}&amp;accountId=${accountId}&amp;addingOppurtunties=editOppur&amp;resultMessage=${resultMessage}&amp;pri=All&amp;leadId=${leadId}</result>
+            <!-- <result>OpportunityAdd.jsp</result> -->
+            <result name="input">OpportunityAdd.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="myOpportunities" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="myOpportunities">
+            <result>MyOpportunitiesDashBoard.jsp</result>
+            <result name="input">MyOpportunitiesDashBoard.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="myCustOpportunities" class="com.mss.mirage.crm.opportunities.OpportunityAction" method="custOpportunities">
+          
+            <result>customersDashboard.jsp</result>
+            <result name="input">customersDashboard.jsp</result>
+            <result type="redirect" name="login">../customer/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="error" >../exception/exception.action</result>
+        </action>
+
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+    </package>
+    
+    <package name="crm-requirement" namespace="/crm/requirement" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        
+        
+        <action name="requirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="execute">
+            <result>RequirementAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="requirementList" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirementListAll">
+            <result>RequirementAjaxList.jsp</result>
+           <!-- <result>RequirementList.jsp</result> -->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="requirementListForPresalesMy" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirementListForPresalesMy">
+            <result>RequirementAjaxListForPresales.jsp</result>
+           <!-- <result>RequirementList.jsp</result> -->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getRequirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirement">
+            <result>RequirementAdd.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="requirementAdd" class="com.mss.mirage.crm.requirement.RequirementAction" method="requirementAdd">
+            <result>RequirementAdd.jsp</result>
+            <!--<result type="redirectAction">
+                <param name="actionName">getRequirement</param>
+                <param name="resultMessage">${resultMessage}</param>
+            </result>-->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="requirementEdit" class="com.mss.mirage.crm.requirement.RequirementAction" method="requirementEdit">
+            <!--<result>RequirementList.jsp</result>-->
+            <result type="redirect">getRequirement.action?objectId=${objectId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;accId=${accId}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="requirementSearch" class="com.mss.mirage.crm.requirement.RequirementAction" method="requirementSearch">
+            <!--<result>RequirementList.jsp</result> -->
+            <result>RequirementAjaxList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="consultantForRequirementList" class="com.mss.mirage.crm.requirement.RequirementAction" method="consultantForRequirementList">
+            <result>ConsultantForRequirementList.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="consultantForRequirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="consultantForRequirement">
+            <result>AddConsultantForRequirement.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="addConsultantRequirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="addConsultantRequirement">
+<!--            <result  type="redirect">consultantForRequirementList.action?objectId=${objectId}</result>-->
+           <!--  <result type="redirect">consultantForRequirementList.action?objectId=${objectId}&amp;requirementAdminFlag=${RequirementAdminFlag}</result>-->
+            <result type="redirect">consultantForRequirement.action?objectId=${objectId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;resultMessage=${resultMessage}&amp;accId=${accId}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getConsultantRequirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="getConsultantRequirement">
+            <result>AddConsultantForRequirement.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action?objectId=${objectId}&amp;consultId=${consultId}&amp;requirementAdminFlag=${requirementAdminFlag}</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="editConsultantRequirement" class="com.mss.mirage.crm.requirement.RequirementAction" method="editConsultantRequirement">
+<!--            <result type="redirect">consultantForRequirementList.action?objectId=${objectId}</result>-->
+            <result type="redirect">getConsultantRequirement.action?objectId=${objectId}&amp;consultId=${consultId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;resultMessage=${resultMessage}&amp;accId=${accId}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+
+        <action name="getDownloadAuthCopy" class="com.mss.mirage.crm.requirement.RequirementAction" method="getDownloadAuthCopy">
+        </action>
+         <action name="getDownloadDLCopy" class="com.mss.mirage.crm.requirement.RequirementAction" method="getDownloadDLCopy">
+          </action>
+
+        <action name="getDownload" class="com.mss.mirage.recruitment.attachments.DownloadAction">
+          <!--  <result>AddConsultantForRequirement.jsp</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result name="exception" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>-->
+        </action>
+        
+         <!-- new action for resume submission on 07162013 -->
+        <action name="resumeSubmissionPopup" class="com.mss.mirage.crm.requirement.RequirementAction" method="resumeSubmissionPopup">
+            <result>CustomerResumeSubmissionWindow.jsp</result> 
+        </action>
+            
+        <action name="requirementAdminList" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirementAdminList">
+            <result>RequirementAjaxList.jsp</result>
+           <!-- <result>RequirementList.jsp</result> -->
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+         <action name="getRequirementDetails" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirementDetails">
+            <result type="redirect">getRequirement.action?objectId=${objectId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;recruitmentRoleType=${recruitmentRoleType}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action?objectId=${objectId}&amp;requirementAdminFlag=${requirementAdminFlag}&amp;recruitmentRoleType=${recruitmentRoleType}</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        
+        
+  <action name="getRequirementAttachment" class="com.mss.mirage.crm.requirement.RequirementAction" method="getRequirementAttachment">
+            <result>RequirementAttachmentAdd.jsp</result>
+            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+          <action name="requrementAttachmentAdd" class="com.mss.mirage.crm.requirement.RequirementAction" method="doRequirementAttachmentAdd">
+            <result>RequirementAttachmentAdd.jsp</result>
+             <result  name="Req" type="redirect">getRequirementAttachment.action?objectId=${objectId}&amp;accId=${accId}&amp;resultMessage=${resultMessage}</result>
+              <result  name="Opp" type="redirect">getRequirementAttachment.action?objectId=${objectId}&amp;accId=${accId}&amp;oppFlag=opp&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+         <action name="getAttachmentDownload" class="com.mss.mirage.crm.requirement.DownloadAction">
+          <!--  <result>ProjectDetails.jsp</result> 
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>-->
+        </action>
+		
+    </package>
+    
+    <!--new action for login popup -->
+    <package name="crm-activities1" namespace="/crm/Listactivities" extends="default">
+      
+        <default-interceptor-ref name="crudStack" />
+        <!-- Team Activities -->
+        <!-- This is for modularity we seperating but actual Functioning is done in AccountAction -->
+        <action name="loginactivity" class="com.mss.mirage.crm.accounts.AccountAction" method="loginactivity">
+            <result>NotesPopUp.jsp</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+    
+    </package>
+    
+    
+    
+</struts>

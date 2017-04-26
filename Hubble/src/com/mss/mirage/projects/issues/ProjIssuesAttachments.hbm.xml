@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!--
+    Document   : Login.hbm.xml
+    Created on : September 24, 2007, 11:31 PM
+    Author     : miracle
+    Description:
+        Purpose of the document follows.
+-->
+
+<hibernate-mapping>
+    <class name="com.mss.mirage.crm.attachments.AttachmentAction" table="tblPrjAttachments" entity-name="ProjectIssuesData">
+        <id name="id" column="Id" type="java.lang.Integer">
+            <generator class="increment"/>
+        </id>
+        <property name="objectId" column="ObjectId"/>
+        <property name="objectType" column="ObjectType"/>
+        <property name="attachmentName" column="AttachmentType"/>
+        <property name="attachmentLocation" column="Path"/>        
+        <property name="dateUploaded" column="DateOfUpload"/>
+    </class>
+</hibernate-mapping>

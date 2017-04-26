@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    
+    <class name="com.mss.mirage.employee.general.EmployeeVTO" table="tblEmployee">
+        
+        <id name="id" column="id">
+            <generator class="increment"/>
+        </id>
+        
+        <property name="firstName" column="FName"/>
+        <property name="lastName" column="LName"/>
+        <property name="middleName" column="MName"/>
+        <property name="aliasName" column="AliasName"/>
+        <property name="gender" column="Gender"/>
+        <property name="maritalStatus" column="MaritalStatus"/>
+        <property name="country" column="Country"/>
+        <property name="ssn" column="SSN"/>
+        <property name="empno" column="EmpNo"/>
+        <property name="nsrno" column="NSR"/>
+        <property name="currStatus" column="CurStatus"/>
+        <property name="empTypeId" column="EmployeeTypeId"/>
+        <property name="orgId" column="OrgId"/>
+        <property name="opsContactId" column="OpsContactId"/>
+        <property name="teamId" column="TeamID"/>
+        <property name="practiceId" column="PracticeId"/>
+        <property name="subPractice" column="SubPractice"/>
+        <property name="titleId" column="TitleTypeId"/>
+        <property name="industryId" column="IndustryId"/>
+        <property name="departmentId" column="DepartmentId"/>
+        <property name="birthDate" column="BirthDate"/>
+        <property name="offBirthDate" column="OffBirthDate"/>
+        <property name="hireDate" column="HireDate"/>
+        <property name="anniversaryDate" column="AnniversaryDate"/>
+        <property name="workPhoneNo" column="WorkPhoneNo"/>
+        <property name="altPhoneNo" column="AlterPhoneNo"/>
+        <property name="homePhoneNo" column="HomePhoneNo"/>
+        <property name="cellPhoneNo" column="CellPhoneNo"/>
+        <property name="officeEmail" column="Email1"/>
+        <property name="hotelPhoneNo" column="HotelPhoneNo"/>
+        <property name="personalEmail" column="Email2"/>
+        <property name="indiaPhoneNo" column="IndiaPhoneNo"/>
+        <property name="otherEmail" column="Email3"/>
+        <property name="faxNo" column="FaxPhoneNo"/>
+        <property name="lastContactBy" column="LastContactBy"/>
+        <property name="modifiedBy" column="ModifiedBy"/>
+        <property name="modifiedDate" column="ModifiedDate"/>
+        <property name="isManager" column="IsManager"/>
+        <property name="isTeamLead" column="IsTeamLead"/>
+        <property name="reportsTo" column="ReportsTo"/>
+        <property name="createdBy" column="CreatedBy"/>
+        <property name="createdDate" column="CreatedDate"/>
+        <property name="empState" column="State"/>
+        <property name="stateStartDate" column="StateStartDate"/>
+        <property name="stateEndDate" column="StateEndDate"/>
+       <!-- <property name="intRatePerHour" column="IntRatePerHour"/>
+        <property name="invRatePerHour" column="InvRatePerHour"/> -->
+        <property name="skillSet" column="SkillSet"/>
+        <!--<property name="deletedFlag" column="DeletedFlag"/>
+        <property name="lastContactDate" column="LastContactDate"/>-->
+        <property name="prjName" column="PrjName"/>
+       <!-- <property name="ctcPerYear" column="CTC"/> -->
+        <property name="itgBatch" column="Itgbatch"/>
+        <property name="isOnsite" column="WorkingOnsite"/>
+        <property name="workingCountry" column="workingCountry"/>
+        <!-- New column for CRE -->
+        <property name="isCreTeam" column="IsCreTeam"/>
+        <property name="location" column="Location"/>
+        <property name="isOperationTeam" column="IsOperationContactTeam"/>
+       <!--  <property name="isPMO" column="IsPMO"/> -->
+         
+          <property name="bankName" column="BankName"/>
+         <property name="accNum" column="AccNum"/>
+         <property name="nameAsPerAcc" column="NameAsPerAcc"/>
+         <property name="ifscCode" column="IfscCode"/>
+         <property name="phyChallenged" column="PhyChallenged"/>
+         <property name="phyCategory" column="PhyCategory"/>
+         <property name="aadharNum" column="AadharNum"/>
+         <property name="aadharName" column="AadharName"/>
+         <property name="nameAsPerPan" column="NameAsPerPan"/>
+           <property name="uanNo" column="UANNo"/>
+         <property name="pfno" column="PFNo"/>  
+          <!-- New column for ReportsTo -->
+         <property name="reportsToFlag" column="reportsToFlag"/>
+         <property name="lastRevisedDate" column="RevisedDate"/>
+         <property name="revisedDate" column="NextRevisedDate"/>
+         <property name="isInternationalWorker" column="IsInternationalWorker"/>
+<property name="dateOfTermination" column="TerminationDate"/>
+          <property name="reasonsForTerminate" column="Termination"/>	
+          <property name="prevExp" column="PrevExp"/>
+           <property name="lateralFlag" column="IsLateral"/>
+
+          
+    </class>
+    
+    
+</hibernate-mapping>

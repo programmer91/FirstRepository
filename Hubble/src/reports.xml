@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : reports.xml
+    Created on  : Semptember 24, 2007, 2:00 PM
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    <!--
+       Package Name : 
+       Author       :
+       Description  :
+    -->
+    <package name="reports" namespace="/reports" extends="default">
+        <!-- Invocation of JasperReports Plugin -->
+        <result-types>
+            <result-type name="jasper" class="org.apache.struts2.views.jasperreports.JasperReportsResult"/>
+        </result-types>
+        
+        <default-interceptor-ref name="crudStack"/>
+        
+        <action name="empLeaveReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="empLeaveReport">
+            <result>monthlyLeaveReports.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+         <!-- new action for emp leave report start-->
+         <action name="GenerateEmpLeaveReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="GenerateEmpLeaveReport">
+            <result>GenerateLeaveReports.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <!-- new action for emp leave report end -->
+        <!-- new action for emp leave report download start-->
+        <action name="generateExcelReportForLeaves" class="com.mss.mirage.reports.LeavesDownloadAction" />
+        <!-- new action for emp leave report download end -->	
+        <action name="generateBdayreport" class="com.mss.mirage.hr.leavereports.LeaveReportAction" method="birthdayReport">
+            <result>AllReports.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        <action name="employeeReports" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="prepareEmpAvailability">
+            <result>reportGeneration.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="generateAvailabilityReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="generate">
+            <result>reportGeneration.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        
+        <action name="deleteReports" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="doDelete">
+            <result>reportGeneration.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="getAttachment" class="com.mss.mirage.reports.DownloadAction">
+            <!--<result>reportGeneration.jsp</result> -->
+        </action>
+        
+        <!-- Mycop Reports Generation -->
+        <action name="mycopreport" class="com.mss.mirage.mycop.LoadUsers">
+            <result>MyCopReport.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <!-- HR Permission Report -->
+        <action name="permReport" class="com.mss.mirage.mycop.Reporting" method="prepare">
+            <result>MyCopReport.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="report" class="com.mss.mirage.mycop.Reporting">            
+            <result name="success" type="jasper">
+                <param name="location">MyCopReport.jasper</param>
+                <param name="dataSource">mycopList</param>
+                <param name="documentName">VenusReport</param>
+                <param name="contentDisposition">application/download</param>
+                <param name="format">PDF</param>              
+            </result>
+            <result name="empty">MyCopReport.jsp</result>
+        </action>  
+        
+         <action name="reportExcel" class="com.mss.mirage.mycop.Reporting">            
+            <result name="success" type="jasper">
+                <param name="location">VenusReport.jasper</param>
+                <param name="dataSource">mycopList</param>
+                <param name="documentName">VenusReport</param>
+                <param name="contentDisposition">application/download</param>
+                <param name="format">XLS</param>              
+            </result>
+            <result name="empty">MyCopReport.jsp</result>
+        </action>  
+        <!-- Leave Reports Generation -->
+        <action name="leavereport" class="com.mss.mirage.hr.leavereports.LeaveReportAction" method="prepare">
+            <result>leaveReport.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>        
+        
+        <action name="generateLeavereport" class="com.mss.mirage.hr.leavereports.LeaveReportAction" method="execute">            
+            <result>leaveReport.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+        </action>
+        
+        <action name="generateAvalLeavereport" class="com.mss.mirage.hr.leavereports.LeaveReportAction" method="avalLeaveReport">            
+            <result>leaveReport.jsp</result>            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+        </action>
+        
+        
+        <action name="venusReport">
+            <result>VenusReport.jsp</result>
+            <result name="input">VenusReport.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="allReports" class="com.mss.mirage.hr.leavereports.LeaveReportAction" method="prepare">
+            <result>AllReports.jsp</result>            
+        </action>
+        
+        <action name="timeSheetsReport" class="com.mss.mirage.hr.leavereports.LeaveReportAction"  method="getTimeSheetReport">
+            <result>AllReports.jsp</result>
+            <result name="input">AllReports.jsp</result>            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="projectSearch" class="com.mss.mirage.hr.leavereports.LeaveReportAction"  method="getProjectsSearchList">
+            <result>AllReports.jsp</result>
+            <result name="input">AllReports.jsp</result>            
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getDashBoardForEmpReports" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="getDashBoardForEmpReports">
+                <result>optDashboardForReportsGeneration.jsp</result>
+                <result type="redirect" name="login">../general/login.action</result>
+                <result name="error" type="redirect">../exception/exception.action</result>
+                <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+            </action>
+             <action name="generateSalesClosuresReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="getSalesClosuresReport">
+            <result  type="redirect" name="input">getDashBoardForEmpReports.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+<action name="generateProjectXls" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="generateProjectXls">
+              <result  type="redirect" name="input">getDashBoardForEmpReports.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <!-- generate PFPortal report start-->
+             <action name="generatePFPortalReport" class="com.mss.mirage.reports.EmployeeAvailabilityAction" method="generatePFPortalReport">
+           <result>optDashboardForReportsGeneration.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+ <!-- generate PFPortal report end-->
+    </package>
+    
+</struts>

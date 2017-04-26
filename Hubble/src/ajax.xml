@@ -1,0 +1,885 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<!--
+    Document   : ajax.xml
+    Created on : June 11, 2008, 4:51 PM
+    Author     : miracle
+    Description:
+        Purpose of the document follows.
+-->
+ 
+<struts>
+    <package name="ajaxHandle" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <action name="gsConsultant" class="com.mss.mirage.ajax.AjaxHandlerAction" method="gsConsultant"/>
+        
+        <action name="greenSheet" class="com.mss.mirage.ajax.AjaxHandlerAction" method="greenSheet"/>
+        
+        <action name="getCustomerDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCustomerDetails"/>
+        
+        <action name="getGreensheetDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getGreensheetDetails"/>
+        
+        <action name="getEmpDepartment" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpDepartment"/>
+        
+        <action name="getEmpForTitles" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeForTitles"/>
+        
+        <action name="getEmpPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeePractice"/>
+        
+        <action name="getEmpSubPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeSubPractice"/>
+        
+        <action name="getEmpForReportsTo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeForReportsTo"/>
+        
+        <action name="getEmpVacationList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeVacationList"/>
+        
+        <action name="getStateData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getStateData"/>
+        
+        <action name="getAccount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccount"></action>
+        
+        <action name="mergeAccount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="mergeAccount"></action>
+        
+        <action name="accountAssignment" class="com.mss.mirage.ajax.AjaxHandlerAction" method="assignAccount"></action>
+        
+        <action name="accountSearchUpdate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="accountSearchUpdate"></action>
+        
+        <action name="employeeSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="employeeSearch"/>
+        
+        <action name="consultantSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="consultantSearch"/>
+        
+        <action name="getImage" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getImage"/>
+        
+        <action name="catagory" class="com.mss.mirage.ajax.AjaxHandlerAction" method="catagory"/>
+        
+        <action name="getStateData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getStateData"/>
+        
+        <action name="getResStateData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getResStateData"/>
+        
+        <action name="getTerritoryData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTerritoryData"/>
+        
+        <action name="getSubProject" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getSubProject"/>
+        
+        
+        <action name="popupWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupActivity"/> 
+        
+        <action name="popupCommentsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupComments"/> 
+        <!-- Actions for Project Issues Screen - Start -->
+        <action name="project" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getSubProjects"></action>
+        
+        <action name="projectEmp" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjEmployees"></action>
+        
+        <!-- Actions for Project Issues Screen - End -->
+        
+        <!-- Actions for Marketing Screen - Start -->
+        <action name="getMarketAccount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMarketAccount"/>
+        
+        <action name="getAccountDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountDetails"/>
+        
+        <action name="saveAccount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="saveAccount"/>   
+        
+        <action name="getMarketContact" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMarketContact"/> 
+        
+        <action name="getContactDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getContactDetails"/> 
+        
+        <action name="saveContact" class="com.mss.mirage.ajax.AjaxHandlerAction" method="saveContact"/>
+        
+        <action name="saveActivity" class="com.mss.mirage.ajax.AjaxHandlerAction" method="saveActivity"/>
+        
+        <!-- Actions for Marketing Screen - End -->
+        
+        <!-- Actions for ConsultantAdd Screen - Starts -->
+        
+        <action name="getConsultantDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getConsultantDetails"/>
+        
+        <action name="getNameOfAccount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getNameOfAccount"/>
+        
+        <action name="getConsultDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getConsultDetails"/>
+        
+        <!-- Actions for ConsultantAdd Screen - End -->
+        
+        <action name="consultantResume" class="com.mss.mirage.ajax.AjaxHandlerAction" method="consultantResume"/>
+        
+        <!--<action name="getRequirementDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementDetails"/>-->
+        
+        <action name="getConsultantList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getConsultantList"/>
+        
+        <action name="getResumeId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getResumeId"/>
+        
+        <!-- CRM Calender Ajax Actions    -    Start  -->
+        
+        <action name="weekDates" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getWeekDates" />  
+        
+        <action name="weeklyEvents" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getWeeklyEvents" />
+        
+        <action name="dailyEventsView" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getDailyEventsView" />
+        
+        <action name="eventPopupWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupEvent"/> 
+        
+        <!-- Add Event And Populate Team memebers **** Done By Venki ****  -->
+        <action name="getAccountTeamId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountTeamId"/>
+        
+        <action name="addEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addEvent"/>
+        
+        <action name="getEventDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEventDetails"/>
+        <!-- Add Event And Populate Team memebers **** Done By Venki ****  -->
+        
+        <!-- Calendar Access Users List ***** Start -->
+        <action name="getCalUserList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCalUserList"/>
+        
+        <action name="userPopUpList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getUserPopupList" />
+        
+        <action name="saveCalAccessUser" class="com.mss.mirage.ajax.AjaxHandlerAction" method="saveCalAccessUser" />
+        
+        <action name="deleteCalAccessUser" class="com.mss.mirage.ajax.AjaxHandlerAction" method="deleteCalAccessUser" />
+        
+        <action name="populateCalendarAccess" class="com.mss.mirage.ajax.AjaxHandlerAction" method="populateCalendarAccess"/>
+        
+        <action name="popupWindowForComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupWindowForComments"/>
+        
+        <!--  Calendar Access Users List ***** End -->
+        <!-- CRM Calender Ajax Actions    -    End  -->
+        
+        <!-- Leave Reports Ajax Actions STARTS -->
+        
+        <action name="getEmpTeamNames" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeTeamNames" />
+        
+        
+        
+        <!-- Leave Reports Ajax Actions ENDS -->
+        <action name="addStatus" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addStatus"/>
+        <action name="getStatus" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getDayStatus"/>
+        
+        <action name="getProjectStatus" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectStatus"/>
+        <action name="addProjStatus" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addProjectStatus"/>
+        
+        <action name="getTotalUsableHours" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTotalHolidays"/>
+        
+        <action name="greensheetSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="greensheetSearch"/>
+        
+        <action name="getVenusReport"   class="com.mss.mirage.ajax.AjaxHandlerAction" method="getVenusReport"/>
+        <action name="getAbsReport"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAbsanteeReport"/>
+        <action name="getTimeSheetsReport"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTimeSheetsReport"/>
+        <action name="getNotApprovedReport"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getNotApprovedReport"/>        
+        
+        <!-- Opportunities Dashboard Ajax Calls -->
+        <action name="oppDashBoard"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOppDashBoard"/>
+        <action name="greensheetListSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="greensheetListSearch"/>
+        
+        <action name="getActivityDashBoard"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getActivityDashBoard"/> 
+        
+        <action name="popupSkillsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupSkillsWindow"/>
+        <action name="popupReqSkillsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupReqSkillsWindow"/>
+        <action name="popupReqRecruiterWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupReqPersonWindow"/>
+        
+        <action name="contactSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="contactSearch"/>
+        
+        <!-- new action for activities -->
+        <action name="activitySearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="activitySearch"/> 
+        
+        <!-- new action for all activities -->
+        <action name="allActivitySearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="allActivitySearch"/> 
+        
+        <action name="getTotalLeaves" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTotalLeaves"/>
+        <action name="getEmpLeavesOpp" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpLeavesOpp"/>
+        <action name="accountsByRep"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountsByRep"/>
+        
+        <action name="getEmpLeavesOppByDate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpLeavesOppByDate"/>
+        
+        <!--New  not used action-->
+        <action name="getAccountActivity" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountActivity"/>
+        
+        <!-- New Action for getting Contact list in Cotact details page-->
+        
+        <action name="getcontactList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getcontactList"/>
+        
+        <action name="getContactActivityList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getContactActivityList"/>
+        
+        <action name="getAddActivityList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAddActivityList"/>
+        
+        <action name="popupLeaveDetailsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupLeaveDetailsWindow"/>
+        
+        <!-- New Action account list popup -->
+        <action name="getNameOfAccountbyLoginId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getNameOfAccountbyLoginId"/>
+        
+        
+        <!-- New Action for requirementAjaxList -->
+        <action name="requirementAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="requirementAjaxList"/>
+         
+        <action name="searchRequirementAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="searchRequirementAjaxList"/>
+
+        <action name="getTeritoryAndStatesList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTeritoryAndStatesList"/>
+        <!-- new on 10162012 for assign Accounts for BDM -->
+        <action name="getAccounts" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccounts"/>
+         
+        <action name="accountUpdateForBdm" class="com.mss.mirage.ajax.AjaxHandlerAction" method="accountUpdateForBdm"></action>
+        <!--   Added for getting states for selected territory -->
+        <action name="getTerritory" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpTerritory"></action>
+        <action name="getStatesByTerritory" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getStatesbyTerritory"></action>
+          
+        <!-- for getting ProjectNames List in Create Issue Page -->
+          
+        <action name="getProjectList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectNamesList"></action>
+        <action name="getEmployeeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetails"/>
+           
+        <!-- new Action to populate comments in Issues list -->
+        <action name="popupIssueCommentsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupissueCommentsWindow"/>
+           
+        <!-- En of the popup Action -->
+        <action name="popupTasksDescWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popuptasksDescWindow"/>
+          
+          
+        <!--Ecertification Ajax Calls Start -->
+        <action name="getDomainTopics" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getDomainTopics"/>
+          
+        <!--  <action name="getExamTimeAndCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getExamTimeAndCount"/>  -->
+        <!-- Ecertification Ajax Calls End -->
+        <action name="getQuestion" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getQuestion"/>
+          
+        <!--Ecertification Ajax Calls for display questions Start -->
+        <action name="questionsAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="questionsAjaxList"/>
+        <!-- Ecertification Ajax Calls for display questions  End -->  
+          
+        <action name="getCurrentQuestionsCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCurrentQuestionsCount"/>
+        <action name="validateExam" class="com.mss.mirage.ajax.AjaxHandlerAction" method="validateExam"/>
+           
+        <action name="getAvailableQuestions" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAvailableQuestionsCount"/>
+           
+        <!-- ajay changes 08072013 -->
+        <action name="popupQuestionsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupQuestionsWindow"/>
+        <action name="getEmployeeDetailsForAuthors" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetailsForAuthors"/>
+           
+        <!-- Cre Ajax Calls -->
+        <action name="popupCreCommentsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupCreCommentsWindow"/>
+            
+        <action name="getCreRecordsList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCreRecordsList"/>
+            
+        <action name="creRecordStatusUpdate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="creRecordStatusUpdate"/>
+        <action name="popupTechLeadComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupTechLeadComments"/>
+        <action name="popupHrLeadComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupHrLeadComments"/>
+            
+        <action name="popupVpComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupVpComments"/>
+        <action name="ConsultentAsEmp" class="com.mss.mirage.ajax.AjaxHandlerAction" method="ConsultentAsEmp"/>
+            
+            
+        <!-- New for Date Pop Up in Recruitment Consultant  
+        Author : Ajay Tummapala
+        -->
+        <action name="popupWindowForCreatedDate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupWindowForCreatedDate"/>
+        <action name="popupWindowForModifiedDate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupWindowForModifiedDate"/>
+        <action name="getCreAvailCreQuestions" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCreAvailCreQuestions"/>
+        <action name="getCreDetailExamInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCreDetailExamInfo"/>
+        <action name="getExamCandidateName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getExamCandidateName"/>
+        <action name="popupTechCommentsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupTechCommentsWindow"/>
+       
+        <!-- State Account Delete
+        Author : Aditya malla
+        Date : 12/03/2013
+        -->
+        <action name="stateAccountDelete" class="com.mss.mirage.ajax.AjaxHandlerAction" method="empStateAccountDelete"/>
+        <action name="sendRepFeedback" class="com.mss.mirage.ajax.AjaxHandlerAction" method="sendRepFeedback"/>
+             
+        <action name="transferAccounts" class="com.mss.mirage.ajax.AjaxHandlerAction" method="transferAccounts"/>
+             
+        <!-- new action for accounts priority 31012014 start-->
+        <!--  <action name="accountsByPriority"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountsByPriority"/> -->
+        <!-- new action for team name account priority section -->
+        <action name="getTeamName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTeamName1"/>
+        <!-- new action for accounts priority 31012014 end-->
+        <action name="sendPriorityEmail" class="com.mss.mirage.ajax.AjaxHandlerAction" method="sendPriorityEmail"/>
+        <!-- new action to populate exam name-->
+        <action name="popupWindowForExamName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupWindowForExamName"/>
+        <!-- Added by aditya start-->
+        <!--new action for checking examtype name satrt -->
+        <action name="getExamType" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getExamTypeName"/>
+        <action name="getCreDetailExamDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCreDetailExamDetails"/>
+        <!--new action for checking examtype name end --> 
+             
+        <action name="getEmployeeDetailsForProject" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetailsForProject"/>
+             
+        <!-- new action for project dashboard -->
+        <action name="getProjectTeam" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectTeam"/>
+        <!-- for customer tasks -->
+        <action name="getProjectsForAccountId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectsForAccountId"/>
+        <action name="getEmployeeDetailsByProjectId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetailsByProjectId"/>
+        <!-- new -->
+              
+        <action name="getEmployeePhoneNumber" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeePhoneNumber"/>
+              
+              
+        <!-- NEw Action for Madhavi mam Project based Timesheets search changes 07/31/2014 -->
+        <action name="getProjectsByAccountId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectsByAccountId"/>
+        <action name="getEmployeesByProjectId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeesByProjectId"/>
+        <action name="getEmployeesByAccountId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeesByAccountId"/>
+        <!-- new action for pmo -->
+        <action name="getEmployeeDetailsForPMO" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetailsForPMO"/>
+              
+        <!-- new Action for populating Operating Comments Date : 08/15/2014-->
+        <action name="popupOnboardComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupOnboardComments"/>
+        <!-- techreviews changes -->
+        <action name="getTechEmployeeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTechEmployeeDetails"/>
+        <action name="sendTechMail" class="com.mss.mirage.ajax.AjaxHandlerAction" method="sendTechMail"/>
+
+        <!-- For Teamlead REport 09/02/2014 -->
+               
+        <action name="getTeamByProjectId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTeamByProjectId"/>
+        <!-- new action for rec dashboard -->
+        <action name="consultantActivitiesByRep" class="com.mss.mirage.ajax.AjaxHandlerAction" method="consultantActivitiesByRep"/>
+        <action name="popupRecDashBoardComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupRecDashBoardComments"/>	   
+                 
+        <!-- new -->
+        <action name="getTaskEmpDetailsBasedOnIssueRel" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTaskEmpDetailsBasedOnIssueRel"/>
+        <action name="getTaskEmpDetailsBasedOnPrjIssue" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTaskEmpDetailsBasedOnPrjIssue"/>
+        <action name="getTaskEmpDetailsBasedOnHubbleNetworkInfraIssue" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTaskEmpDetailsBasedOnHubbleNetworkInfraIssue"/>
+        <action name="getAllEmpNames" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllEmpNames"/>  
+  
+        <!-- new actions for employee associated projects 09262014 -->
+        <action name="getEmpAssociatedProjectsList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpAssociatedProjectsList"/>	   
+        <action name="checkPrimary" class="com.mss.mirage.ajax.AjaxHandlerAction" method="checkPrimary"/>	   
+        <action name="getReportsToAccess" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReportsToAccess"/>	   
+                  
+        <!-- New For RecruitmentDashBord new changes -->
+            
+        <action name="getTotalProfilesByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTotalProfilesByPractice"/>          
+        <action name="getReqProfileSubmittedInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReqProfileSubmittedInfo"/>
+        <action name="getReqStatusInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReqStatusInfo"/>
+        <action name="getReqClosedInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReqClosedInfo"/>
+                  
+        <!--       New For ActiveManagerDetails -->
+        <action name="activeManagerDetailsByDates" class="com.mss.mirage.ajax.AjaxHandlerAction" method="activeManagerDetailsByDates"/>
+                  
+        <!-- new action for marketing account operations -->
+        <action name="marketingAccountAssignment" class="com.mss.mirage.ajax.AjaxHandlerAction" method="marketingAccountAssignment"/>
+        <!-- new action for email check -->
+        <action name="checkEmail" class="com.mss.mirage.ajax.AjaxHandlerAction" method="checkEmail"/>
+        <!-- new action for performance review -->
+        <action name="getAllEmpNamesAlongWithTitle" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllEmpNamesAlongWithTitle"/>
+        <action name="getMetricsList"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMetricsList"/>
+        <action name="getMetricComments"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMetricComments"/>
+        <action name="getAllMetricNames"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllMetricNames"/>
+        <action name="getAllMetricNames1"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllMetricNames1"/>
+        <action name="getTitlesList"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTitlesList"/>
+        <action name="setMetricRange"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="setMetricRange"/>
+        <action name="getAllReviewedPerformances"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllReviewedPerformances"/>
+        <action name="editPerformanceValues"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="editPerformanceValues"/>
+   
+        <action name="setMetricRange1"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="setMetricRange1"/>
+        <action name="updatePerformanceValues"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="updatePerformanceValues"/>
+        <action name="editTitleValues"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="editTitleValues"/>
+   
+        <action name="getAllEmpNamesAlongWithTitle1" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllEmpNamesAlongWithTitle1"/>
+        <action name="addTitleValues" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addTitleValues"/>
+        <action name="updateTitleValues" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateTitleValues"/>
+        <action name="editMetricValues" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editMetricValues"/>
+        <action name="updateMetricValues" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateMetricValues"/>
+        <action name="addMetricValues" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addMetricValues"/>
+    
+        <action name="getActivityDetailsByLoginId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getActivityDetailsByLoginId"/>
+    
+        <!-- Dual reports To actions DAte : 10/28/2014 -->
+        <action name="getTeamByReportsToType" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTeamByReportsToType"/>
+        <action name="isDualReportsTo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="isDualReportsTo"/>
+              
+
+
+        <action name="addReview" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addReview"/>
+        <action name="updateReview" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateReview"/>
+        <action name="getApprovedByDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getApprovedByDetails"/>
+        <action name="getBasePoints" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBasePoints"/>
+        <action name="updateMyReview" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateMyReview"/>
+
+        <!--Recruitment activity graph actions-->
+        <action name="consultantActivitiesAsGraph" class="com.mss.mirage.ajax.AjaxHandlerAction" method="consultantActivitiesAsGraph"/>
+        <action name="consultantActivitiesAsGraphInd" class="com.mss.mirage.ajax.AjaxHandlerAction" method="consultantActivitiesAsGraphInd"/>
+
+        <!-- new actions for recruitment account merge -->
+        <action name="getMergeConsultants" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMergeConsultants"/>
+        <action name="ConsultantAnalysis" class="com.mss.mirage.ajax.AjaxHandlerAction" method="ConsultantAnalysis"/>
+        <!-- getIssueTypeBasedOnIssueRel -->
+        <action name="getIssueTypeBasedOnIssueRel" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getIssueTypeBasedOnIssueRel"/>
+        <action name="getTaskEmpDetailsBasedOnIssueRel1" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTaskEmpDetailsBasedOnIssueRel1"/>   
+        <!--New actions for sales dashboard--> 
+        <action name="salesActivitiesAsGraph" class="com.mss.mirage.ajax.AjaxHandlerAction" method="salesActivitiesAsGraph"/>
+        <action name="salesActivitiesAsGraphInd" class="com.mss.mirage.ajax.AjaxHandlerAction" method="salesActivitiesAsGraphInd"/>
+
+        <action name="getReviewDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReviewDetails"/>
+
+        <action name="addJobposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addJobposting"/>
+        <action name="editJobposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editJobposting"/>
+        <action name="updateJobposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateJobposting"/>
+        <action name="getApplicantDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getApplicantDetails"/>
+
+
+        <action name="getEmpTotalReviews" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpTotalReviews"/>
+        <action name="getEmpReviewComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpReviewComments"/>
+        <action name="getTlReviewComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTlReviewComments"/>
+        <action name="getHrReviewComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getHrReviewComments"/>
+        <action name="getEmployeesByDept" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeesByDept"/>
+        <action name="getEmployeeSkillSet" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeSkillSet"/>
+        <action name="requirementAdminAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementAdminAjaxList"/>
+        <action name="searchAdminRequirementAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="searchAdminRequirementAjaxList"/>
+        <action name="searchpmoActivityAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="searchpmoActivityAjaxList"/>
+        <action name="getMyProjectsByAccountId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMyProjectsByAccountId"/>
+            
+        <!-- perf dashboard changes -->
+        <action name="getTopPerformers" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTopPerformers"/>
+        <action name="getEmployeesForPerformers" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeesForPerformers"/>
+        <action name="getPastReviewData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPastReviewData"/>
+        <action name="getEmployeeReviewDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeReviewDetails"/>
+        <action name="getEmployeePastReviewData" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeePastReviewData"/>
+        <action name="addWebsiteConsultant" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addWebsiteConsultant"/>
+        <!-- No due actions start-->
+        <action name="getEndDate" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getNoDueEndDate"/>
+        <action name="addNoDuesSettlement" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="addNoDuesSettlement"/>
+        <action name="getNoDueDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getNoDueDetails"/>
+        <action name="getEmployeesByDeptPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getEmployeesByDeptPayroll"/>
+  
+        <action name="approveOrRejectNoDues" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="approveOrRejectNoDues"/>
+        <action name="addRemainderValuesNoDues" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="addRemainderValuesNoDues"/>
+        <action name="showEmpListNoDuesRemainder" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="showEmpListNoDuesRemainder"/>
+        <action name="checkForEmpNoDueRecordExistsOrNot" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="checkForEmpNoDueRecordExistsOrNot"/>
+        <action name="noDuesRemainderClose" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="noDuesRemainderClose"/>
+
+        <!-- No due actions end-->
+  
+        <!-- event Add action -->
+  
+        <action name="addEventposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addEventposting"/>
+        <action name="editEventposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editEventposting"/>
+        <action name="updateEventposting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateEventposting"/>
+        <action name="addEventSpeaker" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addEventSpeaker"/>
+        <action name="editEventSpeaker" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editEventSpeaker"/>
+        <action name="updateEventSpeaker" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateEventSpeaker"/>
+   
+        <action name="getWebsiteInfoDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getWebsiteInfoDetails"/>
+        <action name="updateAfterEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateAfterEvent"/>
+        <action name="getQmeetMapByYear" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getQmeetMapByYear"/>
+        <!--  <action name="getEventSeries" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEventSeries"/> -->
+    
+        <action name="doCreateWebinarSeries" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doCreateWebinarSeries"/>
+        <action name="getSeriesDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getSeriesDetails"/>
+        <action name="doUpdateWebinarSeries" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateWebinarSeries"/>
+        <action name="accountContactsDescription" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountContactsDescription"/>
+        <!-- track action start -->
+        <action name="addTrackName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addTrackName"/>
+        <action name="editTrackName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editTrackName"/>
+        <!-- track action end -->
+    
+        <action name="doAddPeople" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddPeople"/>
+        <action name="getPeopleDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPeopleDetails"/>
+        <action name="doUpdatePeopleDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdatePeopleDetails"/>
+
+        <action name="doLibraryTitleCheck" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doLibraryTitleCheck"/>
+        <action name="getEmpolyeeCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpolyeeCount"/>
+        <action name="getRequirementCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementCount"/>
+        <action name="getOpportunitiesCounts" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunitiesCounts"/>
+        <action name="getOpportunitiesCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunitiesCount"/>
+        <action name="getGreenSheetCount" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getGreenSheetCount"/>
+        <action name="getConsultantStatusDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getConsultantStatusDetails"/>  
+        <action name="getSubmissionReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getSubmissionReport"/>
+        <action name="getConsultantListForRequirement" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getConsultantListForRequirement"/>
+        <action name="popupTechRatingsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupTechRatingsWindow"/>
+        <!-- Survey Form action start 09/25/2015-->
+               
+        <action name="doAddQuestionnaire" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddQuestionnaire"/>
+        <action name="editQuestionnaireDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editQuestionnaireDetails"/>
+        <action name="doUpdateQuestionnaire" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateQuestionnaire"/>
+        <action name="showReviewDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="showReviewDetails"/>
+        <action name="getSearchQuestionInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getSearchQuestionInfo"/>
+
+        <action name="doUpdateSequance" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateSequance"/>
+
+        <!-- Survey Form actions end -->
+        <action name="popupNewTechCommentsWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupNewTechCommentsWindow"/>
+        <action name="getMyTeam" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMyTeam"/>
+        <action name="getRequirementStatusReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementStatusReport"/>
+               
+        <action name="accountsByPriorities"    class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountsByPriorities"/>
+                
+        <action name="bdmDashboardInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBDMDashboardInfo"/>
+        <action name="getAccountNamesList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountNamesList"/>
+        <action name="bdmDashboardRevenueInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBDMDashboardRevenueInfo"/>
+        <action name="bdmDashboardOppertunitiesInfo" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBDMDashboardOppertunitiesInfo"/>
+        <action name="opportunitesByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunitesByPractice"/>
+        <action name="requirementsByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementsByPractice"/>
+        <action name="greenSheetsDetailsByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getgreenSheetsDetailsByPractice"/>
+        <action name="opportunitiesDetailsByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunitiesDetailsByPractice"/>
+        <action name="requirementDetailsByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementDetailsByPractice"/>
+        <action name="greenSheetDetailsByPractice" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getGreenSheetDetailsByPractice"/>
+        
+        <action name="accountRenewalByTeamMember"   class="com.mss.mirage.ajax.AjaxHandlerAction" method="getaccountRenewalByTeamMember"/>
+        <!-- utilization Report Action --> 
+        <action name="getUtilizationReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getUtilizationReport"/>
+        <action name="popupSkillSetWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupSkillSetWindow"/>
+        <!--  <action name="getEmpSkillSet" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmpSkillSet"/> -->
+
+        <action name="getActivitySummaryByLoginId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getActivitySummaryByLoginId"/>
+        <action name="getActivityDecriptionById" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getActivityDecriptionById"/>
+        <action name="updateSurveyFormExpiryDate" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateSurveyFormExpiryDate"/>
+
+        <action name="requirementDetailsByStatus" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementDetailsByStatus"/>
+        <action name="getMyOppDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMyOppDashBoard"/>
+       
+        <!-- Accomadation Report Action --> 
+        <action name="getAccomadationReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccomadationReport"/>
+        
+        <!-- preSales oppertunity dashboars-->
+        <action name="getPreSalesOppDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPreSalesOppDashBoard"/>
+        <!-- preSales Project dashboars-->
+        <action name="getPreSalesProjectDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPreSalesProjectDashBoard"/>
+        <action name="getProjectMembers" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectMembers"/>
+        <!-- preSales onsite/offshore dashboars-->
+        <action name="getPresalesOnsiteOffshoreDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPresalesOnsiteOffshoreDashBoard"/>
+        <!-- sales KPI Report Action --> 
+        <action name="getsalesKPIReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getsalesKPIReport"/>
+        
+        <!--        project risk -->
+        <action name="popupTasksRiskDescWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupTasksRiskDescWindow"/>
+        <action name="popupTasksRiskResolutionWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupTasksRiskResolutionWindow"/>
+        <!--      project risk end -->
+        <!-- Requirement KPI Report Action --> 
+        <action name="getRecruitmentKpiReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRecruitmentKpiReport"/>
+
+        <action name="addProjectTaskDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addProjectTaskDetails"/>
+        <action name="getProjectTaskDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectTaskDetails"/>
+        <action name="updateProjectTaskDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateProjectTaskDetails"/>
+        <!-- AvailableEmp Report Action --> 
+        <action name="getAvailableEmpReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAvailableEmpReport"/>
+        <!-- Bridge Managemenet System -->
+
+        <action name="addBMSBridgeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addBMSBridgeDetails"/>
+        <action name="getBmsBridgeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBmsBridgeDetails"/>
+        <action name="updateBMSBridgeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateBMSBridgeDetails"/>
+        <action name="doAvailableBridgeCheck" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAvailableBridgeCheck"/>
+         
+        <action name="addBridgeEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddBridgeEvent"/>
+      
+        <action name="getBridgeList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBridgeList"/>
+        <action name="isActiveBridge" class="com.mss.mirage.ajax.AjaxHandlerAction" method="isActiveBridge"/>
+        <action name="getAvailableBridges" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAvailableBridges"/>
+        <action name="doCancelBridgeEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doCancelBridgeEvent"/>
+        <action name="getBridgeEventSearchDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getBridgeEventSearchDetails"/>
+        <action name="createBridgeIssue" class="com.mss.mirage.ajax.AjaxHandlerAction" method="createBridgeIssue"/>
+        <!-- Bridge Managemenet System end -->
+         
+        <!-- Invest Start -->
+        <action name="addInvestmentdetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addInvestmentdetails"/>
+        <action name="updateInvestmentdetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateInvestmentdetails"/>
+        <action name="getInvestmentDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getInvestmentDetails"/>
+        <!-- Invest end -->
+
+        <!--Contact search-->
+        <action name="contactSearchAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="contactSearchAjaxList"/>
+    
+        <action name="contactSearchAjax" class="com.mss.mirage.ajax.AjaxHandlerAction" method="contactSearchAjax"/>
+        <!--Contact search end-->
+    
+        <action name="getCampaignContactsList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCampaignContactsList"/>
+        <action name="getCampaignSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCampaignSearch"/>
+        <action name="getLeadDetailsList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getLeadDetailsList"/>
+        <action name="accountRenewalByState"   class="com.mss.mirage.ajax.AjaxHandlerAction" method="getaccountRenewalByState"/>
+        <action name="reqDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getReqDashBoard"/>
+
+
+        <action name="timsheetAttachmentUpload" class="com.mss.mirage.ajax.AjaxHandlerAction" method="timsheetAttachmentUpload"/> 
+        <action name="removeTimeSheetAttachement" class="com.mss.mirage.ajax.AjaxHandlerAction" method="removeTimeSheetAttachement"/>
+
+        <!-- Emeet Ajax Calls 01/29/2016 -->
+        <action name="addExecitiveMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addExecitiveMeeting"/>
+        <action name="editExeMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editExeMeeting"/>
+        <action name="updateExecitiveMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateExecitiveMeeting"/>
+        <action name="addExecitiveMeetAttendees" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addExecitiveMeetAttendees"/>
+        <action name="editExeMeetingAttendees" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editExeMeetingAttendees"/>
+        <action name="updateExecitiveMeetingAttendeesDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateExecitiveMeetingAttendeesDetails"/>
+        <action name="updateCompletedExecitiveMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateCompletedExecitiveMeetDetails"/>
+        <action name="doActiveEmmet" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doActiveEmmet"/>
+        <action name="popupOpertunitiesWindow" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupOpertunitiesWindow"/>
+
+        <!-- current status mamagemet -->
+        <action name="searchCustomerProjectsAjaxList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="searchCustomerProjectsAjaxList"/>
+        <action name="isExistedProjectName" class="com.mss.mirage.ajax.AjaxHandlerAction" method="isExistedProjectName"/>
+        <action name="employeeAvailableProjects" class="com.mss.mirage.ajax.AjaxHandlerAction" method="employeeAvailableProjects"/>
+        <!-- current status mamagemet end -->
+        <action name="getPFPortalReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getPFPortalReport"/>
+
+        <action name="ajaxExcelUpload" class="com.mss.mirage.ajax.AjaxHandlerAction" method="ajaxAccountExcelFileUpload"/>
+        <action name="getEmployeesBasedOnCustomer" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeesBasedOnCustomer"/>
+        <action name="getAllProjectsByAccountId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAllProjectsByAccountId"/>
+
+        <action name="getEmployeeDetailforPMOActivity" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeDetailforPMOActivity"/>
+        <action name="getOnboardReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOnboardReport"/>
+ 
+        <action name="getTerminationDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTerminationDetails"/>
+
+        <action name="doUpdateTerminationDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateTerminationDetails"/>
+        <action name="getEmployeeLocations" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeLocations"/>
+
+        <action name="getOpportunityList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunityList"/>
+        <action name="popupOpportunityDescription" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupOpportunityDescription"/> 
+        <action name="getMissingDataReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getMissingDataReport"/>
+        <action name="getCustOppDashBoard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCustOppDashBoard"/>
+
+
+        <!-- new action for payroll --> 
+        <action name="checkEmpExitsForPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="checkEmpExitsForPayroll"/>
+        <action name="payrollAddDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="payrollAddDetails"/>
+        <!--<action name="updatePayrollEmployeeDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updatePayrollEmployeeDetails"/>
+        <action name="updatePayrollDetailsForPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updatePayrollDetailsForPayroll"/>
+        <action name="updateInsuranceSavingsForPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateInsuranceSavingsForPayroll"/>
+        <action name="updateOtherDetailsForPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateOtherDetailsForPayroll"/>
+        <action name="updateContactDetailsForPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateContactDetailsForPayroll"/> -->
+        <action name="getEmployeesByDept" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getEmployeesByDept"/>
+        <action name="doRunWages" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doRunWages"/>
+        <action name="doFreezeWages" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doFreezeWages"/>
+        <action name="updateYearAndDate" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateYearAndDate"/>
+        <action name="freezeEmpWageDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="freezeEmpWageDetails"/>
+        <action name="unfreezeEmpWageDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="unfreezeEmpWageDetails"/>
+        <action name="getDaysCountDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getDaysCountDetails"/>
+        <action name="updateDaysCount" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateDaysCount"/>
+        <action name="updateAllEmpWageDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateAllEmpWageDetails"/>
+        <action name="doGetDaysFortheSelectedMonthRunWages" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doGetDaysFortheSelectedMonthRunWages"/>
+ 
+        <action name="payrollBackUpDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="payrollBackUpDetails"/>
+        <action name="getPayrollCheck" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getPayrollCheck"/>
+        <action name="cleanPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="cleanPayroll"/>
+ 
+        <action name="doUnFreezeWages" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doUnFreezeWages"/>
+        <action name="doReRunWages" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doReRunWages"/>
+        <action name="uploadLeavesExcel" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="uploadLeavesExcel"/>
+ 
+        <action name="getPayrollHistory" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getPayrollHistory"/>
+        <action name="getWagesHistory" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getWagesHistory"/>
+        <action name="getPayRollHistoryEmployeeDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getPayRollHistoryEmployeeDetails"/>
+        <action name="getWagesHistoryEmployeeDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getWagesHistoryEmployeeDetails"/>
+   
+        <action name="getTEFDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getTEFDetails"/>
+   
+  
+        <action name="getNamesByDesignation" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getNamesByDesignation"/>
+  
+        <action name="getEmpTefDetailsForOverlay" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getEmpTefDetailsForOverlay"/>
+        <action name="getEndDate" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getNoDueEndDate"/>
+        <action name="addTaxAssumption" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="addTaxAssumption"/>
+        <action name="upadteTaxExemption" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="upadteTaxExemption"/>
+        <action name="upadtePayrollTaxExemption" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="upadtePayrollTaxExemption"/>
+        <action name="upadtePayrollTaxExemptionPayRollList" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="upadtePayrollTaxExemptionPayRollList"/>
+      
+        <action name="checkCategoryWiseSavingsAmt" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="checkCategoryWiseSavingsAmt"/>
+        <action name="addNoDuesSettlement" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="addNoDuesSettlement"/>
+        <action name="lockAmtListForAllEmps" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="lockAmtListForAllEmps"/>
+        <action name="generatePayRollPassword" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="generatePayRollPassword"/>
+        <action name="getRepaymentDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getRepaymentDetails"/>
+        <action name="getRepaymentReason" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getRepaymentReason"/>
+        <action name="tdsCalculation" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="tdsCalculation"/>
+       
+        <action name="getEmployeeNumberByLoginId" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getEmployeeNumberByLoginId"/>
+        <action name="addTaxAssumptionFromPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="addTaxAssumptionFromPayroll"/>
+        <action name="getCategoryByExemptionTypeId" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getCategoryByExemptionTypeId"/>
+        <action name="getTaxAssumptionFromPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getTaxAssumptionFromPayroll"/>
+        <action name="updateTaxAssumptionFromPayroll" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="updateTaxAssumptionFromPayroll"/>
+        <action name="getBlockedSalDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getBlockedSalDetails"/>
+        <action name="doAddPayslipReleases" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doAddPayslipReleases"/>
+        <action name="doEditPayslipReleases" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doEditPayslipReleases"/>
+        <action name="calculateActualDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="calculateActualDetails"/>
+        <action name="getSumOfHRA" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getSumOfHRA" />
+        <action name="getRevisedSalDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getRevisedSalDetails" />
+        <action name="getTdsCalculation" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getTdsCalculation" />
+        <action name="getEmployeeNames" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="doGetEmployeeNames"/>
+        <action name="deleteTefEmpDetails" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="deleteTefEmpDetails"/>
+        <!-- end for payroll --> 
+
+        <action name="getRequirementList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getRequirementList"/>
+
+        <action name="getOpportunityList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunityList"/>
+        <action name="popupOpportunityDescription" class="com.mss.mirage.ajax.AjaxHandlerAction" method="popupOpportunityDescription"/> 
+        <action name="getLeadSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getLeadSearch"/> 
+
+        <action name="getAccountDetailsPopup" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAccountDetailsPopup"/> 
+        <action name="getContactNamesList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getContactNamesList"/> 
+
+
+        <action name="getOppurtunitySearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOppurtunitySearch"/>
+        <action name="getOppurtunityDetailsPopup" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOppurtunityDetailsPopup"/>
+
+        <!-- CC Actions Start -->
+        <action name="getConstantContactListSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doConstantContactListSearch"/>
+        <action name="getCampaignContactListSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doCampaignContactListSearch"/>
+        <action name="doGetCampaignEmailsList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doGetCampaignEmailsList"/>
+        <action name="doSynchronizeToHubble" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doSynchronizeToHubble"/>
+        <action name="doConstantContactEmailList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doConstantContactEmailList"/>
+ 
+        <action name="doGetSyncListSearch" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doGetSyncListSearch"/>
+
+        <action name="dotrackingEmailCampaign" class="com.mss.mirage.ajax.AjaxHandlerAction" method="dotrackingEmailCampaign"/>
+
+        <!-- CC Actions End -->
+        <action name="getLostClosedOpportunities" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getLostClosedOpportunities"/>
+
+       
+        <action name="getEmployeeTypeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getEmployeeTypeDetails"/>
+
+        <action name="getResourceTypeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getResourceTypeDetails"/>
+
+        <action name="doGetTitleType" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doGetTitleType"/>
+
+
+
+
+<!-- New AjaxHandlerAction calls Start -->
+        <action name="getMcertRecordsList" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getMcertRecordsList"/>
+        <action name="mcertRecordStatusUpdate" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="mcertRecordStatusUpdate"/>
+        <action name="getMcertQuestion" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getMcertQuestion"/>
+        <action name="getMcertDetailExamInfo" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getMcertDetailExamInfo"/>
+   
+<!-- New AjaxHandlerAction calls End -->
+
+        <action name="projectDetailsDashboard" class="com.mss.mirage.ajax.AjaxHandlerAction" method="projectDetailsDashboard"/>
+        <action name="getProjectEmployeeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getProjectEmployeeDetails"/>
+
+        <action name="monthlyStatusReport" class="com.mss.mirage.ajax.AjaxHandlerAction" method="monthlyStatusReport"/>
+        <action name="isTeamLead" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getIsTeamLead"/>
+
+
+
+        <action name="getCerCommnets" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCerCommnets"/> 
+        <action name="doGetStageRelatedComments" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getStageRelatedComments"/> 
+        <action name="getOpportunityNamesList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getOpportunityNamesList"/> 
+
+        <action name="getTerminationDetailsForInActivePerson" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getTerminationDetailsForInActivePerson"/>
+ 
+ 
+        <action name="searchPreSalesRequirementList" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="searchPreSalesRequirementList"/>
+        <action name="getRequirementOtherDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getRequirementOtherDetails"/>
+        <action name="requirementAjaxListForMyPresales" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="requirementAjaxListForMyPresales"/>
+ 
+        <action name="doPopulateAccountDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doPopulateAccountDetails"/> 
+ 
+        <action name="popupContactsWindow" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="popupContactsWindow"/>
+ 
+        <action name="getEmployeeProjectDetailsBasedOnStatus" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getEmployeeProjectDetailsBasedOnStatus"/>
+ 
+        <action name="getProjectStatusById" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getProjectStatusById"/>
+ 
+        <action name="getProjectProtfolioReport" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getProjectProtfolioReport"/>
+        <action name="getProjectDescriptionDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getProjectDescriptionDetails"/>   
+        <action name="getProjectCommentDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getProjectCommentDetails"/>
+
+        <action name="searchPSCERDetailsForPresales" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getPSCERDetailsForPresales"/>
+        <action name="getRequestInSightDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getRequestInSightDetails"/>
+
+        <action name="searchPSCERDetailsForEmployee" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getPSCERDetailsForEmployee"/>
+  
+        <action name="searchPSCERDetailsForSales" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getPSCERDetailsForSales"/>
+  
+        <action name="getDomainByExamType" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getDomainByExamType"/>
+        <action name="questionsFileUpload" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="ajaxQuestionsFileUpload"/>
+   
+   
+   <!-- Newletter deployment automation actions start 12/21/2016-->
+        <action name="getAllFilesInDirectory" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getAllFilesInDirectory"/>
+        <action name="doAddNewsLetter" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doAddNewsLetter"/>
+        <action name="getAllFilesInImagesDirectory" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getAllFilesInImagesDirectory"/>
+        <action name="doAddNewsLetterImages" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doAddNewsLetterImages"/>   
+<!-- Newletter deployment automation actions end 12/21/2016-->
+
+<!-- BDM Statistics Satrt -->
+
+        <action name="getBDMStatistics" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getBDMStatistics"/>
+        <action name="getBdmStatisticsDetailsByLoginId" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getBdmStatisticsDetailsByLoginId"/>
+        <action name="getActivityContacts" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getActivityContacts"/>
+ 
+<!-- BDM Statistics End -->
+
+        <action name="getCustomerContacts" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getCustomerContacts"/>
+        <action name="getContactActivities" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getContactActivities"/>
+        <action name="reqOverviewPieChart" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="reqOverviewPieChart" />
+        <action name="getRequirementOverviewDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getRequirementOverviewDetails" />
+   
+   <!-- Inside Sales Status satrt -->
+        <action name="getInsideSalesStatusList" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getInsideSalesStatusList"/>
+        <action name="getInsideSalesAccountDetailsList" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getInsideSalesAccountDetailsList"/>
+        <action name="getCustomerDetailsByBde" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getCustomerDetailsByBde"/>
+<!-- Inside Sales Status end -->
+ 
+        <action name="getInvestmentType" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getInvestmentType"/>
+        <action name="addLeadHystory" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="addLeadHystory"/>
+        <action name="getLeadFollowUpHistoryDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getLeadFollowUpHistoryDetails"/>
+ 
+ 
+ 
+ <!-- Event functionality new actions start Date : 01/23/2017 Author : Santosh Kola/Phani Kanuri -->
+        <action name="doAddQmeetEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddQmeetEventPost"/>
+        <action name="editEventpost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editEventpost"/>
+        <action name="updateQmeetEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateQmeetEventPost"/>
+        <action name="doAddExternalWebinarEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddExternalWebinarEventPost"/>
+        <action name="editExternalEventpost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editExternalEventpost"/>
+        <action name="updateExternalWebinarEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateExternalWebinarEventPost"/>
+        <action name="doAddIEEEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddIEEEventPost"/>
+        <action name="updateIEEEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateIEEEventPost"/>
+        <action name="doAddInternalWebinarEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddInternalWebinarEventPost"/>
+        <action name="updateInternalWebinarEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateInternalWebinarEvent"/>
+        <action name="updateExternalConferenceEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateExternalConferenceEventPost"/>
+        <action name="doAddExternalConferenceEventPost" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddExternalConferenceEventPost"/>
+        <action name="updateWebinarAfterEvent" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateWebinarAfterEvent"/>
+        <action name="getWebinarSeriesList" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getWebinarSeriesList"/>
+        <action name="doAddWebinarSeries" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doAddWebinarSeries"/>
+        <action name="getWebinarSeriesDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getWebinarSeriesDetails"/>
+        <action name="doUpdateWebinarSeriesDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="doUpdateWebinarSeriesDetails"/>
+        <action name="getQmeetAttendeeDetails" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getQmeetAttendeeDetails"/>
+        <action name="addAttendeesForExecitiveMeet" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addAttendeesForExecitiveMeet"/>
+        <action name="editAttendeesforExeMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="editAttendeesforExeMeeting"/>
+        <action name="updateAttendeesDetailsforExecitiveMeeting" class="com.mss.mirage.ajax.AjaxHandlerAction" method="updateAttendeesDetailsforExecitiveMeeting"/>
+        <action name="getAjaxWebinarsListBySeriesId" class="com.mss.mirage.ajax.AjaxHandlerAction" method="getAjaxWebinarsListBySeriesId"/>
+        <action name="addOrRemoveWebinarToSeries" class="com.mss.mirage.ajax.AjaxHandlerAction" method="addOrRemoveWebinarToSeries"/>
+ <!-- Event functionality new actions end Date : 01/23/2017 Author : Santosh Kola/Phani Kanuri -->
+ 
+ 
+<action name="customerProjectDetailsDashboard" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="customerProjectDetailsDashboard"/>
+
+  <action name="getResourceTypeDetailsByCustomer" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getResourceTypeDetailsByCustomer"/>
+
+  <action name="getProjectListByCustomer" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getProjectListByCustomer"/>
+  
+  <action name="getTaskNotesDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getTaskNotes"/>
+  
+  
+<!-- tasks DashBoards functionality new actions  Author : Phanindra Kanuri -->
+ <action name="getIssuesDashBoardByStatus" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getIssuesDashBoardByStatus"/>
+ <action name="getTaskListByStatus" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getTaskListByStatus"/>
+ 
+  <action name="getDescriptionByTaskId" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doPopulateTaskDetails"/>
+  
+  
+   <action name="getEmpSavingsValidate" class="com.mss.mirage.ajax.PayrollAjaxHandlerAction" method="getEmpSavingsValidate"/>
+   
+    <action name="setQReviewManagerComments" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doSetQReviewManagerComments"/>
+   <action name="setQReviewPersonalityComments" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doSetQReviewPersonalityComments"/>
+   <action name="setQReviewGoalsComments" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="doSetQReviewGoalsComments"/>
+   <action name="dummySessionHit" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="dummySessionHit"/>
+   <action name="saveQReviewDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="saveQReviewDetails"/>
+   <action name="setQReviewEmpDescriptions" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="setQReviewEmpDescriptions"/>
+   
+   <!-- BDM Associates strat -->
+   <action name="getBdmReport" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getBdmReport"/>
+   <action name="getSalesTeamforBDMAssociate" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getSalesTeamforBDMAssociate"/>
+   
+   <action name="getSalesTeamDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getSalesTeamDetails"/>
+   <action name="addSalesToBdm" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="addSalesToBdm"/>
+    <action name="updateBdmTeam" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="updateBdmTeam"/>
+
+     <!-- BDM Associates End -->
+     
+     <!--Actions created by Teja Kadamanti 04/20/2017 start-->
+     
+     <action name="multipleProjectsEmployeeList" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getMultipleProjectsEmployeeList"/>
+      
+       <action name="multipleProjectsEmployeeListDetails" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="multipleProjectsEmployeeListDetails"/>
+      <!-- Actions created by Teja Kadamanti 04/20/2017 end -->
+      
+      
+      <action name="getConsultantNames" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="getConsultantNames"/>
+  <action name="fileUploadWorkAuthorizationCopy" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="fileUploadWorkAuthorizationCopy"/>
+  <action name="fileUploadDlCopyAttached" class="com.mss.mirage.ajaxnew.NewAjaxHandlerAction" method="fileUploadDlCopyAttached"/>
+  
+    </package>
+</struts>

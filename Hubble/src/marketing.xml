@@ -1,0 +1,779 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+
+<!--
+    Document    : 
+    Created on  : 
+    Author      : Corporate Application Support Team 
+    Description : 
+-->
+
+<struts>
+    
+    <!--
+       Package Name : 
+       Author       : marketing/accountMarketing.action
+       Description  :
+    -->
+    
+    <package name="marketing" namespace="/marketing" extends="default">
+        <!--START: Following actions written by : <developer name>:<mailid>-->
+        <default-interceptor-ref name="crudStack" />
+        <action name="accountMarketing" class="com.mss.mirage.marketing.MarketingAction" method="prepare">
+            <result>Marketing.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="getActivity" class="com.mss.mirage.marketing.MarketingAction" method="getActivity">
+            <result>Marketing.jsp</result>          
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>            
+        </action>
+        
+        <action name="gridAction" class="com.mss.mirage.marketing.MarketingAction" method="getActivityQuery">
+            <result>Marketing.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="gridActivityAll" class="com.mss.mirage.marketing.MarketingAction" method="getAllActivityQuery">
+            <result>Marketing.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <!--Email Campaign List action -->
+        <action name="emailCampaignList" class="com.mss.mirage.marketing.MarketingAction" method="getEamilCampaignList">
+            <result>MarketingEmailCampaign.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="getCampaignExcelSheet" class="com.mss.mirage.marketing.EmailAccountActivitiesCampaign"></action>
+        
+        <!--END: Above actions written by : <developer name>:<mailid>-->
+        
+        
+        <action name="websiteJob" class="com.mss.mirage.marketing.MarketingAction" method="websiteJobSearch">
+            <result>websitejobsList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="jobSearch" class="com.mss.mirage.marketing.MarketingAction" method="jobSearch">
+            <result>websitejobsList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="appliedConsultantList" class="com.mss.mirage.marketing.MarketingAction" method="appliedConsultantList">
+            <result>AppliedConsultantsList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        
+        <action name="resumeDownload" class="com.mss.mirage.marketing.ResumeDownloadAction">
+           <!-- <result>TimeSheetSearch.jsp</result>-->
+        </action>
+        <action name="websiteLatestJobApplications" class="com.mss.mirage.marketing.MarketingAction" method="websiteLatestJobApplications">
+            <result>LatestJobApplications.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <!-- Action added by Santosh Kola 08/03/2015 satrt -->
+	
+        <action name="eventManagement" class="com.mss.mirage.marketing.MarketingAction" method="eventManagement">
+            <result>EventList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="webEventSearch" class="com.mss.mirage.marketing.MarketingAction" method="webEventSearch">
+            <result>EventList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+
+
+        
+        
+        
+        
+        <action name="completedEvents" class="com.mss.mirage.marketing.MarketingAction" method="completedEvents">
+            <result>CompletedEvents.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="completedEventSearch" class="com.mss.mirage.marketing.MarketingAction" method="completedEventSearch">
+            <result>CompletedEvents.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getCompletedEventSpeakers" class="com.mss.mirage.marketing.MarketingAction" method="getCompletedEventSpeakers">
+            <result>CompletedEventSpeakersList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        
+        <action name="getContactUs" class="com.mss.mirage.marketing.MarketingAction" method="getContactUs">
+            <result>ContactUsData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchContactUsData" class="com.mss.mirage.marketing.MarketingAction" method="searchContactUsData">
+            <result>ContactUsData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getEmpVerification" class="com.mss.mirage.marketing.MarketingAction" method="getEmpVerification">
+            <result>EmployeeVerificationData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchEmpVerification" class="com.mss.mirage.marketing.MarketingAction" method="searchEmpVerification">
+            <result>EmployeeVerificationData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getResourceDepot" class="com.mss.mirage.marketing.MarketingAction" method="getResourceDepot">
+            <result>ResourceDepotData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchResourceDepot" class="com.mss.mirage.marketing.MarketingAction" method="searchResourceDepot">
+            <result>ResourceDepotData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getSuggestionBox" class="com.mss.mirage.marketing.MarketingAction" method="getSuggestionBox">
+            <result>SuggestionBoxData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchSuggestionBox" class="com.mss.mirage.marketing.MarketingAction" method="searchSuggestionBox">
+            <result>SuggestionBoxData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getQuarterlyMeet" class="com.mss.mirage.marketing.MarketingAction" method="getQuarterlyMeet">
+            <result>QmeetData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchQuarterlyMeet" class="com.mss.mirage.marketing.MarketingAction" method="searchQuarterlyMeet">
+            <result>QmeetData.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="websiteDataDownload" class="com.mss.mirage.marketing.WebsiteDataDownloadAction" />
+        
+     <!--   <action name="getResources" class="com.mss.mirage.marketing.MarketingAction" method="getResources">
+            <result>ResourceManagement.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action> -->
+        
+        
+        <!-- Webinar series actions start -->
+        <action name="webinarSeries" class="com.mss.mirage.marketing.MarketingAction" method="webinarSeries">
+            <result>WebinarSeries.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchWebinarSeries" class="com.mss.mirage.marketing.MarketingAction" method="searchWebinarSeries">
+            <result>WebinarSeries.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="getEventsBySeries" class="com.mss.mirage.marketing.MarketingAction" method="getEventsBySeries">
+            <result>WebinarSeriesEventsList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="addEventToSeries" class="com.mss.mirage.marketing.MarketingAction" method="addEventToSeries">
+           <!-- <result>WebinarSeriesEventsList.jsp</result>                        -->
+            <result type="redirect">getEventsBySeries.action?resultMessage=${resultMessage}&amp;seriesId=${seriesId}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="removeEventFromSeries" class="com.mss.mirage.marketing.MarketingAction" method="removeEventFromSeries">
+          <!-- <result>WebinarSeriesEventsList.jsp</result>        -->
+            <result type="redirect">getEventsBySeries.action?resultMessage=${resultMessage}&amp;seriesId=${seriesId}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>	
+		
+		 <!-- Action added by Santosh Kola 08/03/2015 end -->
+
+                 
+        <action name="getEventSpeakers" class="com.mss.mirage.marketing.MarketingAction" method="getEventSpeakers">
+            <result>EventSpeakersList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="eventSpeakerSubmit" class="com.mss.mirage.marketing.MarketingAction" method="eventSpeakerSubmit">
+            <result type="redirect">getEventSpeakers.action?eventId=${eventId}&amp;objectType=${objectType}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">getEventSpeakers.action?eventId=${eventId}&amp;objectType=${objectType}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="eventSpeakerDetailsList" class="com.mss.mirage.marketing.MarketingAction" method="eventSpeakerDetailsList">
+            <result>EventSpeakersDetails.jsp</result>
+          
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="getLkpTrackNames" class="com.mss.mirage.marketing.MarketingAction" method="getLkpTrackNames">
+            <result>TrackNamesList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>	
+
+        
+ <!-- Authors actions start -->
+        
+        <action name="getPeople" class="com.mss.mirage.marketing.MarketingAction" method="getPeople">
+            <result>PeopleList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchPeopleList" class="com.mss.mirage.marketing.MarketingAction" method="searchPeopleList">
+            <result>PeopleList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <!-- Authors actions end -->
+
+        <action name="leadGen" class="com.mss.mirage.marketing.MarketingAction" method="leadGen">
+            <result>InvestmentDetails.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="investmentSearch" class="com.mss.mirage.marketing.MarketingAction" method="investmentSearch">
+            <result>InvestmentDetails.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="generateInvestmentXls" class="com.mss.mirage.marketing.MarketingAction" method="generateInvestmentXls">
+            <result>InvestmentDetails.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="downloadInvestmentAttachment" class="com.mss.mirage.marketing.MarketingAction" method="downloadInvestmentAttachment"/>
+        <action name="deleteInvestment" class="com.mss.mirage.marketing.MarketingAction" method="deleteInvestment"> 
+            <result>InvestmentDetails.jsp</result> 
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result name="error" type="redirect">../../exception/exception.action</result> 
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result> 
+        </action>
+        <action name="campaignSearchAction" class="com.mss.mirage.marketing.MarketingAction" method="campaignSearch">
+            <result>CampaignSearch.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="addOrUpdateCampaign" class="com.mss.mirage.marketing.MarketingAction" method="addOrUpdateCampaign"> 
+            <result type="redirect"> ../marketing/campaignSearchAction.action?resultMessage=${resultMessage}</result>
+            <result type="redirect" name="INPUT">../marketing/redirectCampaign.action?resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result> 
+        </action>
+        <action name="redirectCampaign" class="com.mss.mirage.marketing.MarketingAction" method="redirectCampaign"> 
+            <result>CampaignDetails.jsp</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result> 
+        </action>
+        <action name="selectCampaignDetails" class="com.mss.mirage.marketing.MarketingAction" method="selectCampaignDetails"> 
+            <result>CampaignDetails.jsp</result> 
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result> 
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result> 
+        </action>
+        <action name="getCampaignContactsExcel" class="com.mss.mirage.marketing.MarketingAction" method="getCampaignContactsExcel">
+            <result>CampaignSearch.jsp</result>             
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        <action name="doAddLeads" class="com.mss.mirage.marketing.MarketingAction" method="doAddLeads">
+            <result>addCrmLeads.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="addLeads" class="com.mss.mirage.marketing.MarketingAction" method="addLeads">
+            <result name="dashboardsuccess" type="redirect">leadDashboard.action?resultMessage=${resultMessage}</result> 
+            <result  type="redirect">../crm/accounts/getAccount.action?id=${accountId}&amp;leadsResultMessage=${resultMessage}</result> 
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="doEditLeads" class="com.mss.mirage.marketing.MarketingAction" method="doEditLeads">
+            <result>addCrmLeads.jsp</result> 
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="doUpdateLeads" class="com.mss.mirage.marketing.MarketingAction" method="doUpdateLeads">
+            <result name="dashboardsuccess" type="redirect">leadDashboard.action?resultMessage=${resultMessage}</result> 
+            <result type="redirect">../crm/accounts/getAccount.action?id=${accountId}&amp;leadsResultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+
+<!-- Emeet Actions Start 01/29/2016 Author : Phani Kanuri-->
+        <action name="emeetList" class="com.mss.mirage.marketing.MarketingAction" method="executiveMeetingSearch">
+            <result>../marketing/emeets/EmeetList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+
+
+        <action name="emeetSearch" class="com.mss.mirage.marketing.MarketingAction" method="emeetSearch">
+            <result>../marketing/emeets/EmeetList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="emeetAttendiesList" class="com.mss.mirage.marketing.MarketingAction" method="emeetAttendiesList">
+            <result>../marketing/emeets/EmeetAttendees.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="emeetAttendeesSearch" class="com.mss.mirage.marketing.MarketingAction" method="emeetAttendeesSearch">
+            <result>../marketing/emeets/EmeetAttendees.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+    
+        
+        <action name="doPublishExeMeet" class="com.mss.mirage.marketing.MarketingAction" method="doPublishExeMeet">
+            <result type="redirect">emeetSearch.action?resultMessage=${resultMessage}&amp;emeetStatusByDate=U</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="doActiveExeMeet" class="com.mss.mirage.marketing.MarketingAction" method="doActiveExeMeet">
+            <result type="redirect">emeetSearch.action?resultMessage=${resultMessage}&amp;emeetStatusByDate=U</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+
+
+<!-- Emeet Actions End -->
+ <!-- phani start -->
+        <action name="getIOTDetails" class="com.mss.mirage.marketing.MarketingAction" method="getIOTDetails">
+            <result>IOTDetails.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchIOTDetails" class="com.mss.mirage.marketing.MarketingAction" method="searchIOTDetails">
+            <result>IOTDetails.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <!-- phani end -->
+        
+        
+ <!-- Signature Details start -->
+        <action name="getSignatureDetails" class="com.mss.mirage.marketing.MarketingAction" method="getSignatureDetails">
+            <result>SignatureDetails.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="searchSignatureDetails" class="com.mss.mirage.marketing.MarketingAction" method="searchSignatureDetails">
+            <result>SignatureDetails.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <!-- Signature Details end -->
+        
+        
+        <action name="getInvestmentBdms" class="com.mss.mirage.marketing.MarketingAction" method="getInvestmentBdms">
+            <result>InvestmentBDMList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+
+        <action name="investmentBDMSubmit" class="com.mss.mirage.marketing.MarketingAction" method="investmentBDMSubmit">
+            <result type="redirect">getInvestmentBdms.action?investmentId=${investmentId}&amp;resultMessage=${resultMessage}</result>
+            <result name="input" type="redirect">getInvestmentBdms.action?investmentId=${investmentId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="investmentBDMrDetailsList" class="com.mss.mirage.marketing.MarketingAction" method="investmentBDMrDetailsList">
+            <result>InvestmentBDMDetails.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="leadDashboard" class="com.mss.mirage.marketing.MarketingAction" method="leadDashboard">
+            <result>LeadDashboard.jsp</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="getOppurtunityList" class="com.mss.mirage.marketing.MarketingAction" method="getOppurtunityList">
+            <result>OppurtunityDetailsList.jsp</result>            
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>
+        </action>
+        
+        <action name="getConstnatList" class="com.mss.mirage.marketing.MarketingAction" method="doGetConstnatList">
+            <result>ConstantContactList.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <!-- Inside Sales Status Action start 01/19/2017 -->
+        <action name="getInsideSalesStatus" class="com.mss.mirage.marketing.MarketingAction" method="getInsideSalesStatus">
+            <result>InsideSalesStatus.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="getAccountDetailsForInsideSalesStatus" class="com.mss.mirage.marketing.MarketingAction" method="getAccountDetailsForInsideSalesStatus">
+            <result>InsideSalesStatusAccountDetails.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <!-- Inside Sales Status Action end 01/19/2017 -->
+        
+    </package>
+    
+    <package name="marketing-library" namespace="/marketing/library" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <action name="getResources" class="com.mss.mirage.marketing.library.LibraryAction" method="getResources">
+            <result>ResourceManagement.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="addLibrary" class="com.mss.mirage.marketing.library.LibraryAction" method="addLibrary">
+            <result>LibraryAdd.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="doAddLibrary" class="com.mss.mirage.marketing.library.LibraryAction" method="doAddLibrary">
+            <result type="redirect">addLibrary.action?resultMessage=${resultMessage}</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="libraryManagementSearch" class="com.mss.mirage.marketing.library.LibraryAction" method="libraryManagementSearch">
+            <result>ResourceManagement.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="editLibrary" class="com.mss.mirage.marketing.library.LibraryAction" method="editLibrary">
+            <result>LibraryAdd.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="doUpdateLibrary" class="com.mss.mirage.marketing.library.LibraryAction" method="doUpdateLibrary">
+           <!-- <result >LibraryAdd.jsp</result>   -->
+            <result type="redirect">editLibrary.action?libraryId=${libraryId}&amp;resultMessage=${resultMessage}</result>
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="downloadLibraryDoc" class="com.mss.mirage.marketing.library.LibraryAction" method="downloadLibraryAttachment">
+           <!-- <result>TimeSheetSearch.jsp</result>-->
+        </action>
+    </package>
+        
+        
+    <package name="marketing-surveyform" namespace="/marketing/surveyform" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <action name="surveyFormList" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="surveyFormList">
+            <result>SurveyFormList.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="addSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="addSurveyForm">
+            <result>SurveyFormDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="doAddSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doAddSurveyForm">
+            <result type="redirect">addSurveyForm.action?resultMessage=${resultMessage}</result>                           
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="surveyFormListSearch" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="surveyFormListSearch">
+            <result>SurveyFormList.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="editSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="editSurveyForm">
+            <result>SurveyFormDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="doUpdateSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doUpdateSurveyForm">
+            <result>SurveyFormDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="getQuestionnaireList" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="getQuestionnaireList">
+            <result>SurveyQuestionnaireList.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="addQuestionnaire" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="addQuestionnaire">
+            <result>SurveyQuestionnaireDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+     <!--    <action name="doAddQuestionnaire" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doAddQuestionnaire">
+            <result type="redirect">addQuestionnaire.action?resultMessage=${resultMessage}&amp;surveyId=${surveyId}</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="editQuestionnaireDetails" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="editQuestionnaireDetails">
+            <result>SurveyQuestionnaireDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="doUpdateQuestionnaire" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doUpdateQuestionnaire">
+            <result>SurveyQuestionnaireDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        -->
+        
+        
+        <action name="getSurveyReviewList" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="getSurveyReviewList">
+            <result>SurveyReviewList.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="doSurveyAttachmentDownload" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doSurveyAttachmentDownload"> </action>
+        
+        
+        <action name="getSurveyFormInfoDetails" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="getSurveyFormInfoDetails">
+            <result>SurveyFormInfoDetails.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+
+        <action name="doPublishSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doPublishSurveyForm">
+            <result type="redirect">surveyFormListSearch.action?resultMessage=${resultMessage}</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="surveyFormReviewListSearch" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="surveyFormReviewListSearch">
+            <result>SurveyReviewList.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        
+        <action name="doDeleteQuestion" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doDeleteQuestion">
+            <result type="redirect">getQuestionnaireList.action?surveyId=${surveyId}&amp;resultMessage=${resultMessage}</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>
+        </action>
+        <action name="doInactiveSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doInactiveSurveyForm">
+            <result type="redirect">surveyFormListSearch.action?resultMessage=${resultMessage}</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="doActiveSurveyForm" class="com.mss.mirage.marketing.surveyform.SurveyFormAction" method="doActiveSurveyForm">
+            <result type="redirect">surveyFormListSearch.action?resultMessage=${resultMessage}</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+    </package>
+        
+        <!-- Event functionality new actions start Date : 01/23/2017 Author : Santosh Kola/Phani Kanuri -->
+        
+    <package name="marketing-events" namespace="/marketing/events" extends="default">
+        <default-interceptor-ref name="crudStack" />
+        <action name="internalEvents" class="com.mss.mirage.marketing.events.EventAction" method="internalEvents">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="internalQMeetEventSearch" class="com.mss.mirage.marketing.events.EventAction" method="internalQMeetEventSearch">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="externalEvents" class="com.mss.mirage.marketing.events.EventAction" method="externalEvents">
+            <result>ExternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="externalWebinarSearch" class="com.mss.mirage.marketing.events.EventAction" method="externalWebinarSearch">
+            <result>ExternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="internalIeeEventSearch" class="com.mss.mirage.marketing.events.EventAction" method="internalIeeEventSearch">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <action name="internalWebinarEventSearch" class="com.mss.mirage.marketing.events.EventAction" method="internalWebinarEventSearch">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="externalConferenceEventSearch" class="com.mss.mirage.marketing.events.EventAction" method="externalConferenceEventSearch">
+            <result>ExternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        <!-- Emeet Actions Start 01/29/2016 Author : Phani Kanuri-->
+        <action name="internalEmeetSearch" class="com.mss.mirage.marketing.events.EventAction" method="internalEmeetSearch">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="doPublishInternalExeMeet" class="com.mss.mirage.marketing.events.EventAction" method="doPublishInternalExeMeet">
+            <result type="redirect">internalEmeetSearch.action?resultMessage=${resultMessage}&amp;emeetStatusByDate=U</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+        
+        <action name="doActiveInternalExeMeet" class="com.mss.mirage.marketing.events.EventAction" method="doActiveInternalExeMeet">
+            <result type="redirect">internalEmeetSearch.action?resultMessage=${resultMessage}&amp;emeetStatusByDate=U</result>                       
+            <result name="error" type="redirect">../../exception/exception.action</result>
+            <result type="redirect" name="login">../../general/login.action</result>
+            <result type="redirect" name="accessFailed">../../exception/accessFailed.action</result>            
+        </action>
+<!-- Emeet Actions End -->
+        <action name="getQmeetAttendees" class="com.mss.mirage.marketing.events.EventAction" method="getQmeetAttendees">
+          <!-- <result>WebinarSeriesEventsList.jsp</result>        -->
+            <result>QmeetAttendees.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="executeMeetAttendeesSearch" class="com.mss.mirage.marketing.events.EventAction" method="executeMeetAttendeesSearch">
+            <result>InternalEvents.jsp</result>                       
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+        <action name="getQmeetAttendiesExcelSheet" class="com.mss.mirage.marketing.events.EventAction" method="getQmeetAttendiesExcelSheet">
+            <result>QmeetAttendees.jsp</result>
+            <result name="error" type="redirect">../exception/exception.action</result>
+            <result type="redirect" name="login">../general/login.action</result>
+            <result type="redirect" name="accessFailed">../exception/accessFailed.action</result>            
+        </action>
+    </package>
+        <!-- Event functionality new actions end Date : 01/23/2017 Author : Santosh Kola/Phani Kanuri -->
+        
+        
+</struts>

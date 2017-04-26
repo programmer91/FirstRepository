@@ -1,0 +1,3878 @@
+/*  ###########################################################
+Author: MrutyumajayaRao.Chenn<mchennu@miraclesoft.com>
+###########################################################
+*/
+
+/*
+Default Body
+------------------------------------------------------ */ 
+.bodyGeneral{
+   margin: 0;
+   padding: 0;
+   scrollbar-face-color: #FFFFFF; 
+   scrollbar-shadow-color: #508fc4;
+   scrollbar-highlight-color: #4CA0E0; 
+   scrollbar-3dlight-color: #FFFFFF;
+   scrollbar-darkshadow-color: #FFFFFF; 
+   scrollbar-track-color: #FFFFFF;
+   scrollbar-arrow-color: #508fc4;
+}
+
+#bodyGeneral
+{
+   margin: 0;
+   padding: 0;
+   scrollbar-face-color: #FFFFFF; 
+   scrollbar-shadow-color: #508fc4;
+   scrollbar-highlight-color: #4CA0E0; 
+   scrollbar-3dlight-color: #FFFFFF;
+   scrollbar-darkshadow-color: #FFFFFF; 
+   scrollbar-track-color: #FFFFFF;
+   scrollbar-arrow-color: #508fc4;
+}
+
+/*
+Template Styles
+------------------------------------------------------
+*/
+
+
+
+.templateTable{
+   height: 750px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.templateTableLogin{
+   height: 580px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.templateTableLogin{
+   height: 580px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.templateTable1000x580{
+   height: 580px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.innerTable {
+   border-top: 1px solid #979AC2;
+   border-bottom: 1px solid #979AC2;
+   height: 685px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+.innerTableLogin {
+   border-top: 1px solid #979AC2;
+   border-bottom: 1px solid #979AC2;
+   height: 515px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+.innerTable1000x515 {
+   border-top: 1px solid #979AC2;
+   border-bottom: 1px solid #979AC2;
+   height: 515px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+  
+
+}
+
+.templateTable705x440{
+   height: 440px;
+   left: 0px;
+   top: 0px;
+   width: 705px;
+   border-top:        0px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.innerTable700x440{
+   border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-style: solid;
+   border-top: 0px solid #979AC2;
+   height: 440px;
+   left: 0px;
+   top: 0px;
+   width: 700px;
+}
+
+
+.tableOfButtons{
+  
+   background-color : white;
+   border-bottom-width :1px ;
+   border-left-width :1px ;
+   border-right-width :1px ;
+   width :300px ;
+   height :200px ;
+   border: medium double lightblue;
+  
+}
+
+.cellBorder{
+   border-top:        1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+}
+
+.leftMenuBgColor{
+   border-top:        1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   background-color : #3E93D4 ;
+}
+
+.rightBorder{
+   border-right:      1px solid #979AC2;
+}
+
+.leftBorder{
+   border-left:      1px solid #979AC2;
+}
+
+.topBorder{
+   border-top:      1px solid #979AC2;
+}
+
+.bottomBorder{
+   border-bottom:    1px solid #979AC2;
+}
+
+.leftTopBorder{
+   border-left:    1px solid #979AC2;
+   border-top:    1px solid #979AC2;
+}
+
+
+
+.headerTextNormal{
+   color: #3E93D4;
+   font-family: lucida-sans;
+   font-size: 13px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 2px;
+   text-decoration: none;
+}
+
+ 
+
+.headerText{
+   background: url(grd-1px_1.1.gif) 0 -237px repeat-x;
+   color: #3E93D4;
+   font-family: lucida-sans;
+   font-size: 13px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 2px;
+   text-decoration: none;
+}
+
+.tableHeaderBg{
+   background-image: url(bgBlue_10_50.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   color: #0000cc;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-variant: small-caps;
+   font-weight: bold;
+   height: 35px
+}
+
+.mailBackground{
+   background-image: url(blueHeader_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   border-bottom: 0px solid #979AC2;
+   height: 400px;
+   width: 800px;
+}
+
+
+.horizontalMenuBarBg{
+   background-image: url(blueBar_10x35.gif);
+   background-repeat: repeat-x;
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   height: 35px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+.headerBg{
+   background-image: url(blueHeader_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   border-bottom: 1px solid #979AC2;
+   height: 35px;
+   width: 1000px;
+}
+
+.footerBg{
+   background-image: url(blueFooter_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   font-family: lucida-sans;
+   font-size: 11px;
+   height: 30px;
+   width: 1000px;
+}
+
+.mirageLogo{
+   background-image: url(mirageLogo_135x32.gif);
+   background-repeat: no-repeat;
+}
+
+.menuBarHelpLink{
+   background-image: url(help00_44x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarHelpLink:hover {
+   background-image: url(help01_44x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarLogInLink{
+   background-image: url(logIn00_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarLogInLink:hover {
+   background-image: url(logIn01_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarLogoutLink{
+   background-image: url(logOut00_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarLogoutLink:hover {
+   background-image: url(logOut01_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarHomeLink{
+   background-image: url(home00_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarHomeLink:hover {
+   background-image: url(home01_59x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarContactUsLink{
+   background-image: url(contactUs00_82x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+.menuBarContactUsLink:hover {
+   background-image: url(contactUs01_82x13.gif);
+   background-repeat: no-repeat;
+   text-decoration: none;
+}
+
+
+.displayObject {
+   display: inline;
+}
+
+.hideObject {
+   display: none;
+}
+
+/*
+Data Labels
+------------------------------------------------------
+*/
+
+.fieldCheckLabel{
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+
+}
+
+.fieldLabel {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+}
+
+.fieldLabelLeft {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+
+.fieldLabelLeft1 {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+  
+   text-align: left;
+}
+.fieldLabelCenter {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: center;
+}
+
+.fieldLabelWhite {
+   color: #FFFFFF;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+}
+.fieldLabelWhiteLeft {
+   color: #FFFFFF;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+.userInfo {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: center;
+}
+
+.userInfoLeft {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+
+.navigationText{
+   color: #009900;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 2px;
+   /*text-decoration: none*/
+}
+
+.navigationText:hover{
+   color: #000099;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 2px;
+   text-decoration: none;
+}
+
+/*
+FORM OBJECTS
+------------------------------------------------------
+*/
+
+.buttonBg{
+   background-image: url(btnBackground_1x22.gif);
+   background-repeat: repeat-x;
+   border-bottom: 1px solid #979AC2;
+   border-left: 1px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 1px solid #979AC2;
+   font-size: 11px;
+   padding-top: 0px;
+   vertical-align: bottom;
+   font-weight : normal;
+   cursor:pointer;
+
+}
+
+.anchorButton{
+   background-image: url(btnBackground_1x22.gif);
+   background-repeat: repeat-x;
+   border-bottom: 1px solid #979AC2;
+   border-left: 1px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 1px solid #979AC2;
+   font-size: 11px;
+   padding-top: 0px;
+   vertical-align: bottom;
+   font-weight : normal;
+   text-decoration: none;
+}
+
+.inputBox {
+   BORDER-RIGHT: silver 1px solid; 
+   BORDER-TOP: silver 1px solid; 
+   FONT-WEIGHT: 500; 
+   FONT-SIZE: 12px; 
+   BORDER-LEFT: silver 1px solid; 
+   BORDER-BOTTOM: silver 1px solid; 
+   FONT-STYLE: normal; 
+   FONT-FAMILY: arial, helvetica, sans-serif; 
+   BACKGROUND-COLOR: #ffffff;
+   width :150px;
+}
+
+.inputDate {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+}
+
+.inputTextBlueLarge {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 200px;
+}
+
+/* add by raja reddy*/
+.inputTextBlueAddressEmp {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 330px;
+}
+
+
+/* add by rajanikanth */
+.inputTextBlueComment1 { 
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 560px;
+}
+
+/* add by rajanikanth */
+.inputTextBlueLargeAccount {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 402px;
+}
+
+/* add by rajanikanth */
+.inputTextBlueAddress1 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 339px;
+}
+
+
+.inputTextBlueAddress {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 338px;
+}
+
+.inputTextBlueExtraLarge {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 585px;
+}
+.inputTextBlueDoubleExtraLarge {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 675px;
+}
+
+.inputTextBlueDoubleExtraLarge2 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 687px;
+}
+
+.gridCol{
+   border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-top: 0px solid #979AC2;
+   color: #333;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 100px
+}
+.gridColumnLarge{
+ border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-top: 0px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 300px;
+}
+.gridColumnMediumLarge{
+ border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-top: 0px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 200px;
+}
+.gridColumnMedium{
+ border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-top: 0px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 150px;
+}
+.inputTextBlue {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 130px;
+}
+
+.inputTextBlueWithDatePicker {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 100px;
+}
+
+.inputTextBlueUpload {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 200px;
+}
+
+.inputTextBlueMedium {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 100px;
+}
+
+.inputTextBlueSmall {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 70px;
+}
+
+/*Add by Ranga for Timesheets*/
+.inputTextHours{
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 50px;
+   text-align: right;
+}
+
+/*Employee Update Email (Praveen)*/
+.inputTextBlueEmail { 
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 280px;
+}
+
+/* Employee Sefl Registration Email*/
+.inputTextBlueReg { 
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 250px;
+}
+/*Employee Travel Frequently Flyer Related Information*/
+.inputTextBlueTravel { 
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 180px;
+}
+
+
+.inputDateTimePicker{
+   width:  100px;
+}
+
+.inputSelectGender{
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   80px ;
+}
+
+.inputSelectSmall {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   50px ;
+}
+ 
+.inputSelect {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   130px ;
+}
+.inputSelectForProjects {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   180px ;
+}
+.inputSelectExtraLarge {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   250px ;
+}
+
+.inputSelectEmpUpdate {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   480px ;
+}
+
+.inputSelectLarge {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   200px ;
+}
+
+.inputRadio {
+   background-color:  transparent;
+   margin-top:        4px;
+   margin-bottom:     4px;
+   padding:           0;
+   border:            0;
+}
+
+.inputTextarea {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+   
+}
+
+.activeFile {
+   background-color: silver;
+   background-image: url(bgBlue.gif);
+   background-repeat: repeat-x;
+   border-bottom-color: gray;
+   border-bottom-style: outset;
+   border-bottom-width: 1px;
+   border-left-color: gray;
+   border-left-style: outset;
+   border-left-width: 1px;
+   border-right-color: gray;
+   border-right-style: outset;
+   border-right-width: 1px;
+   border-top-color: silver;
+   border-top-style: outset;
+   border-top-width: 1px;
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: lighter;
+   padding: 3px 6px 3px 6px;
+   text-align: right
+}
+
+
+
+/*
+TABLE FORMATTING 
+------------------------------------------------------ 
+*/ 
+
+
+.border {
+   border:     		1px solid #B2B3CE;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+.tableBorder {
+   border-left:     	1px solid #B2B3CE;
+   border-right:     	1px solid #B2B3CE;
+   border-bottom:         1px solid #B2B3CE;
+   padding:			0px;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+.tableBorderLeft {
+   border-left:      1px solid #B2B3CE;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+
+.tableHeading {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         10px;
+   letter-spacing:    .1em;
+   font-weight:		bold;
+   color:             #fff;
+   padding:           0;
+   margin:			0;
+   background-color:  transparent; 
+   white-space: 		nowrap;
+}
+.tableHeadingBig {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         1px;
+   font-weight:		normal;
+   color:             #fff;
+   padding:           0;
+   margin:			0;
+   background-color:  transparent;  
+}
+
+.tableCellOne {
+
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         11px;
+   color:             #38394B;
+   padding:           3px 6px 3px 6px;
+   border-top:        1px solid #fff;
+   border-bottom:     1px solid #B2B3CE;
+   border-left:       1px solid #fff;
+   border-right:      1px solid #B2B3CE;
+}
+
+.tableDescription {
+   font-family:       Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size:         10px;
+   color:             #73769D;
+   background-color:  transparent;  
+}
+
+/*
+For RoleSelect page (raja reddy andra)
+-----------------------------------------------------
+*/
+.templateTableHome{
+   /*height: 580px;*/
+   left: 0px;
+   top: 0px;
+   width: 800px;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+}
+
+.innerTableHome {                        
+   border-top: 0px solid #979AC2;
+   border-bottom: 0px solid #979AC2;
+   height: 715px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+.borderBlue {
+   border:     		1px solid #6698FF;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+.borderHome {
+   border:     		1px solid #FBB917;
+   padding:			0;
+   margin-top:        1px;
+   margin-bottom:     3px;
+}
+
+
+/*
+For ContactUs page(raja reddy andra)
+------------------------------------------------------
+*/
+
+.fieldLabelContact {
+   color: #678AB7;
+   font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size: 10px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+
+.fieldLabelContactAD {
+   color: #666666;
+   font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size: 10px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+/*
+For Help Page (raja reddy andra)
+-------------------------------------------------------
+*/
+.fieldLabelContactHelpA {
+   color: #302226;
+   font-family: lucida-sans;
+   font-size: 15px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+
+.fieldLabelContactHelpQ {
+   color: #F88017;
+   font-family: Verdana, Geneva, Tahoma, Trebuchet MS, Arial, Sans-serif;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+
+.innerTableHelp {
+   border-top: 0px solid #979AC2;
+   border-bottom: 0px solid #979AC2;
+   height: 685px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+.bgColor{
+   background-color: #3DB1FA;
+}
+
+
+.templateTableHelp{
+   height: 750px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        0px solid #979AC2;
+   border-left:       0px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      0px solid #979AC2;
+}
+
+.mailLink{
+   color: #3E93D4;
+   font-family: lucida-sans;
+   font-size: 15px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 2px;
+   text-decoration: none;    
+}
+
+.mailLink:hover{
+   color: #FFFFFF;
+   font-family: lucida-sans;
+   font-size: 15px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   background-color: #F88017;
+   padding: 2px;
+   text-decoration: none;    
+}
+
+/*
+For Validation in Login page
+------------------------------
+*/
+.error {
+   font-family: lucida-sans;
+   font-size: 11px;
+   color: red;
+   margin-left: 0px;
+   display: none;
+}
+
+
+.note{
+    font-family: arial;
+    font-size: 12px;
+    color: green;
+    font-style: bold;
+    font-variant: normal;
+    
+}
+
+.messageNote {
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+   color: red;
+}
+/* Left Menu CSS*/
+.LeftMenuHead{
+   font-size:12px;
+   font-weight:bold;
+   font-family: Arial, sans-serif;
+   padding: 5px 5px 5px 0.5em;
+   border-bottom: 1px solid #FFFFFF;
+   border-top: 1px solid #FFFFFF;
+   background-color: #3E93D4;
+   color: #fff;
+   text-decoration: none;
+   width: 100%;
+}
+.LeftMenuItem{
+   color: #FFFFFF;
+   text-decoration:none;
+   font-size:12px;
+   font-family: Arial, sans-serif;
+}
+/* Field set */
+
+fieldset {
+border: 1px solid #3E93D4;
+width: 20em
+}
+ 
+legend {
+color: #3E93D4;
+font-weight: bold;
+background: #fff;
+border: 1px solid #3E93D4;
+padding: 1px 2px
+}
+
+.calendarCol{
+   border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-top: 0px solid #979AC2;
+   color: #333;
+   font-family: Verdana,Arial,Helvetica,sans-serif;
+   font-size: 12px;
+   height: 4.0em;
+   margin: 0;
+   padding: 0;
+   width: 115px
+}
+
+/*Home Page Styles Start-Chennu*/
+.homePortlet{
+    border-style: solid;
+    border-width: px;
+    border-style: outset;
+    border-color: #999;
+}
+
+.portletTitleBar {
+   background-image: url(titlebar.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   height: 20px;
+   padding-top: 3px;
+   
+}
+.portletTitleLeft {
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center; 
+    padding-top: 2px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+.portletTitleCenter {
+    font-size: 10px;
+    font-weight: bold;
+    color: #fff;
+    float: center; 
+    padding-top: 2px;
+    font-family: Verdana, Arial, sans-serif;
+}
+
+
+.portletArea {
+    background-color: #fff;
+    padding: 5px;
+}
+
+/* Fixes Floating Box issue in IE */
+* html .portletTitleBar {height: 1%;}
+
+.photo 
+    {display:inline; border:1px solid #fff; margin:1px;}
+            
+.photo a {
+    display:block; cursor:default; float:left; text-decoration:none; background:#444; border:1px solid #58ACFA;
+}
+
+.photo a img {
+    display:block; border:5px solid #eee;
+}
+            
+.photo a:hover, .photo a:hover {
+    white-space:normal; position:relative;
+}
+           
+.photo a:hover img, .photo a:hover img {
+    position:absolute; left:-100px; top:-10px; width:250px; height:250px; border-color:#fff;
+}
+
+
+.calendarHourRow
+{
+    color: white;
+    background-color: #ACCFF2;
+    /*background: #6C73B4 url(../images/DBGrid/bg_table_td_two.jpg) repeat  top center ;*/
+    /*background-color: #e4e4d7;*/
+    font-family: Arial,Verdana, Tahoma,"Sans Serif", "Times New Roman";
+    font-size: 12px;
+    font-weight: bold;
+    height: 3.5em;
+    border-top:        2px solid #979AC2;
+    border-left:       2px solid #979AC2;
+    border-bottom:     1px solid #979AC2;
+    border-right:      1px solid #979AC2;
+}
+
+.calendarHourRowEvent
+{
+    background-color: #F2F5A9;
+    /*background: #6C73B4 url(../images/DBGrid/bg_table_td_two.jpg) repeat  top center ;*/
+    /*background-color: #e4e4d7;*/
+    font-family: Arial,Verdana, Tahoma,"Sans Serif", "Times New Roman";
+    /*font-family: lucida-sans*/
+    font-size: 10px;
+    font-weight: normal;
+    height: 3.5em;
+    border-top:        2px solid #979AC2;
+    border-left:       2px solid #979AC2;
+    border-bottom:     1px solid #979AC2;
+    border-right:      1px solid #979AC2;
+}
+
+
+
+
+
+/*Home Page Styles Start-Chennu*/
+.homePortlet {
+	border-style: solid;
+	border-width: 1px;
+	border-style: outset;
+	border-color: #999;
+}
+
+.portletTitleBar {
+	background-image: url(../images/portal/titlebar.gif);
+	background-position: top;
+	background-repeat: repeat-x;
+	padding: 2px 5px;
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+}
+
+.portletTitleLeft {
+	font-size: 10px;
+	font-weight: bold;
+	color: #fff;
+	float: left;
+	padding-top: 2px;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+.portletTitleCenter {
+	font-size: 10px;
+	font-weight: bold;
+	color: #fff;
+	float: center;
+	padding-top: 2px;
+	font-family: Verdana, Arial, sans-serif;
+}
+
+.portletArea {
+	background-color: #fff;
+	padding: 5px;
+}
+
+.portletIcons {
+	float: right;
+	color: #fff;
+	padding-right: 1px;
+}
+
+div.portletIcons a:link,div.portletIcons a:hover,div.portletIcons a:visited
+	{
+	color: #fff;;
+	font-size: 10px;
+	font-weight: bold;
+}
+
+/* Fixes Floating Box issue in IE */
+* html .portletTitleBar {
+	height: 1%;
+}
+
+.clear {
+	clear: both;
+}
+
+img {
+	border: none;
+}
+
+.inputlablegreen {
+   color: green;
+   font-family: lucida-sans;
+   font-size: 12px;
+   
+}
+.inputlablegreen1 {
+    color: green;
+    font-family: lucida-sans;
+    font-size: 12px;
+}
+.innerTable0x400{
+   border-bottom: 0px solid #979AC2;
+   border-left: 0px solid #979AC2;
+   border-right: 0px solid #979AC2;
+   border-style: solid;
+   border-top: 0px solid #979AC2;
+   height: 0px;
+   left: 0px;
+   top: 0px;
+   width: 400px;
+}	
+
+
+.mailBackgroundForIssueReminder{
+   background-image: url(blueHeader_10x35.gif);
+   background-position: top;
+   background-repeat: repeat-x;
+   border-bottom: 0px solid #979AC2;
+   height: 0pxpx;
+   width: 800px;
+}
+.inputTextBlue2 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 40px;
+}
+
+
+.inputTextBlueCustomer {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 180px;
+}
+
+.inputTextBlueTitle {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 445px;
+}
+.inputTextBlue2 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 40px;
+}
+
+.headerText1{
+   background: url(grd-1px_1.1.gif) 0 -237px repeat-x;
+   color: #3E93D4;
+   font-family: lucida-sans;
+   font-size: 13px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 5px 175px 5px 5px ; 
+   text-decoration: none;
+   
+}
+
+.inputTextareaDesc {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+   height: 5em;
+   width: 450px;
+}
+
+/* field lable for ecert*/
+
+.fieldLabeforecert {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   text-align: left;
+} 
+
+
+
+.fieldLabeforecertForResult {
+   color: white;
+   font-family: lucida-sans;
+   font-size: 12px;
+   text-align: center;
+} 
+
+.BgForEcert{
+    /*background-image: url('eCertification_1.jpg');
+    background-repeat: no-repeat;
+    background-position: 40%; */
+    background-color  : #048FD2;
+    width : 800px;
+    height : 40px;
+}
+
+.cellBorderForExamTable{
+   border-top:        1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   width : 800px; 
+   height : 420px;
+   
+}
+.cellBorderForInnerExamTable {
+   /* border-top:        1px solid #979AC2;
+    border-bottom:     1px solid #979AC2;
+    border-right:      1px solid #979AC2;
+    border-left:       1px solid #979AC2;*/
+    width : 790px; 
+    height : 400px;
+}
+.fieldLabeforQuestion {
+  /* color: black;
+   font-family: Courier New;
+   font-size: 12px;
+   text-align: left;*/
+        font-style: normal;
+	color: #000000;
+	font-family: Courier New;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 12px;
+	text-align: justify;
+	border-width: 0px;
+	line-height: 17px;
+	text-indent: 0; 
+	margin-left: 2.5; 
+        padding-left: 1%
+} 
+
+.fieldLabeforAns {
+  /* color: black;
+   font-family: Courier New;
+   font-size: 12px;
+   text-align: left;*/
+        font-style: normal;
+	color: #000000;
+	font-family: Courier New;
+	text-decoration: none;
+	font-weight: 500;
+	font-size: 12px;
+	text-align: justify;
+	border-width: 0px;
+	line-height: 17px;
+	text-indent: 0; 
+	margin-left: 2.5; 
+        padding-left: 2%
+} 
+
+
+.hiddenLabel {
+   color: green;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+}
+ .inputTextBlue3 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 60px;
+}
+
+.borderBlue_review {
+   border:     		1px solid #6698FF;
+   padding:			0;
+   height: 90px;
+   left: 0px;
+   top: 0px;
+   width: 800px;
+   margin-top:        7px;
+   margin-bottom:     10px;
+}
+
+.inputTextBlueLarge1 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 437px;
+}
+
+.inputTextarea1 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+    width: 437px;
+}
+
+
+	
+
+
+.inputTextarea2 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+     width: 416px;
+}
+
+.inputTextarea3 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+     width: 486px;
+}
+.inputTextarea4 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+     width: 486px;
+}
+
+.inputTextBlue1 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 170px;
+}
+
+
+/* newliy added 09/16/2014*/
+
+.fieldLabelText {
+   color: #045FB4;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+  /* font-weight: normal;*/
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+}
+
+
+.headerText12{
+  /* background: url(grd-1px_1.1.gif) 0 -237px repeat-x;*/
+   color: #3E93D4;
+   font-family: lucida-sans;
+   font-size: 13px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 5px 175px 5px 5px ; 
+   text-decoration: none;
+   
+}
+
+
+
+/* Add for ReleaseNotes version */
+.fieldLabelContactReleaseV {
+   color: #1E90FF;
+   font-family: Georgia, Times, "Times New Roman", serif;
+   font-size: 16px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bold;
+   padding: 3px 6px 3px 6px;
+   text-align: left;
+}
+/* Add for ReleaseNotes Desc */
+.fieldLabelContactReleaseD { 
+   font-family:"Times New Roman", Times, serif ;
+   color:#4E443C;
+   font-size:16px;
+   font-weight:normal;
+   font-style:normal;
+   letter-spacing:.1em;
+   padding-bottom:12px;
+ }         
+
+/* Add for ReleaseNotes icon image */
+.menuBarReleaseNotesLink{   
+  /*background-image: url(release00_44x13.gif);  */
+  background-image: url(Releasenotes.jpg);
+  background-repeat: no-repeat;
+  text-decoration: none;
+}
+
+
+/* Add for ReleaseNotes Outer Table */
+.templateTableReleaseNotes{
+   height: 750px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+   border-top:        0px solid #979AC2;
+   border-left:       0px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      0px solid #979AC2;
+}
+
+/* Add for ReleaseNotes Inner Table */
+.innerTableReleaseNotes{
+   border-top: 0px solid #979AC2;
+   border-bottom: 0px solid #979AC2;
+   height: 685px;
+   left: 0px;
+   top: 0px;
+   width: 1000px;
+}
+
+
+.inputTextBlue31 {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 37px;
+}
+
+.inputTextarea41 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+     width: 360px;
+}
+
+.inputSelect11 {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   150px ;
+}
+
+.inputTextarea51 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+     width: 355px;
+}
+
+
+ .inputTextBlueForIssueTitle {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 415px;
+}
+
+
+
+.inputTextareaOverlay {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+   width:440px;
+   
+}
+
+.inputTextareaOverlay1 {
+   border-top:        2px solid #979AC2;
+   border-left:       2px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   margin: 0;
+   padding: 0;
+   width:410px;
+   
+}
+
+
+/*
+Css for Performance reviews
+*/
+
+div#overlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBox {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+        div#wrapper {
+            position:absolute;
+            top: 0px;
+            left: 0px;
+            padding-left:24px;
+        }
+        
+        
+        
+        
+
+  /** PAGE navigation **/
+  
+  /* css for PO grid start */
+.pg-normal {
+	color: #666666;
+	font-weight: normal;
+	text-decoration: none;
+	cursor: pointer;
+	text-align: bottom;
+}
+
+.pg-selected {
+	color: #800080;
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+	text-align: bottom;
+}
+
+
+*.whiteTblHdr {
+
+        background-color: rgb(117,145,221);  /*  BW rgb(117, 145, 221); */
+
+        color: RGB(255,255,255);   /* BW rgb(255, 255, 255); */
+
+        font-family: Arial;
+
+        font-size: 12px;
+
+        font-weight: bold;
+
+}
+/* css for PO Grid End */
+div#noDuesOverlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#noDuesSpecialBox {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 65px  auto 0px auto;
+            width: 620px; 
+            height: auto;
+            background: #FFF;
+           
+
+            color: #000;
+        }
+        
+  div#noDuesOverlayRemainder {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#noDuesSpecialBoxRemainder {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 65px  auto 0px auto;
+            width: 620px; 
+            height: 250px;
+            background: #FFF;
+           
+
+            color: #000;
+        }
+div#overlayRecruitment {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxRecruitment {
+            display: none;
+              top: 50px;
+            left: 80px;
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 1102px; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+div#AppOverlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+ div#specialBoxApp {
+            display: none;
+            position: absolute;
+            z-index: 3;
+             margin: 100px auto 0px auto;
+             margin-left: 100px;
+            width: 400px; 
+            height: auto;
+            background: #FFF;
+            color: #000;
+        }
+		
+		.cornerleft {
+	border-top-left-radius: 25px;
+        
+}
+.corneright {
+	
+        border-top-right-radius: 25px;
+}
+
+div#specialBox1 {
+              border-top-left-radius: 25px;
+              border-top-right-radius: 25px;
+              border-bottom-left-radius: 25px;
+              border-bottom-right-radius: 25px;
+
+          
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 100px auto 0px auto;
+            width: 450px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+          }
+        
+
+        
+        
+
+ .inputSelectSmall1 {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   70px ;
+}   
+
+div#overlayForProjectAdd {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxForProjectAdd {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 174px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+            
+
+            color: #000;
+        }
+        
+div#bridgeOverlay {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#bridgeSpecialBox {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 65px  auto 0px auto;
+    width: 620px; 
+    height: auto;
+    background: #FFF;
+
+
+    color: #000;
+}
+
+
+div#bridgeIssueOverlay {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#bridgeIssueSpecialBox {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 65px  auto 0px auto;
+    width: 543px; 
+    height: auto;
+    background: #FFF;
+
+
+    color: #000;
+/*    top: -42;*/
+}
+
+div#bridgeCancelOverlay {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#bridgeCancelSpecialBox {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 65px  auto 0px auto;
+    width: 512px; 
+    height: auto;
+    background: #FFF;
+
+
+    color: #000;
+}
+ div#overlayForBridge {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxForBridge {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+       .pagination{
+            letter-spacing: 4px;
+float: right;
+
+        }
+        
+        
+        .boxdiv{   
+/* width: 14%;  */
+ width: 18%;  
+ 
+/* height: 48px;    */
+ display: inline-block;   
+ margin: 1%;  
+border-radius: 25px;
+border: 2px solid #3CB0FD;
+ padding: 10px;
+ }
+
+
+/*
+New Styles for Investment Date : 12/30/2015
+*/
+
+ div#specialBoxInvestment {		
+            display: none;		
+            position: absolute;		
+            z-index: 3;		
+            margin: 10px auto 0px auto;		
+            width: 730px; 		
+            height: auto;		
+            background: #FFF;		
+            color: #000;		
+        }		
+        		
+        
+				
+.inputSelectInvestement {		
+   background-color:  #fff;		
+   font-family:       lucida-sans;		
+   font-size:         12px;		
+   font-weight:       normal;		
+   letter-spacing:    .1em;		
+   color:             #333;		
+   margin-top:        1px;		
+   margin-bottom:     1px;		
+   margin-left :     1px ;		
+   margin-right :    1px ;		
+   border-top:        1px solid #979AC2;		
+   border-left:       1px solid #979AC2;		
+   border-bottom:     1px solid #979AC2;		
+   border-right:      1px solid #979AC2;		
+   width :   70px ;		
+}
+
+
+
+.inputTextInvestment {		
+   border-bottom: 1px solid #979AC2;		
+   border-left: 2px solid #979AC2;		
+   border-right: 1px solid #979AC2;		
+   border-top: 2px solid #979AC2;		
+   color: #333;		
+   font-family: lucida-sans;		
+   font-size: 12px;		
+   height: 1.7em;		
+   margin: 0;		
+   padding: 0;		
+   width: 300px;		
+}
+
+
+ div#exeMeetoverlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#exeMeetspecialBox {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }	
+        div#exeMeetAttendeesoverlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#exeMeetAttendeesspecialBox {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+div#empProjectsOverlay {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#empProjectsSpecialBox {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 65px  auto 0px auto;
+    width: 833px; 
+    height: auto;
+    background: #FFF;
+    color: #000;
+   top: 200px;
+}
+
+
+ #overlay1 {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+#specialBox1 {
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    display: none;
+    height: auto;
+    margin: 10px auto 0;
+    position: absolute;
+    width: 750px;
+    z-index: 3;
+    top: 150px;
+}
+
+ .pagination .btn{
+    background-color: white;
+    border-color: white;
+    color: black;
+    padding: 4px;
+     text-decoration: none !important;
+}
+
+
+.btn{
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857;
+    text-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    background-image: none;
+    border-radius: 4px;
+    -moz-user-select: none;
+    border: 1px solid transparent;
+    vertical-align: middle;
+   
+}
+.pagination {
+    display: inline-block;
+    float: right;
+    margin-bottom: 25px;
+    margin-top: 0;
+    padding-left: 15px;
+}
+.pagination li:first-child a, .pagination li:first-child span {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    margin-left: 0;
+}
+.pagination li:last-child a, .pagination li:last-child span {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+.pagination .active a, .pagination .active span, .pagination .active a:hover, .pagination .active span:hover, .pagination .active a:focus, .pagination .active span:focus {
+    background-color: #fe980f;
+    border-color: #fe980f;
+    color: #ffffff;
+    cursor: default;
+    z-index: 2;
+}
+.pagination li a, .pagination li span {
+    background-color: #f0f0e9;
+    border: 0 none;
+    color: #000;
+    float: left;
+    line-height: 1.42857;
+    margin-left: -1px;
+    margin-right: 5px;
+    padding: 6px 12px;
+    position: relative;
+    text-decoration: none;
+}
+.pagination li a:hover {
+    background: #fe980f none repeat scroll 0 0;
+    color: #fff;
+}
+.product-details {
+    overflow: hidden;
+}
+/*css for payroll start*/
+
+.inputSelectExtraLargeForPayroll {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   300px ;
+}
+
+.inputSelectLargeForPayroll {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   225px ;
+}
+
+#payrollOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#hubblePayrollOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	 width: 400px; 
+	height: 130px;
+	background: #FFF;
+	color: #000;
+        
+}
+.overlayHeader{
+    background: #4981CE;
+   
+}
+
+.overlayFieldLabels{
+    color:#048FD2;
+    font-size: 15px;
+    font-family: sans-serif;
+    
+}
+
+
+#payrollReportOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#hubblePayrollReportOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 605px; 
+	height: 235px;
+	background: #FFF;
+	color: #000;
+        
+}
+
+.btnPayrollReports {
+  background: #795d8c;
+  background-image: -webkit-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -moz-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -ms-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -o-linear-gradient(top, #795d8c, #795d8c);
+  background-image: linear-gradient(to bottom, #795d8c, #795d8c);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 1px 1px 3px #795d8c;
+  -webkit-box-shadow: 0px 0px 4px #795d8c;
+  -moz-box-shadow: 0px 0px 4px #795d8c;
+  box-shadow: 0px 0px 4px #795d8c;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 1px 21px 1px 22px;
+  border: solid #556699 3px;
+  text-decoration: none;
+}
+
+.btnPayrollReports:hover {
+  background: #795d8c;
+  background-image: -webkit-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -moz-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -ms-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -o-linear-gradient(top, #795d8c, #795d8c);
+  background-image: linear-gradient(to bottom, #795d8c, #795d8c);
+  text-decoration: none;
+}
+.confbox
+    {
+        visibility:hidden;
+        width:300px;height:300px;
+        z-index:999;
+        position:absolute;
+        display:block;
+        top:30%;
+        left:30%; 
+    }
+    
+    
+    #wagesGridOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#wagesGridMainOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 750px; 
+	height: auto;
+	background: #FFF;
+	color: #000;
+        
+}
+
+ #bankReportsGridOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#bankReportsGridOverlayMain {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 750px; 
+	height: 170px;
+	background: #FFF;
+	color: #000;
+        
+}
+#rerunWagesOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#rerunReportOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 230px;
+	background: #FFF;
+	color: #000;
+        
+}
+
+.fieldLabelWages {
+   color: #000000;
+   font-family: sans-serif;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: bolder;
+   padding: 3px 6px 3px 6px;
+   text-align: right;
+}
+
+
+
+.inputTextBlueWages {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 130px;
+}
+
+.inputSelectWages {
+   background-color:  #fff;
+   font-family:       sans-serif;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px outset #000000;
+   border-left:       1px outset #000000;
+   border-bottom:     1px outset #000000;
+   border-right:      1px outset #000000;
+   width :   130px ;
+}
+
+.btnPayrollReportsWages {
+  background: #ffffff;
+  background-image: -webkit-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -moz-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -ms-linear-gradient(top, #795d8c, #795d8c);
+  background-image: -o-linear-gradient(top, #795d8c, #795d8c);
+  background-image: linear-gradient(to bottom, #795d8c, #795d8c);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  text-shadow: 1px 1px 3px #795d8c;
+  -webkit-box-shadow: 0px 0px 4px #795d8c;
+  -moz-box-shadow: 0px 0px 4px #795d8c;
+  box-shadow: 0px 0px 4px #795d8c;
+  font-family: Arial;
+  color: #ffffff;
+  font-size: 13px;
+  padding: 1px 21px 1px 22px;
+  border: solid #556699 3px;
+  text-decoration: none;
+}
+
+.inputTextBlueWagesColoredTextBoxes {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 130px;
+   background-color: #ff8f69;
+}
+
+.navigationTextWages{
+    
+    color:#1C7120;font-family: sans-serif;font-weight: 700;font-size: 15px;
+}
+
+.inputTextBlueWagesSmall{
+      border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 50px;
+}
+
+.inputTextBlueWagesMedium{
+       border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 107px;
+    
+}
+
+#leavesUplaodSpecailbox {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#leavesUploadOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 200px;
+	background: #FFF;
+	color: #000;
+        
+}
+
+#payRollHistoryGridOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#payRollHistoryGridOverlayMain {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 750px; 
+	height: auto;
+	background: #FFF;
+	color: #000;
+        
+}
+ #wagesHistoryGridOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#wagesHistoryGridOverlayMain {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 750px; 
+	height: auto;
+	background: #FFF;
+	color: #000;
+        
+}
+
+
+.verticalLine{
+    border-left: thick ridge #000000;
+    height: 500px;
+    
+}
+
+.inputTextBluePayroll {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+}
+
+div#overlayPayrollListEditTef {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxPayrollListEditTef {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 150px auto 0px auto;
+            width: 700px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+        
+        div#noDuesOverlay {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#noDuesSpecialBox {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 65px  auto 0px auto;
+            width: 620px; 
+            height: auto;
+            background: #FFF;
+           
+
+            color: #000;
+        }
+    #tefOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#rerunTefOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 190px;
+	background: #FFF;
+	color: #000;
+        
+}
+    
+  #payRollAuthOverlay {
+
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+
+#payRollAuthOverlaybox {
+    
+    position: absolute;
+    z-index: 3;
+    margin: 100px auto 0px 100px;
+    width: 339px; 
+    height: auto;
+    background: #FFF;
+    color: #000;
+        
+}
+div#overlayTaxAdd {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxTaxAdd {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            top: 73px;
+            color: #000;
+        }
+/*css for payroll end*/
+
+
+
+
+div#displyID {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+    
+}
+div#blockDiv {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 10px auto;
+    width: 500px; 
+    height: 500px;
+    color: #000;
+    top:42%;
+    left:42%;
+}
+
+
+div#overlayEmailCampaign {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#specialBoxEmailCampaign {
+    display: none;
+    position: absolute;
+    z-index: 3;
+    margin: 120px auto 0px auto;
+    width: 756px; 
+    height: 150px;
+    background: #FFF;
+    color: #000;
+}
+
+
+div#overlayExecutiveDashBoard {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxExecutiveDashBoard {
+            display: none;
+              top: 200px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+        
+        
+        div#overlayResourceType{
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxResourceType{
+            display: none;
+              top: 200px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+#releasePayslipSpecailbox {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#releasePayslipOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 165px;
+	background: #FFF;
+	color: #000;
+  }
+
+  #rectangleRed {
+      width: 20px; 
+      height: 10px; 
+      background: #ff9999; 
+      color: #E3170D;        
+	
+  }
+    #rectangleBlue {
+      width: 20px; 
+      height: 10px; 
+      background: #9999ff; 
+      color: #003F87;        
+	
+  }
+    #rectangleGreen {
+      width: 20px; 
+      height: 10px; 
+      background: #7fff7f; 
+      color: #008000;        
+	
+  }
+  #freezeOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#freezePayrollOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 190px;
+	background: #FFF;
+	color: #000;
+  }
+  
+   #unfreezeOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#unfreezePayrollOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 190px;
+	background: #FFF;
+	color: #000;
+  }
+  
+   #cleanPayrollOverlay {
+display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+}
+
+#cleanPayrollHubbleOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 150px;
+	background: #FFF;
+	color: #000;
+  }
+  
+  #getPayslipOverlay{
+      display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+  }
+  
+  #getPayslipHubbleOverlay {
+	display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 175px;
+	background: #FFF;
+	color: #000;
+  }
+  
+  #getPayrollReportOverlay{
+      display: none;
+	z-index: 2;
+	background: #000;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	text-align: center;
+  }
+  
+  #getPayrollReportHubbleOverlay{
+      display: none;
+	position: absolute;
+	z-index: 3;
+	margin: 100px auto 0px 100px;
+	width: 580px; 
+	height: 175px;
+	background: #FFF;
+	color: #000;
+  }
+  
+  .popupItem:hover {
+                background: #F2F5A9;
+                font: arial;
+                font-size:10px;
+                color: black;
+            }
+
+            .popupRow {
+                background: #3E93D4;
+            }
+
+            .popupItem {            
+                padding: 2px;
+                width: 100%;
+                border: black;
+                font:normal 9px verdana;
+                color: white;
+                text-decoration: none;
+                line-height:13px;
+                z-index:100;
+            }
+            
+            .inputTextReadOnlyColoredTextBoxes {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 130px;
+  /* background-color: #ececec; */
+  background-color: #ffdae0;
+}
+
+
+
+.button_payroll{
+border:2px solid #26759E;-webkit-box-shadow: #1B73CC 2px 2px 2px ;-moz-box-shadow: #1B73CC 2px 2px 2px ; box-shadow: #1B73CC 2px 2px 2px ; -webkit-border-radius: 23px; -moz-border-radius: 23px;border-radius: 23px;font-size:12px;font-family:arial, helvetica, sans-serif; padding:0px 5px 2px 6px; text-decoration:none; display:inline-block;text-shadow: -1px -1px 0 rgba(33,82,181,0.3);font-weight:bold; color: #FFFFFF;
+ background-color: #3EBCFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#3EBCFF), to(#194F75));
+ background-image: -webkit-linear-gradient(top, #3EBCFF, #194F75);
+ background-image: -moz-linear-gradient(top, #3EBCFF, #194F75);
+ background-image: -ms-linear-gradient(top, #3EBCFF, #194F75);
+ background-image: -o-linear-gradient(top, #3EBCFF, #194F75);
+ background-image: linear-gradient(to bottom, #3EBCFF, #194F75);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#3EBCFF, endColorstr=#194F75);
+}
+
+.button_payroll:hover{
+ border:3px solid #26759E;
+ background-color: #2A80AD; background-image: -webkit-gradient(linear, left top, left bottom, from(#2A80AD), to(#35ABFF));
+ background-image: -webkit-linear-gradient(top, #2A80AD, #35ABFF);
+ background-image: -moz-linear-gradient(top, #2A80AD, #35ABFF);
+ background-image: -ms-linear-gradient(top, #2A80AD, #35ABFF);
+ background-image: -o-linear-gradient(top, #2A80AD, #35ABFF);
+ background-image: linear-gradient(to bottom, #2A80AD, #35ABFF);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#2A80AD, endColorstr=#35ABFF);
+}
+
+
+/*
+.btnPayroll {
+	display: inline-block;
+	outline: none;
+	cursor: pointer;
+	text-align: center;
+	text-decoration: none;
+	font: 14px/100% Arial, Helvetica, sans-serif;
+	padding: 0 3px 1px 3px;
+	text-shadow: 0 1px 1px rgba(0,0,0,.3);
+	-webkit-border-radius: .5em; 
+	-moz-border-radius: .5em;
+	border-radius: .5em;
+	-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: 0 1px 2px rgba(0,0,0,.2);
+}
+.btnPayroll:hover {
+	text-decoration: none;
+}
+.btnPayroll:active {
+	position: relative;
+	top: 1px;
+}
+
+.blue {
+	color: #d9eef7;
+	border: solid 1px #0076a3;
+	background: #f78d1d;
+	background: -webkit-gradient(linear, left top, left bottom, from(#00adee), to(#0078a5));
+	background: -moz-linear-gradient(top,  #00adee,  #0078a5);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#00adee', endColorstr='#0078a5');
+}
+.blue:hover {
+	background: #0078a5;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0095cc), to(#00678e));
+	background: -moz-linear-gradient(top,  #0095cc,  #00678e);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0095cc', endColorstr='#00678e');
+}
+.blue:active {
+	color: #00adee;
+	background: -webkit-gradient(linear, left top, left bottom, from(#0078a5), to(#00adee));
+	background: -moz-linear-gradient(top,  #0078a5,  #00adee);
+	filter:  progid:DXImageTransform.Microsoft.gradient(startColorstr='#0078a5', endColorstr='#00adee');
+}*/
+
+
+.btnPayroll{
+ border:1px solid #288ad1;-webkit-box-shadow: #FEFFFF 0px 1px 3px inset;-moz-box-shadow: #FEFFFF 0px 1px 3px inset; box-shadow: #FEFFFF 0px 1px -1px inset; -webkit-border-radius: 7px; -moz-border-radius: 7px;border-radius: 7px;font-size:11px;font-family:verdana, sans-serif; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0); color: #CDFFF9;padding:-1px;
+ background-color: #408CFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#408CFF), to(#2B7BE3));
+ background-image: -webkit-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -moz-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -ms-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -o-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: linear-gradient(to bottom, #408CFF, #2B7BE3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#408CFF, endColorstr=#2B7BE3);
+}
+
+.btnPayroll:hover{
+ border:1px solid #26759E;
+ background-color: #288DC7; background-image: -webkit-gradient(linear, left top, left bottom, from(#288DC7), to(#16428C));
+ background-image: -webkit-linear-gradient(top, #288DC7, #16428C);
+ background-image: -moz-linear-gradient(top, #288DC7, #16428C);
+ background-image: -ms-linear-gradient(top, #288DC7, #16428C);
+ background-image: -o-linear-gradient(top, #288DC7, #16428C);
+ background-image: linear-gradient(to bottom, #288DC7, #16428C);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#288DC7, endColorstr=#16428C);
+}
+
+.btnPayrollWage{
+ border:1px solid #288ad1;-webkit-box-shadow: #FEFFFF 0px 1px 3px inset;-moz-box-shadow: #FEFFFF 0px 1px 3px inset; box-shadow: #FEFFFF 0px 1px -1px inset; -webkit-border-radius: 7px; -moz-border-radius: 7px;border-radius: 7px;font-size:11px;font-family:verdana, sans-serif; text-decoration:none; display:inline-block;text-shadow: 0px 0px 0 rgba(255,255,255,0); color: #CDFFF9;padding: 0px;
+ background-color: #408CFF; background-image: -webkit-gradient(linear, left top, left bottom, from(#408CFF), to(#2B7BE3));
+ background-image: -webkit-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -moz-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -ms-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: -o-linear-gradient(top, #408CFF, #2B7BE3);
+ background-image: linear-gradient(to bottom, #408CFF, #2B7BE3);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#408CFF, endColorstr=#2B7BE3);
+}
+
+.btnPayrollWage:hover{
+ border:1px solid #26759E;
+ background-color: #288DC7; background-image: -webkit-gradient(linear, left top, left bottom, from(#288DC7), to(#16428C));
+ background-image: -webkit-linear-gradient(top, #288DC7, #16428C);
+ background-image: -moz-linear-gradient(top, #288DC7, #16428C);
+ background-image: -ms-linear-gradient(top, #288DC7, #16428C);
+ background-image: -o-linear-gradient(top, #288DC7, #16428C);
+ background-image: linear-gradient(to bottom, #288DC7, #16428C);filter:progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr=#288DC7, endColorstr=#16428C);
+}
+
+.inputTextReadOnlyPayroll {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+    background-color: #ffdae0;
+}
+.inputTextReadOnlyImpPayroll {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+    background-color: #DDA0DD;
+}
+.inputTextReadOnlyTotalCostPayroll {
+   border-bottom: 2px outset #000000;
+   border-left: 2px outset #000000;
+   border-right: 2px outset #000000;
+   border-top: 2px outset #000000;
+   color: #333;
+   font-family: sans-serif;
+   font-size: 12px;
+   height: 1.9em;
+   margin: 0;
+   padding: 0;
+   width: 80px;
+    background-color: #2cb5e2;
+}
+
+.inputTextBlueNew {
+   border-bottom: 1px solid #979AC2;
+   border-left: 2px solid #979AC2;
+   border-right: 1px solid #979AC2;
+   border-top: 2px solid #979AC2;
+   color: #333;
+   font-family: lucida-sans;
+   font-size: 12px;
+   height: 1.7em;
+   margin: 0;
+   padding: 0;
+   width: 120px;
+}
+.inputSelectNew {
+   background-color:  #fff;
+   font-family:       lucida-sans;
+   font-size:         12px;
+   font-weight:       normal;
+   letter-spacing:    .1em;
+   color:             #333;
+   margin-top:        1px;
+   margin-bottom:     1px;
+   margin-left :     1px ;
+   margin-right :    1px ;
+   border-top:        1px solid #979AC2;
+   border-left:       1px solid #979AC2;
+   border-bottom:     1px solid #979AC2;
+   border-right:      1px solid #979AC2;
+   width :   120px ;
+}
+
+
+
+div#overlayImages {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxImages {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 750px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+div#overlayContactsActivites {
+    display: none;
+    z-index: 2;
+    background: #000;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    text-align: center;
+}
+div#specialBoxContactsActivites {
+    display: none;
+    top:25px;
+    position: absolute;
+    z-index: 3;
+    margin: 120px auto 0px auto;
+    width: auto; 
+    height: auto;
+    background: #FFF;
+    color: #000;
+}
+
+div#specialBoxLead {		
+            display: none;		
+            position: absolute;		
+            z-index: 3;		
+            margin: 200px auto 0px auto;		
+            width: 730px; 		
+            height: auto;		
+            background: #FFF;		
+            color: #000;		
+        }		
+        
+        
+
+ .overlay {
+    background-color: rgba(180, 180, 180, 0.8);
+    display: none;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    text-align: center;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+}
+.specialBox {
+    background: #fff none repeat scroll 0 0;
+    color: #000;
+    display: none;
+    height: auto;
+    margin: 10px auto 0;
+    position: absolute;
+    width: 750px;
+    z-index: 3;
+    top: 150px;
+}
+
+
+
+ div#overlayProjectList{
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxProjectList{
+            display: none;
+              top: 200px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+		
+        
+div#overlayTaskAttachments{
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxTaskAttachments{
+            display: none;
+              top: 100px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+	
+        
+        
+           
+ div#overlayTaskNotes{
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxTaskNotes{
+            display: none;
+              top: 100px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+	
+ .underscore{
+          text-decoration: none;
+        }
+        .fieldLabelCenterTimeSheetNotes {
+   color: darkblue;
+   font-family: lucida-sans;
+   font-size: 12px;
+   font-style: normal;
+   font-variant: normal;
+   font-weight: normal;
+   padding: 3px 6px 3px 155px;
+   text-align: left;
+}
+
+.formfield * {
+  vertical-align: middle;
+}
+
+ div#overlayBdmAssociates {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            text-align: center;
+        }
+        div#specialBoxBdmAssociates {
+            display: none;
+            position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: 550px; 
+            height: auto;
+            background: #FFF;
+
+            color: #000;
+        }
+
+div#overlayMultipleProjectList{
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxMultipleProjectList{
+            display: none;
+              top: 200px;
+          
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+            width: auto; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+		.uploadButton {
+    background: #3498db;
+  background-image: -webkit-linear-gradient(top, #3498db, #2980b9);
+  background-image: -moz-linear-gradient(top, #3498db, #2980b9);
+  background-image: -ms-linear-gradient(top, #3498db, #2980b9);
+  background-image: -o-linear-gradient(top, #3498db, #2980b9);
+  background-image: linear-gradient(to bottom, #3498db, #2980b9);
+  -webkit-border-radius: 60;
+  -moz-border-radius: 60;
+  border-radius: 60px;
+  font-family: Georgia;
+  color: #ffffff;
+  font-size: 10px;
+  padding: 1px 1px 1px 1px;
+  text-decoration: none;
+}
+
+.uploadButton:hover {
+  background: #3cb0fd;
+  background-image: -webkit-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -moz-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -ms-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
+  background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
+  text-decoration: none;
+}
+
+		
+   
+	
+        div#overlayUpload {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxUpload {
+            display: none;
+              top: 155px;
+            left: 80px;
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+             width: 555px; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+       
+          div#overlayUpload1 {
+            display: none;
+            z-index: 2;
+            background: #000;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0px;
+            left: 0px;
+            overflow: auto;
+            text-align: center;
+        }
+        div#specialBoxUpload1 {
+            display: none;
+              top: 155px;
+            left: 80px;
+        position: absolute;
+            z-index: 3;
+            margin: 10px auto 0px auto;
+             width: 555px; 
+            height: auto;
+            background: #FFF;
+            overflow: auto;
+            overflow-y: auto;
+            color: #000;
+        }
+       

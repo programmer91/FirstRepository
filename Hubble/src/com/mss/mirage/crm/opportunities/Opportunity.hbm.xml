@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<!--
+    Document   : Opportunity.hbm.xml
+    Created on : September 26, 2007, 7:36 PM
+    Author     : D.Charan Raj
+    Description:
+        Purpose of the document follows.
+-->
+<hibernate-mapping>
+    <class name="com.mss.mirage.crm.opportunities.OpportunityAction" table="tblCrmOpportunity">
+        <id name="id" column="Id" >
+            <generator class="increment"/>
+        </id>
+        
+        <property name="accountId"    column="AccountId"/>
+        <property name="title"    column="Title"/>
+        <property name="description" column="Description"/> 
+        <property name="value" column="Value"/> 
+        <property name="stage" column="Stage"/>
+        <property name="type" column="Type"/> 
+        
+        <property name="architectId" column="ArchitectId"/> 
+        <property name="insideSalesId" column="InsideSalesId"/> 
+        
+        <property name="bdmId" column ="BDMId"/> 
+        
+        <property name="offshorePMId" column="OffshorePMId"/> 
+        
+        
+        <property name="vpId" column="VicePresidentId"/> 
+        <property name="regionalMgrId" column="RegionalMgrId"/> 
+        
+        
+        <property name="practiceMgrId" column="PracticeManagerId"/> 
+        
+        
+        <property name="dueDateTimestamp"  column="DueDate"/> 
+        <property name="createdDate"   column="CreatedDate" insert="true" update="false"/>
+        <property name="createdBy"   column="createdBy" insert="true" update="false"/>
+        
+        <property name="modifiedDate"   column="modifiedDate" insert="false" update="true"/>
+        <property name="modifiedBy"   column="modifiedBy" insert="false" update="true"/>
+        <property name="practiceName"   column="Practice" insert="true" update="true"/>
+        <property name="state"   column="State" insert="true" update="true"/>
+        <property name="leadSourceId"   column="LeadSourceId" insert="true" update="true"/>
+        <property name="contactsHidden"   column="Contacts" insert="true" update="true"/>
+        <property name="sviNum"   column="SviNumber" insert="true" update="true"/>
+        <property name="sviList"   column="SviStage" insert="true" update="true"/>
+    </class>
+</hibernate-mapping>
+
+
+
