@@ -1,7 +1,7 @@
 <%-- 
     Document   : sample.jsp
     Created on : Mar 13, 2014, 2:48:51 PM
-    Author     : miracle
+    Author     : Anand
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
