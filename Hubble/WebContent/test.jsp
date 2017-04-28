@@ -7,7 +7,7 @@
  *
  * Date    :  July 18, 2014, 07:16 PM
  *
- * Author  : Santosh Kola<skola2@miraclesoft.com>
+ * Author  : Santosh Kola uuuuu Katappa121 <skola2@miraclesoft.com>
  *
  * File    : ecertificationDomain.jsp
  *
